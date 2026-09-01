@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Play, Sparkles, UserCheck, Cpu, Smile, ShieldCheck, ArrowRight } from "lucide-react";
 import gsap from "gsap";
 import Tilt3DCard from "./Tilt3DCard";
-import { CLINIC_INFO } from "@/data/dentalData";
 
 interface HeroSectionProps {
   onOpenBooking: () => void;
@@ -48,7 +47,6 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
       "-=0.3"
     );
 
-    // Animate value props with stagger
     if (valuePropsRef.current) {
       const props = valuePropsRef.current.querySelectorAll(".value-prop");
       gsap.fromTo(
@@ -130,8 +128,8 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
 
             <div className="pt-4 flex items-center gap-4 text-xs text-slate-500">
               <div className="flex -space-x-2">
-                <div className="w-10 h-10 rounded-full border-2 border-white bg-[#E6F5F4] flex items-center justify-center text-[#0D7A75] font-bold text-xs shadow-xs">VS</div>
-                <div className="w-10 h-10 rounded-full border-2 border-white bg-[#E6F5F4] flex items-center justify-center text-[#0D7A75] font-bold text-xs shadow-xs">SS</div>
+                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=100&h=100&fit=crop&crop=face" alt="Dr. Vinay Saini" className="w-10 h-10 rounded-full border-2 border-white object-cover shadow-xs" />
+                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=100&h=100&fit=crop&crop=face" alt="Dr. Shivani Saini" className="w-10 h-10 rounded-full border-2 border-white object-cover shadow-xs" />
               </div>
               <div>
                 <span className="font-bold text-[#101828]">Consult Dr. Vinay & Dr. Shivani</span>
@@ -144,14 +142,11 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
             <Tilt3DCard maxTilt={8} scale={1.01} className="relative z-10 mx-auto max-w-md lg:max-w-none">
               <div className="relative rounded-3xl p-3 bg-gradient-to-tr from-[#0D7A75]/15 via-white to-[#CCECE8]/30 border border-white shadow-2xl overflow-hidden">
                 <div className="relative h-[380px] sm:h-[460px] w-full rounded-2xl overflow-hidden bg-slate-100">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#E6F5F4] via-[#CCECE8] to-[#0D7A75]/20" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="text-8xl mb-4">🦷</div>
-                      <div className="text-2xl font-bold text-[#0D7A75]">J.D. Dentals</div>
-                      <div className="text-sm text-slate-600 mt-1">Greater Noida</div>
-                    </div>
-                  </div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&h=600&fit=crop" 
+                    alt="Happy patient at J.D. Dentals Greater Noida" 
+                    className="w-full h-full object-cover"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#063B36]/50 via-transparent to-transparent" />
 
                   <div className="absolute top-4 left-4 glass-panel px-3.5 py-2 rounded-2xl shadow-lg flex items-center gap-2.5 animate-float">

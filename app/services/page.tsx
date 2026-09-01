@@ -26,8 +26,14 @@ export default function ServicesPage() {
   const cardsRef = useRef<HTMLDivElement>(null);
 
   const categories = ["all", "Preventive Care", "Cosmetic Care", "Restorative Care", "Orthodontics"];
-
   const filteredServices = activeFilter === "all" ? SERVICES : SERVICES.filter((s) => s.category === activeFilter);
+
+  const serviceImages: Record<string, string> = {
+    "general-checkup": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&h=400&fit=crop",
+    "teeth-whitening": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&h=400&fit=crop",
+    "dental-implants": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&h=400&fit=crop",
+    "orthodontics": "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=600&h=400&fit=crop",
+  };
 
   useEffect(() => {
     if (!cardsRef.current) return;
@@ -52,24 +58,15 @@ export default function ServicesPage() {
     );
   }, [activeFilter]);
 
-  const getBadgeIcon = (iconName: string) => {
-    switch (iconName) {
-      case "Stethoscope": return <Stethoscope className="w-5 h-5 text-[#0D7A75]" />;
-      case "Sparkles": return <Sparkles className="w-5 h-5 text-[#0D7A75]" />;
-      case "ShieldCheck": return <ShieldCheck className="w-5 h-5 text-[#0D7A75]" />;
-      case "Smile": default: return <Smile className="w-5 h-5 text-[#0D7A75]" />;
-    }
-  };
-
   const additionalServices = [
-    { name: "Root Canal Treatment", desc: "Painless single-sitting root canal", icon: Heart, color: "bg-rose-50 text-rose-500" },
-    { name: "Dental Crowns", desc: "Same-day ceramic crowns", icon: Shield, color: "bg-amber-50 text-amber-500" },
-    { name: "Wisdom Tooth Removal", desc: "Safe surgical extraction", icon: Zap, color: "bg-purple-50 text-purple-500" },
-    { name: "Pediatric Dentistry", desc: "Gentle care for kids", icon: Smile, color: "bg-blue-50 text-blue-500" },
-    { name: "Gum Treatment", desc: "Periodontal therapy", icon: Stethoscope, color: "bg-green-50 text-green-500" },
-    { name: "Dental Bridges", desc: "Missing teeth replacement", icon: Star, color: "bg-orange-50 text-orange-500" },
-    { name: "Smile Makeover", desc: "Complete smile transformation", icon: Sparkles, color: "bg-pink-50 text-pink-500" },
-    { name: "Emergency Care", desc: "24/7 dental emergencies", icon: ShieldCheck, color: "bg-red-50 text-red-500" },
+    { name: "Root Canal Treatment", desc: "Painless single-sitting root canal", icon: Heart, color: "bg-rose-50 text-rose-500", image: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=400&h=300&fit=crop" },
+    { name: "Dental Crowns", desc: "Same-day ceramic crowns", icon: Shield, color: "bg-amber-50 text-amber-500", image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=300&fit=crop" },
+    { name: "Wisdom Tooth Removal", desc: "Safe surgical extraction", icon: Zap, color: "bg-purple-50 text-purple-500", image: "https://images.unsplash.com/photo-1551884831-bbf3cdc6469e?w=400&h=300&fit=crop" },
+    { name: "Pediatric Dentistry", desc: "Gentle care for kids", icon: Smile, color: "bg-blue-50 text-blue-500", image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&h=300&fit=crop" },
+    { name: "Gum Treatment", desc: "Periodontal therapy", icon: Stethoscope, color: "bg-green-50 text-green-500", image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400&h=300&fit=crop" },
+    { name: "Dental Bridges", desc: "Missing teeth replacement", icon: Star, color: "bg-orange-50 text-orange-500", image: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&h=300&fit=crop" },
+    { name: "Smile Makeover", desc: "Complete smile transformation", icon: Sparkles, color: "bg-pink-50 text-pink-500", image: "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=400&h=300&fit=crop" },
+    { name: "Emergency Care", desc: "24/7 dental emergencies", icon: ShieldCheck, color: "bg-red-50 text-red-500", image: "https://images.unsplash.com/photo-1551884831-bbf3cdc6469e?w=400&h=300&fit=crop" },
   ];
 
   return (
@@ -111,10 +108,12 @@ export default function ServicesPage() {
                 <div key={service.id} className="service-card" style={{ perspective: "1000px" }}>
                   <Tilt3DCard maxTilt={6} scale={1.02} className="h-full">
                     <div className="h-full rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-[#A3E3DF] overflow-hidden flex flex-col transition-all duration-300 group">
-                      <div className="relative h-52 w-full bg-slate-100 overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#E6F5F4] to-[#CCECE8] flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                          {getBadgeIcon(service.iconName)}
-                        </div>
+                      <div className="relative h-52 w-full overflow-hidden">
+                        <img 
+                          src={serviceImages[service.id] || "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&h=400&fit=crop"}
+                          alt={service.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                         <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-[#0D7A75] text-white text-[11px] font-medium">{service.badgeText}</span>
                       </div>
@@ -166,13 +165,25 @@ export default function ServicesPage() {
               {additionalServices.map((service, idx) => {
                 const Icon = service.icon;
                 return (
-                  <div key={idx} className="p-5 rounded-2xl bg-[#FBFDFC] border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#A3E3DF] transition-all group cursor-pointer">
-                    <div className={`w-12 h-12 rounded-xl ${service.color} flex items-center justify-center mb-3 group-hover:scale-110 transition-transform`}>
-                      <Icon className="w-6 h-6" />
+                  <Tilt3DCard key={idx} maxTilt={4} scale={1.01} className="h-full">
+                    <div className="h-full rounded-2xl bg-[#FBFDFC] border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#A3E3DF] transition-all group cursor-pointer overflow-hidden">
+                      <div className="relative h-32 overflow-hidden">
+                        <img 
+                          src={service.image}
+                          alt={service.name}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                        <div className={`absolute bottom-3 left-3 w-10 h-10 rounded-xl ${service.color} flex items-center justify-center bg-white shadow-md`}>
+                          <Icon className="w-5 h-5" />
+                        </div>
+                      </div>
+                      <div className="p-4">
+                        <h3 className="text-base font-bold text-[#101828] group-hover:text-[#0D7A75] transition-colors">{service.name}</h3>
+                        <p className="text-xs text-slate-500 mt-1">{service.desc}</p>
+                      </div>
                     </div>
-                    <h3 className="text-base font-bold text-[#101828] group-hover:text-[#0D7A75] transition-colors">{service.name}</h3>
-                    <p className="text-xs text-slate-500 mt-1">{service.desc}</p>
-                  </div>
+                  </Tilt3DCard>
                 );
               })}
             </StaggerContainer>

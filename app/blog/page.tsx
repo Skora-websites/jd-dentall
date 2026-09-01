@@ -26,6 +26,12 @@ export default function BlogPage() {
   const categories = ["all", ...new Set(BLOG_POSTS.map((post) => post.category))];
   const filteredPosts = activeCategory === "all" ? BLOG_POSTS : BLOG_POSTS.filter((post) => post.category === activeCategory);
 
+  const blogImages: Record<string, string> = {
+    "post-1": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&h=400&fit=crop",
+    "post-2": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&h=400&fit=crop",
+    "post-3": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&h=400&fit=crop",
+  };
+
   useEffect(() => {
     if (!postsRef.current) return;
 
@@ -89,10 +95,12 @@ export default function BlogPage() {
                   <Tilt3DCard maxTilt={5} scale={1.02} className="h-full">
                     <Link href={`/blog/${post.slug}`}>
                       <div className="h-full rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-[#A3E3DF] overflow-hidden flex flex-col justify-between cursor-pointer group transition-all duration-300">
-                        <div className="relative h-52 w-full overflow-hidden bg-gradient-to-br from-[#E6F5F4] to-[#CCECE8]">
-                          <div className="absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                            <BookOpen className="w-12 h-12 text-[#0D7A75] opacity-30" />
-                          </div>
+                        <div className="relative h-52 w-full overflow-hidden">
+                          <img 
+                            src={blogImages[post.id] || "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&h=400&fit=crop"}
+                            alt={post.title}
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                          />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                           <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-xs text-[#0D7A75] text-[11px] font-bold shadow-xs">{post.category}</span>
                         </div>

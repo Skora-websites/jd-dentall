@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { Award, Calendar, Star, MapPin, CheckCircle2, ShieldCheck, ArrowRight } from "lucide-react";
+import { Award, Calendar, Star, MapPin, ShieldCheck, ArrowRight } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Navbar from "@/components/Navbar";
@@ -22,6 +22,11 @@ export default function DoctorsPage() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [selectedDoctorId, setSelectedDoctorId] = useState<string>("dr-vinay");
   const doctorsRef = useRef<HTMLDivElement>(null);
+
+  const doctorImages: Record<string, string> = {
+    "dr-vinay": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=500&h=600&fit=crop&crop=face",
+    "dr-shivani": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&h=600&fit=crop&crop=face",
+  };
 
   useEffect(() => {
     if (!doctorsRef.current) return;
@@ -81,10 +86,12 @@ export default function DoctorsPage() {
                           ? "bg-gradient-to-b from-[#063B36] to-[#0A4A44] text-white border-[#0D7A75] ring-2 ring-[#0D7A75]/40"
                           : "bg-white text-[#101828] border-slate-200 hover:border-[#A3E3DF]"
                       }`}>
-                        <div className="relative h-80 sm:h-96 w-full bg-slate-100 overflow-hidden">
-                          <div className="absolute inset-0 bg-gradient-to-br from-[#E6F5F4] to-[#CCECE8] flex items-center justify-center">
-                            <div className="text-7xl font-bold text-[#0D7A75] opacity-20">{doc.name.charAt(0)}</div>
-                          </div>
+                        <div className="relative h-80 sm:h-96 w-full overflow-hidden">
+                          <img 
+                            src={doctorImages[doc.id] || "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=500&h=600&fit=crop&crop=face"}
+                            alt={doc.name}
+                            className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                          />
                           <div className={`absolute inset-0 bg-gradient-to-t ${isFeatured ? "from-[#063B36] via-[#063B36]/20 to-transparent" : "from-white/60 via-transparent to-transparent"}`} />
 
                           <div className="absolute top-4 right-4 flex items-center gap-2">

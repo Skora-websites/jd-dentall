@@ -69,6 +69,11 @@ export default function Home() {
     setActiveServiceModal(service);
   };
 
+  const locationImages = [
+    "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=500&fit=crop",
+    "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=500&fit=crop",
+  ];
+
   return (
     <div className="flex flex-col min-h-screen bg-[#FBFDFC] text-[#101828]">
       <Navbar onOpenBooking={() => handleOpenBooking()} />
@@ -106,16 +111,20 @@ export default function Home() {
                 <div key={clinic.id} className="location-card">
                   <Tilt3DCard maxTilt={5} scale={1.02} className="h-full">
                     <div className="h-full rounded-3xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-[#A3E3DF] overflow-hidden transition-all duration-300">
-                      <div className="relative h-48 w-full bg-slate-100 overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#E6F5F4] to-[#CCECE8] flex items-center justify-center">
-                          <FloatingElement duration={3 + index * 0.5} y={10}>
-                            <MapPin className="w-12 h-12 text-[#0D7A75]" />
-                          </FloatingElement>
-                        </div>
+                      <div className="relative h-48 w-full overflow-hidden">
+                        <img 
+                          src={locationImages[index]} 
+                          alt={clinic.name}
+                          className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                         <div className="absolute top-3 right-3 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm shadow-sm">
                           <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                           <span className="text-xs font-bold text-[#101828]">{clinic.rating}</span>
                           <span className="text-[10px] text-slate-500">({clinic.reviewCount} reviews)</span>
+                        </div>
+                        <div className="absolute bottom-3 left-3">
+                          <span className="px-3 py-1 rounded-full bg-[#0D7A75] text-white text-xs font-bold">{clinic.shortName}</span>
                         </div>
                       </div>
 
@@ -140,7 +149,7 @@ export default function Home() {
                           </div>
                         </div>
 
-                        <div className="flex items-center gap-2 pt-2 border-t border-slate-100">
+                        <div className="flex items-center gap-2 pt-2 border-t border-slate-100 flex-wrap">
                           {clinic.features.slice(0, 3).map((feature, idx) => (
                             <span key={idx} className="px-2 py-1 rounded-full bg-[#E6F5F4] text-[#0D7A75] text-[10px] font-semibold">{feature}</span>
                           ))}
