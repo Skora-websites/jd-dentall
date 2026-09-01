@@ -18,7 +18,7 @@ export default function BookingModal({
   initialServiceId,
 }: BookingModalProps) {
   const [step, setStep] = useState<number>(1);
-  const [selectedDoctor, setSelectedDoctor] = useState<string>(initialDoctorId || "dr-adam");
+  const [selectedDoctor, setSelectedDoctor] = useState<string>(initialDoctorId || "dr-vinay");
   const [selectedService, setSelectedService] = useState<string>(initialServiceId || "general-checkup");
   const [selectedLocation, setSelectedLocation] = useState<string>(CLINIC_LOCATIONS[0].slug);
   const [selectedDate, setSelectedDate] = useState<string>(
@@ -97,7 +97,7 @@ export default function BookingModal({
           <p className="text-slate-300 text-sm mt-1 max-w-md">
             {step === 4
               ? "Your consultation is reserved at our Greater Noida clinic."
-              : "Consult Dr. Amit or Dr. Priya for painless, personalized dental care."}
+              : "Consult Dr. Vinay or Dr. Shivani for painless, personalized dental care."}
           </p>
 
           {/* Step Progress Indicators */}

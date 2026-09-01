@@ -24,7 +24,7 @@ import { SERVICES, DOCTORS } from "@/data/dentalData";
 export default function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
-  const [selectedDoctorId, setSelectedDoctorId] = useState<string>("dr-adam");
+  const [selectedDoctorId, setSelectedDoctorId] = useState<string>("dr-vinay");
   const [selectedServiceId, setSelectedServiceId] = useState<string>(slug);
 
   const service = SERVICES.find((s) => s.slug === slug);
