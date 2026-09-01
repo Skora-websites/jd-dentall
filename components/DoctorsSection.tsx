@@ -30,7 +30,7 @@ export default function DoctorsSection({ onBookWithDoctor }: DoctorsSectionProps
           </div>
 
           <p className="text-sm text-[#475569] max-w-md leading-relaxed">
-            Our clinic is exclusively headed by our two senior specialists, Dr. Adam and Dr. Eve, delivering personalized, pain-free dental excellence across Sector 62 & 18, Noida.
+            Our clinic is exclusively headed by our two senior specialists, our specialists, delivering personalized, pain-free dental excellence across Greater Noida, Greater Noida.
           </p>
         </div>
 
@@ -119,7 +119,7 @@ export default function DoctorsSection({ onBookWithDoctor }: DoctorsSectionProps
                             isFeatured ? "text-[#A3E3DF]" : "text-[#0D7A75]"
                           }`}
                         >
-                          Noida Sector 62 & 18
+                          Greater Noida Greater Noida
                         </span>
                       </div>
 

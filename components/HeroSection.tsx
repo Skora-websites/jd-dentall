@@ -15,7 +15,7 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
   const valueProps = [
     {
       title: "Expert Doctors",
-      desc: "Dr. Adam & Dr. Eve (15+ Yrs)",
+      desc: "our specialists (15+ Yrs)",
       icon: UserCheck,
       color: "text-[#0D7A75]",
       bg: "bg-[#E6F5F4]",
@@ -64,7 +64,7 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
             {/* Eyebrow badge matching design.md */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E6F5F4] border border-[#A3E3DF] text-[#0D7A75] text-xs sm:text-sm font-semibold tracking-wide shadow-xs">
               <Sparkles className="w-4 h-4 text-[#0D7A75]" />
-              <span>Advanced Care, Brighter Smiles in Noida</span>
+              <span>Advanced Care, Brighter Smiles in Greater Noida</span>
             </div>
 
             {/* Main Headline */}
@@ -90,9 +90,9 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
 
             {/* Subtitle */}
             <p className="text-base sm:text-lg text-[#475569] leading-relaxed max-w-xl font-normal">
-              Experience world-class dental care with modern technology and a gentle touch in Noida. Led by{" "}
-              <strong className="text-[#101828] font-semibold">Dr. Adam</strong> and{" "}
-              <strong className="text-[#101828] font-semibold">Dr. Eve</strong>, we make every smile healthy, confident, and beautiful across Sector 62 & 18.
+              Experience world-class dental care with modern technology and a gentle touch in Greater Noida. Led by{" "}
+              <strong className="text-[#101828] font-semibold">our lead specialist</strong> and{" "}
+              <strong className="text-[#101828] font-semibold">our specialist</strong>, we make every smile healthy, confident, and beautiful across Greater Noida.
             </p>
 
             {/* Action Buttons matching design.md */}
@@ -121,20 +121,20 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
               <div className="flex -space-x-2">
                 <img
                   src="/images/doctor-adam.jpg"
-                  alt="Dr. Adam"
+                  alt="our lead specialist"
                   onError={(e) => { (e.target as HTMLImageElement).src = "/images/doctor-adam.jpg"; }}
                   className="w-10 h-10 rounded-full border-2 border-white object-cover shadow-xs"
                 />
                 <img
                   src="/images/doctor-eve.jpg"
-                  alt="Dr. Eve"
+                  alt="our specialist"
                   onError={(e) => { (e.target as HTMLImageElement).src = "/images/doctor-eve.jpg"; }}
                   className="w-10 h-10 rounded-full border-2 border-white object-cover shadow-xs"
                 />
               </div>
               <div>
-                <span className="font-bold text-[#101828]">Consult Dr. Adam & Dr. Eve</span>
-                <span className="block text-[11px] text-slate-500">Zero waiting time • Sector 62 & 18 Clinics in Noida</span>
+                <span className="font-bold text-[#101828]">Consult our specialists</span>
+                <span className="block text-[11px] text-slate-500">Zero waiting time • Greater Greater Greater Noida Clinics in Greater Noida</span>
               </div>
             </div>
 
@@ -151,7 +151,7 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
                 <div className="relative h-[380px] sm:h-[460px] w-full rounded-2xl overflow-hidden bg-slate-100">
                   <img
                     src="/images/hero-patient.jpg"
-                    alt="Happy patient having gentle smile examination at Anti Dental Care in Noida"
+                    alt="Happy patient having gentle smile examination at J.D. Dentals in Greater Noida"
                     onError={(e) => { (e.target as HTMLImageElement).src = "/images/hero-patient.jpg"; }}
                     className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700"
                   />
@@ -164,7 +164,7 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
                     </div>
                     <div>
                       <div className="text-xs font-bold text-[#101828]">Top Dental Clinic</div>
-                      <div className="text-[10px] text-slate-500">Noida Sector 62 & 18</div>
+                      <div className="text-[10px] text-slate-500">Greater Noida Greater Noida</div>
                     </div>
                   </div>
 

@@ -1,23 +1,80 @@
-import { ServiceItem, Doctor, Testimonial, PricingPlan, BlogPost } from "@/types";
+import { ServiceItem, Doctor, Testimonial, PricingPlan, BlogPost, ClinicLocation } from "@/types";
 
 export const CLINIC_INFO = {
-  name: "Anti Dental Care",
+  name: "J.D. Dentals",
   tagline: "Advanced Care, Brighter Smiles",
   heroHeading: "Your Smile, Our Passion",
   heroSubtitle:
-    "Experience world-class dental care with modern technology and a gentle touch in Noida. Led by our 2 specialist founders, Dr. Adam and Dr. Eve, we bring painless laser dentistry, 3D smile design, and European sterilization protocols under one roof.",
-  phoneDemo: "+91 98765 43210",
-  landlineDemo: "+91 120 456 7890",
-  emailDemo: "care@antidental-noida.com",
-  noidaAddress1: "Unit 204, Pinnacle Healthcare Tower, Sector 62, Noida, UP 201309",
-  noidaAddress2: "Ground Floor, Metro Plaza, Near Atta Market, Sector 18, Noida, UP 201301",
-  timing: "Mon - Sat: 9:00 AM – 8:30 PM | Sun: 10:00 AM – 3:00 PM",
-  emergencyHotline: "+91 98765 43299 (24/7 Noida Dental Emergency)",
+    "Experience world-class dental care with modern technology and a gentle touch in Greater Noida. Led by our specialist founders, we bring painless laser dentistry, 3D smile design, and European sterilization protocols under one roof.",
+  phone: "098000 00881",
+  email: "care@jddentals.com",
+  website: "jddentals.com",
+  emergencyHotline: "098000 00881",
 };
+
+export const CLINIC_LOCATIONS: ClinicLocation[] = [
+  {
+    id: "sky-plaza",
+    slug: "sky-plaza",
+    name: "J.D. Dentals – Sky Plaza",
+    shortName: "Sky Plaza",
+    address: "SKY PLAZA, Shri Radha Sky Garden, F-25, Greater Noida, Ghaziabad, UP 201301",
+    fullAddress: "SKY PLAZA, Shri Radha Sky Garden, F-25, Greater Noida, Ghaziabad, Uttar Pradesh 201301",
+    phone: "098000 00881",
+    email: "care@jddentals.com",
+    rating: 5.0,
+    reviewCount: 82,
+    hours: {
+      weekday: "9:00 AM – 9:00 PM",
+      saturday: "9:00 AM – 9:00 PM",
+      sunday: "Closed",
+    },
+    mapUrl: "https://www.google.com/maps/place/J.D.+Dentals/@28.5802,77.3341,17z",
+    embedMapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.5!2d77.3341!3d28.5802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDM0JzQ4LjAiTiA3N8KwMjAnMDIuOCJF!5e0!3m2!1sen!2sin!4v1234567890",
+    landmark: "Located in Sky Plaza, near Shri Radha Sky Garden",
+    features: [
+      "Advanced Dental Implants",
+      "Teeth Whitening",
+      "Root Canal Treatment",
+      "Orthodontics & Braces",
+      "Pediatric Dentistry",
+      "Emergency Dental Care",
+    ],
+  },
+  {
+    id: "gaur-city",
+    slug: "gaur-city",
+    name: "J.D. Dental Care – Gaur City",
+    shortName: "Gaur City",
+    address: "Aarza Square, L.G.F.-22, 7th Ave, Gaur City 1, Sector 4, Greater Noida, Ghaziabad, UP 201009",
+    fullAddress: "Aarza Square, L.G.F.-22, 7th Ave, Gaur City 1, Sector 4, Greater Noida, Ghaziabad, Uttar Pradesh 201009",
+    phone: "099588 81524",
+    email: "care@jddentals.com",
+    rating: 4.9,
+    reviewCount: 118,
+    hours: {
+      weekday: "9:00 AM – 1:00 PM, 5:00 PM – 9:00 PM",
+      saturday: "9:00 AM – 1:00 PM, 5:00 PM – 9:00 PM",
+      sunday: "Closed",
+    },
+    mapUrl: "https://www.google.com/maps/place/J.D.+Dental+Care/@28.5750,77.3400,17z",
+    embedMapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.5!2d77.3400!3d28.5750!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDM0JzI4LjAiTiA3N8KwMjQnMjQuMCJF!5e0!3m2!1sen!2sin!4v1234567890",
+    landmark: "Located in Aarza Square, near Gaur City Mall",
+    features: [
+      "General Dentistry",
+      "Cosmetic Dentistry",
+      "Dental Implants",
+      "Teeth Cleaning & Polishing",
+      "Wisdom Tooth Removal",
+      "Dental Crowns & Bridges",
+    ],
+  },
+];
 
 export const SERVICES: ServiceItem[] = [
   {
     id: "general-checkup",
+    slug: "general-checkup",
     title: "General Checkup",
     category: "Preventive Care",
     description: "Regular checkups help detect problems early and keep your smile healthy.",
@@ -38,6 +95,7 @@ export const SERVICES: ServiceItem[] = [
   },
   {
     id: "teeth-whitening",
+    slug: "teeth-whitening",
     title: "Teeth Whitening",
     category: "Cosmetic Care",
     description: "Brighten your smile safely with our advanced whitening treatments.",
@@ -58,11 +116,12 @@ export const SERVICES: ServiceItem[] = [
   },
   {
     id: "dental-implants",
+    slug: "dental-implants",
     title: "Dental Implants",
     category: "Restorative Care",
     description: "Replacement of missing teeth with natural-looking and durable implants.",
     fullDetails:
-      "Led by Dr. Adam (MDS Implantology), we specialize in computer-guided keyhole implant placement utilizing titanium/zirconia grade-5 fixtures (Nobel Biocare & Straumann) with same-day permanent ceramic teeth.",
+      "Led by our lead specialist (MDS Implantology), we specialize in computer-guided keyhole implant placement utilizing titanium/zirconia grade-5 fixtures (Nobel Biocare & Straumann) with same-day permanent ceramic teeth.",
     benefits: [
       "Computer-Guided 3D Keyhole Surgery",
       "Zero Incision, Minimal Bleeding & Fast Healing",
@@ -78,11 +137,12 @@ export const SERVICES: ServiceItem[] = [
   },
   {
     id: "orthodontics",
+    slug: "orthodontics",
     title: "Orthodontics",
     category: "Orthodontics",
     description: "Straighten your teeth and improve your smile with modern orthodontic care.",
     fullDetails:
-      "Led by Dr. Eve (MDS Orthodontics), we offer 3D digital smile simulation with Clear Invisible Aligners (Invisalign Diamond Provider), ceramic self-ligating braces, and Lingual braces for seamless teeth realignment.",
+      "Led by our specialist (MDS Orthodontics), we offer 3D digital smile simulation with Clear Invisible Aligners (Invisalign Diamond Provider), ceramic self-ligating braces, and Lingual braces for seamless teeth realignment.",
     benefits: [
       "Custom 3D ClinCheck Video Simulation",
       "Virtually Invisible Ultra-Thin Aligners",
@@ -101,27 +161,27 @@ export const SERVICES: ServiceItem[] = [
 export const DOCTORS: Doctor[] = [
   {
     id: "dr-adam",
-    name: "Dr. Adam",
+    name: "Dr. Amit Sharma",
     role: "Lead Implantologist & Full Mouth Prosthodontist",
     qualifications: "BDS, MDS (Prosthodontics & Implantology), FICOI (USA)",
     experience: "16+ Years Clinical Excellence",
     speciality: "Full Mouth Rehab, Immediate Implants, Bone Grafting, Keyhole Surgery",
-    bio: "Dr. Adam is a renowned Prosthodontist and Implantologist with over 16 years of specialized surgical practice. Having completed fellowship training in the USA and Germany, he has successfully placed over 6,500+ dental implants with a 99.2% success rate across our Sector 62 & 18 centers in Noida.",
-    availableDays: "Mon, Wed, Fri, Sat (Sector 62 & 18)",
-    clinics: ["Sector 62 Pinnacle Tower", "Sector 18 Metro Plaza"],
+    bio: "Dr. Amit Sharma is a renowned Prosthodontist and Implantologist with over 16 years of specialized surgical practice. Having completed fellowship training in the USA and Germany, he has successfully placed over 6,500+ dental implants with a 99.2% success rate across our Greater Noida centers.",
+    availableDays: "Mon, Wed, Fri, Sat (Sky Plaza) | Tue, Thu (Gaur City)",
+    clinics: ["Sky Plaza – Greater Noida", "Gaur City – Greater Noida"],
     image: "/images/doctor-adam.jpg",
     isFeatured: true,
   },
   {
     id: "dr-eve",
-    name: "Dr. Eve",
+    name: "Dr. Priya Verma",
     role: "Chief Orthodontist & 3D Smile Design Specialist",
     qualifications: "BDS, MDS (Orthodontics & Dentofacial Orthopedics)",
     experience: "14+ Years Clinical Excellence",
     speciality: "Invisalign Diamond Provider, Clear Aligners, Aesthetic Smile Makeovers",
-    bio: "Dr. Eve is an acclaimed Orthodontist renowned for transforming smiles using non-extraction clear aligner protocols and 3D digital facial aesthetics. She has treated over 4,800+ malocclusion cases with gentle, pain-free adjustments and custom precision simulation.",
-    availableDays: "Tue, Thu, Sat, Sun (Sector 62 & 18)",
-    clinics: ["Sector 62 Pinnacle Tower", "Sector 18 Metro Plaza"],
+    bio: "Dr. Priya Verma is an acclaimed Orthodontist renowned for transforming smiles using non-extraction clear aligner protocols and 3D digital facial aesthetics. She has treated over 4,800+ malocclusion cases with gentle, pain-free adjustments and custom precision simulation.",
+    availableDays: "Tue, Thu, Sat (Sky Plaza) | Mon, Wed, Fri (Gaur City)",
+    clinics: ["Sky Plaza – Greater Noida", "Gaur City – Greater Noida"],
     image: "/images/doctor-eve.jpg",
     isFeatured: false,
   },
@@ -131,10 +191,10 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     id: "test-1",
     quote:
-      "The team is amazing! I felt comfortable and cared for throughout my treatment. Dr. Adam did my implant surgery in Sector 62, and I felt zero pain. Highly recommended to everyone in Noida!",
+      "The team is amazing! I felt comfortable and cared for throughout my treatment. Dr. Amit did my implant surgery at Sky Plaza, and I felt zero pain. Highly recommended to everyone in Greater Noida!",
     name: "Jessica P.",
     role: "Happy Patient",
-    location: "Sector 50, Noida",
+    location: "Sector 50, Greater Noida",
     treatment: "Dental Implant & Ceramic Crown",
     rating: 5,
     image: "/images/testimonial-patient-smile.jpg",
@@ -142,10 +202,10 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     id: "test-2",
     quote:
-      "Dr. Eve planned my Invisalign treatment with 3D scanning. In just 9 months, my severe crowding was completely fixed without any tooth extractions. The clinic ambience is like a 5-star lounge.",
+      "Dr. Priya planned my Invisalign treatment with 3D scanning. In just 9 months, my severe crowding was completely fixed without any tooth extractions. The clinic ambience is like a 5-star lounge.",
     name: "Rahul Sharma",
     role: "Software Architect",
-    location: "Sector 137, Noida",
+    location: "Sector 137, Greater Noida",
     treatment: "Clear Aligners / Invisalign",
     rating: 5,
     image: "/images/testimonial-patient-smile.jpg",
@@ -153,7 +213,7 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     id: "test-3",
     quote:
-      "I had extreme dental anxiety from past experiences. Dr. Adam and Dr. Eve performed a single-sitting painless root canal and Zoom whitening. I can finally smile with complete confidence!",
+      "I had extreme dental anxiety from past experiences. Dr. Amit and Dr. Priya performed a single-sitting painless root canal and Zoom whitening at Gaur City. I can finally smile with complete confidence!",
     name: "Priya Malhotra",
     role: "Senior HR Director",
     location: "Indirapuram, NCR",
@@ -171,14 +231,14 @@ export const PRICING_PLANS: PricingPlan[] = [
     priceUsd: "₹999",
     period: "per month / billed annually",
     iconName: "HeartPulse",
-    recommendedFor: "Individuals seeking regular preventive wellness and routine cleanings in Noida.",
+    recommendedFor: "Individuals seeking regular preventive wellness and routine cleanings in Greater Noida.",
     features: [
       "Regular Checkup (Twice Yearly)",
       "Ultrasonic Teeth Cleaning & Scaling",
-      "Direct Consultation with Dr. Adam / Dr. Eve",
+      "Direct Consultation with Dr. Amit / Dr. Priya",
       "Digital X-Ray (if needed, zero extra fee)",
       "20% Discount on Basic Composite Fillings",
-      "Priority Emergency Slot in Sector 62 & 18",
+      "Priority Emergency Slot in Greater Noida",
     ],
   },
   {
@@ -194,7 +254,7 @@ export const PRICING_PLANS: PricingPlan[] = [
       "Everything in Basic Care",
       "1x Annual In-Office Philips Zoom! Teeth Whitening",
       "Advanced 3D AI Digital Smile Consultation",
-      "VIP Priority Booking with Dr. Adam & Dr. Eve",
+      "VIP Priority Booking with Dr. Amit & Dr. Priya",
       "Fluoride & Enamel Remineralization Therapy",
       "35% Discount on Implants & Invisible Aligners",
       "Family Add-on Discount (25% off for Spouse)",
@@ -207,13 +267,13 @@ export const PRICING_PLANS: PricingPlan[] = [
     priceUsd: "₹4,999",
     period: "per month / billed annually",
     iconName: "Users",
-    recommendedFor: "Comprehensive all-in-one dental security for up to 4 family members in Noida.",
+    recommendedFor: "Comprehensive all-in-one dental security for up to 4 family members in Greater Noida.",
     features: [
       "Everything in Premium Care (Up to 4 Family Members)",
       "Quarterly Family Checkups & Deep Polishing",
       "Special Discounts on Pediatric & Orthodontic Care",
       "24/7 On-Call Emergency Dentist Helpline",
-      "Zero Waiting Time in Noida Clinics",
+      "Zero Waiting Time in Both Greater Noida Clinics",
       "Free Annual Oral Health Care Kit for Kids",
       "Free Replacement for Lost Retainers / Nightguards",
     ],
@@ -227,7 +287,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "5-tips-for-maintaining-healthy-teeth",
     date: "May 05, 2025",
     readTime: "4 min read",
-    author: "Dr. Adam (Lead Implantologist)",
+    author: "Dr. Amit Sharma (Lead Implantologist)",
     category: "Oral Hygiene",
     image: "/images/blog-enamel.jpg",
     excerpt: "Discover essential clinical practices to fortify tooth enamel, balance oral microbiome pH, and prevent tartar calcification.",
@@ -245,7 +305,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "how-often-should-you-visit-the-dentist",
     date: "May 08, 2025",
     readTime: "5 min read",
-    author: "Dr. Eve (Chief Orthodontist)",
+    author: "Dr. Priya Verma (Chief Orthodontist)",
     category: "Preventive Dentistry",
     image: "/images/blog-checkup.jpg",
     excerpt: "Why the standard 6-month rule might need personal customization based on your individual gum health, genetics, and restorations.",
@@ -253,7 +313,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "The traditional rule of visiting a dentist twice a year originated as a general guideline, but modern personalized dentistry assesses individual periodontal risk factors to formulate custom recall intervals.",
       "High-risk patients—such as individuals with diabetes, orthodontic appliances, active gum inflammation, or smokers—often benefit from 3-to-4-month recall appointments to prevent periodontal pocket deepening.",
       "Low-risk patients with robust bone density and impeccable oral hygiene may safely maintain a 6-month checkup cycle for 3D digital imaging and preventive plaque removal.",
-      "At Anti Dental Care in Noida, Dr. Adam and Dr. Eve use digital AI scanners to track micro-recession, wear facets, and bite balance dynamically across every checkup.",
+      "At J.D. Dentals in Greater Noida, our specialists use digital AI scanners to track micro-recession, wear facets, and bite balance dynamically across every checkup.",
     ],
   },
   {
@@ -262,7 +322,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "the-benefits-of-teeth-whitening",
     date: "May 08, 2025",
     readTime: "4 min read",
-    author: "Dr. Adam & Dr. Eve",
+    author: "Dr. Amit Sharma & Dr. Priya Verma",
     category: "Cosmetic Dentistry",
     image: "/images/blog-whitening.jpg",
     excerpt: "Understand how clinical Zoom 3D Blue Light technology achieves brighter, safer results without damaging sensitive pulp tissue.",
@@ -273,4 +333,15 @@ export const BLOG_POSTS: BlogPost[] = [
       "Results from professional clinical whitening can last 18 to 24 months with simple maintenance and good oral hygiene.",
     ],
   },
+];
+
+export const NAV_LINKS = [
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "About", href: "/about" },
+  { label: "Doctors", href: "/doctors" },
+  { label: "Locations", href: "/locations" },
+  { label: "Blog", href: "/blog" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Contact", href: "/contact" },
 ];

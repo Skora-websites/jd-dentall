@@ -73,7 +73,7 @@ export default function BlogModal({ post, onClose }: BlogModalProps) {
           <div className="pt-6 border-t border-slate-100 flex justify-between items-center">
             <div className="flex items-center gap-2 text-xs text-slate-500">
               <BookOpen className="w-4 h-4 text-[#0D7A75]" />
-              <span>Published by Anti Dental Care Clinical Team (Sector 62 & 18, Noida)</span>
+              <span>Published by J.D. Dentals Clinical Team (Greater Noida)</span>
             </div>
             <button
               onClick={onClose}

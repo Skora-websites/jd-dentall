@@ -10,24 +10,35 @@ const jakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Anti Dental Care | Dr. Adam & Dr. Eve - Noida's Premier Dental Hospital",
+  title: {
+    default: "J.D. Dentals | Greater Noida's Premier Dental Clinic",
+    template: "%s | J.D. Dentals Greater Noida",
+  },
   description:
-    "Experience world-class, pain-free dental care led by Dr. Adam (BDS, MDS - Implantology) and Dr. Eve (BDS, MDS - Orthodontics) in Noida Sector 62 & Sector 18. Digital smile design, painless laser dentistry, and dental implants.",
+    "Experience world-class, pain-free dental care at J.D. Dentals in Greater Noida. Two convenient locations - Sky Plaza & Gaur City. Digital smile design, painless laser dentistry, and dental implants.",
   keywords: [
-    "Dentist in Noida",
-    "Dr Adam Dentist",
-    "Dr Eve Orthodontist",
-    "Anti Dental Care Noida",
-    "Dental Implants Noida",
-    "Teeth Whitening Noida",
-    "Invisalign Noida",
-    "Root Canal Treatment Sector 62",
+    "Dentist in Greater Noida",
+    "J.D. Dentals",
+    "Dental Implants Greater Noida",
+    "Teeth Whitening Greater Noida",
+    "Invisalign Greater Noida",
+    "Root Canal Treatment Greater Noida",
+    "Dental Clinic Greater Noida",
+    "Orthodontist Greater Noida",
+    "Sky Plaza Dental",
+    "Gaur City Dental",
   ],
-  authors: [{ name: "Dr. Adam & Dr. Eve" }],
+  authors: [{ name: "J.D. Dentals Clinical Team" }],
   openGraph: {
-    title: "Anti Dental Care | Dr. Adam & Dr. Eve - Noida",
-    description: "Your Smile, Our Passion. Pain-free dental treatments, dental implants, smile makeovers, and orthodontic care in Noida.",
+    title: "J.D. Dentals | Greater Noida's Premier Dental Clinic",
+    description: "Your Smile, Our Passion. Pain-free dental treatments, dental implants, smile makeovers, and orthodontic care in Greater Noida.",
     type: "website",
+    locale: "en_IN",
+    siteName: "J.D. Dentals",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

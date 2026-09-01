@@ -65,7 +65,7 @@ export default function ServicesSection({ onSelectService, onOpenBooking }: Serv
           {/* Header Right: Description & (←) (→) Controls */}
           <div className="flex flex-col sm:flex-row sm:items-center gap-4 max-w-md">
             <p className="text-sm text-[#475569] leading-relaxed">
-              From routine checkups to advanced laser treatments and dental implants — we provide complete, gentle care for you and your family in Noida.
+              From routine checkups to advanced laser treatments and dental implants — we provide complete, gentle care for you and your family in Greater Noida.
             </p>
             <div className="flex items-center gap-2">
               <button

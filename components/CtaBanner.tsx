@@ -28,7 +28,7 @@ export default function CtaBanner({ onOpenBooking }: CtaBannerProps) {
               
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/15 border border-white/20 text-white text-xs font-semibold uppercase tracking-wider">
                 <Sparkles className="w-3.5 h-3.5" />
-                Experience Excellence in Noida
+                Experience Excellence in Greater Noida
               </div>
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
@@ -37,7 +37,7 @@ export default function CtaBanner({ onOpenBooking }: CtaBannerProps) {
               </h2>
 
               <p className="text-sm sm:text-base text-teal-50 max-w-lg leading-relaxed font-normal">
-                Book your appointment today and experience painless, world-class dental care with Dr. Adam and Dr. Eve across our modern Noida clinics in Sector 62 & 18.
+                Book your appointment today and experience painless, world-class dental care with our specialists across our modern Greater Noida clinics in Greater Noida.
               </p>
 
               {/* Action Buttons matching design.md */}
@@ -52,11 +52,11 @@ export default function CtaBanner({ onOpenBooking }: CtaBannerProps) {
                 </button>
 
                 <a
-                  href={`tel:${CLINIC_INFO.phoneDemo}`}
+                  href={`tel:${CLINIC_INFO.phone}`}
                   className="px-6 py-3.5 rounded-full bg-black/20 hover:bg-black/30 border border-white/30 text-white font-semibold text-sm transition-all flex items-center gap-2"
                 >
                   <Phone className="w-4 h-4" />
-                  <span>Helpline: {CLINIC_INFO.phoneDemo}</span>
+                  <span>Helpline: {CLINIC_INFO.phone}</span>
                 </a>
               </div>
 
@@ -68,7 +68,7 @@ export default function CtaBanner({ onOpenBooking }: CtaBannerProps) {
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-white/30 bg-slate-900">
                   <img
                     src="/images/cta-operatory.jpg"
-                    alt="Modern dental chair operatory room with clean lighting in Noida"
+                    alt="Modern dental chair operatory room with clean lighting in Greater Noida"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = "/images/cta-operatory.jpg";
                     }}
@@ -77,7 +77,7 @@ export default function CtaBanner({ onOpenBooking }: CtaBannerProps) {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   
                   <div className="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-black/50 backdrop-blur-md text-white text-xs flex items-center justify-between">
-                    <span className="font-semibold">Sector 62 & 18 Operatories</span>
+                    <span className="font-semibold">Greater Greater Noida Operatories</span>
                     <span className="text-[#A3E3DF] font-bold">100% Sterilized</span>
                   </div>
                 </div>

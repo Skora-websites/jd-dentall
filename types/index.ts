@@ -10,6 +10,7 @@ export interface ServiceItem {
   image: string;
   iconName: string;
   badgeText: string;
+  slug: string;
 }
 
 export interface Doctor {
@@ -65,10 +66,46 @@ export interface BlogPost {
 export interface AppointmentData {
   doctor: string;
   service: string;
+  location: string;
   date: string;
   timeSlot: string;
   patientName: string;
   patientPhone: string;
   patientEmail: string;
   notes: string;
+}
+
+export interface ClinicLocation {
+  id: string;
+  slug: string;
+  name: string;
+  shortName: string;
+  address: string;
+  fullAddress: string;
+  phone: string;
+  email: string;
+  rating: number;
+  reviewCount: number;
+  hours: {
+    weekday: string;
+    saturday: string;
+    sunday: string;
+  };
+  mapUrl: string;
+  embedMapUrl: string;
+  landmark: string;
+  features: string[];
+}
+
+export interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+export interface PageHeroProps {
+  title: string;
+  subtitle: string;
+  breadcrumbs: BreadcrumbItem[];
+  badge?: string;
+  bgGradient?: string;
 }

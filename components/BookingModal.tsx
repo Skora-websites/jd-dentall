@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { X, Calendar, Clock, MapPin, CheckCircle2, User, Phone, Mail, Sparkles, AlertCircle, IndianRupee } from "lucide-react";
-import { CLINIC_INFO, DOCTORS, SERVICES } from "@/data/dentalData";
+import { X, Calendar, Clock, MapPin, CheckCircle2, User, Phone, Mail, Sparkles, AlertCircle } from "lucide-react";
+import { CLINIC_INFO, DOCTORS, SERVICES, CLINIC_LOCATIONS } from "@/data/dentalData";
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -20,7 +20,7 @@ export default function BookingModal({
   const [step, setStep] = useState<number>(1);
   const [selectedDoctor, setSelectedDoctor] = useState<string>(initialDoctorId || "dr-adam");
   const [selectedService, setSelectedService] = useState<string>(initialServiceId || "general-checkup");
-  const [selectedLocation, setSelectedLocation] = useState<string>("Sector 62 (Pinnacle Healthcare Tower)");
+  const [selectedLocation, setSelectedLocation] = useState<string>(CLINIC_LOCATIONS[0].slug);
   const [selectedDate, setSelectedDate] = useState<string>(
     new Date(Date.now() + 86400000).toISOString().split("T")[0]
   );
@@ -56,7 +56,7 @@ export default function BookingModal({
       setIsSubmitting(true);
       setTimeout(() => {
         setIsSubmitting(false);
-        const refId = `ANTI-NOIDA-${Math.floor(1000 + Math.random() * 9000)}`;
+        const refId = `JD-DENTALS-${Math.floor(1000 + Math.random() * 9000)}`;
         setBookingRef(refId);
         setStep(4);
       }, 700);
@@ -71,6 +71,7 @@ export default function BookingModal({
 
   const currentDoctorObj = DOCTORS.find((d) => d.id === selectedDoctor) || DOCTORS[0];
   const currentServiceObj = SERVICES.find((s) => s.id === selectedService) || SERVICES[0];
+  const currentLocationObj = CLINIC_LOCATIONS.find((c) => c.slug === selectedLocation) || CLINIC_LOCATIONS[0];
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-900/70 backdrop-blur-md transition-all duration-300">
@@ -88,15 +89,15 @@ export default function BookingModal({
           
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0D7A75]/40 border border-[#A3E3DF]/30 text-[#A3E3DF] text-xs font-semibold uppercase tracking-wider mb-2">
             <Sparkles className="w-3.5 h-3.5" />
-            Noida Dental Appointment
+            Greater Noida Dental Appointment
           </div>
           <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
             {step === 4 ? "Appointment Confirmed!" : "Book Your Dental Visit"}
           </h3>
           <p className="text-slate-300 text-sm mt-1 max-w-md">
             {step === 4
-              ? "Your consultation is reserved with our specialists in Sector 62 / Sector 18, Noida."
-              : "Consult Dr. Adam or Dr. Eve for painless, personalized dental care."}
+              ? "Your consultation is reserved at our Greater Noida clinic."
+              : "Consult Dr. Amit or Dr. Priya for painless, personalized dental care."}
           </p>
 
           {/* Step Progress Indicators */}
@@ -121,7 +122,7 @@ export default function BookingModal({
             <div className="space-y-6">
               <div>
                 <label className="block text-sm font-semibold text-[#101828] mb-3">
-                  1. Select Your Specialist Doctor (2 Lead Founders):
+                  1. Select Your Specialist Doctor:
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {DOCTORS.map((doc) => (
@@ -135,14 +136,9 @@ export default function BookingModal({
                           : "border-slate-200 hover:border-slate-300 bg-white"
                       }`}
                     >
-                      <img
-                        src={doc.image}
-                        alt={doc.name}
-                        onError={(e) => {
-                          (e.target as HTMLImageElement).src = doc.isFeatured ? "/images/doctor-adam.jpg" : "/images/doctor-eve.jpg";
-                        }}
-                        className="w-14 h-14 rounded-full object-cover border-2 border-white shadow-sm flex-shrink-0"
-                      />
+                      <div className="w-14 h-14 rounded-full bg-[#E6F5F4] flex items-center justify-center text-[#0D7A75] font-bold text-sm flex-shrink-0">
+                        {doc.name.charAt(0)}
+                      </div>
                       <div className="min-w-0">
                         <div className="font-bold text-[#101828] text-sm truncate flex items-center gap-1.5">
                           {doc.name}
@@ -192,7 +188,7 @@ export default function BookingModal({
                   onClick={() => setStep(2)}
                   className="px-7 py-3 rounded-full bg-[#0D7A75] text-white font-semibold hover:bg-[#095C58] transition-all shadow-md"
                 >
-                  Continue to Date & Slot →
+                  Continue to Location & Slot →
                 </button>
               </div>
             </div>
@@ -203,24 +199,23 @@ export default function BookingModal({
               <div>
                 <label className="block text-sm font-semibold text-[#101828] mb-2 flex items-center gap-1.5">
                   <MapPin className="w-4 h-4 text-[#0D7A75]" />
-                  Select Noida Clinic Branch:
+                  Select Clinic Location:
                 </label>
                 <div className="grid grid-cols-1 gap-2.5">
-                  {[
-                    "Sector 62 (Pinnacle Healthcare Tower - Dr. Adam & Dr. Eve)",
-                    "Sector 18 (Metro Plaza, Near Atta Market - Full Operatory)",
-                  ].map((loc) => (
+                  {CLINIC_LOCATIONS.map((clinic) => (
                     <button
                       type="button"
-                      key={loc}
-                      onClick={() => setSelectedLocation(loc)}
+                      key={clinic.slug}
+                      onClick={() => setSelectedLocation(clinic.slug)}
                       className={`p-3.5 rounded-xl text-left text-sm border transition-all ${
-                        selectedLocation === loc
+                        selectedLocation === clinic.slug
                           ? "border-[#0D7A75] bg-[#E6F5F4]/60 text-[#101828] font-semibold ring-2 ring-[#0D7A75]"
                           : "border-slate-200 hover:border-slate-300 text-slate-600 bg-white"
                       }`}
                     >
-                      {loc}
+                      <div className="font-semibold">{clinic.name}</div>
+                      <div className="text-xs text-slate-500 mt-1">{clinic.address}</div>
+                      <div className="text-xs text-[#0D7A75] mt-1">📞 {clinic.phone}</div>
                     </button>
                   ))}
                 </div>
@@ -286,7 +281,7 @@ export default function BookingModal({
 
           {step === 3 && (
             <form onSubmit={handleNext} className="space-y-4">
-              <div className="p-3.5 rounded-xl bg-[#E6F5F4]/50 border border-[#CCECE8] flex items-center justify-between text-xs">
+              <div className="p-3.5 rounded-xl bg-[#E6F5F4]/50 border border-[#CCECE8] flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs gap-2">
                 <div>
                   <span className="text-slate-500">Doctor: </span>
                   <span className="font-bold text-[#101828]">{currentDoctorObj?.name}</span>
@@ -355,7 +350,7 @@ export default function BookingModal({
               <div className="p-3 rounded-lg bg-emerald-50 border border-emerald-200/60 flex items-start gap-2 text-xs text-emerald-900">
                 <AlertCircle className="w-4 h-4 text-[#0D7A75] flex-shrink-0 mt-0.5" />
                 <span>
-                  Zero advance booking fee. WhatsApp appointment confirmation token will be sent directly to your phone.
+                  Zero advance booking fee. WhatsApp appointment confirmation will be sent to your phone.
                 </span>
               </div>
 
@@ -372,7 +367,7 @@ export default function BookingModal({
                   disabled={isSubmitting}
                   className="px-8 py-3 rounded-full bg-[#0D7A75] text-white font-semibold hover:bg-[#095C58] transition-all shadow-md text-sm flex items-center gap-2"
                 >
-                  {isSubmitting ? "Confirming..." : "Confirm VIP Appointment ✓"}
+                  {isSubmitting ? "Confirming..." : "Confirm Appointment ✓"}
                 </button>
               </div>
             </form>
@@ -387,7 +382,7 @@ export default function BookingModal({
               <div>
                 <h4 className="text-2xl font-bold text-[#101828]">You&apos;re All Set!</h4>
                 <p className="text-slate-600 text-sm mt-1">
-                  We look forward to welcoming you at our Noida clinic.
+                  We look forward to welcoming you at our {currentLocationObj?.shortName} clinic.
                 </p>
               </div>
 
@@ -414,7 +409,7 @@ export default function BookingModal({
                 </div>
                 <div className="flex justify-between">
                   <span className="text-slate-500">Clinic Location:</span>
-                  <span className="font-semibold text-slate-800 text-right">{selectedLocation}</span>
+                  <span className="font-semibold text-slate-800 text-right">{currentLocationObj?.name}</span>
                 </div>
               </div>
 
@@ -427,10 +422,10 @@ export default function BookingModal({
                   Done & Close
                 </button>
                 <a
-                  href={`tel:${CLINIC_INFO.phoneDemo}`}
+                  href={`tel:${currentLocationObj?.phone}`}
                   className="px-6 py-2.5 rounded-full border border-slate-300 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-all inline-flex items-center justify-center gap-2"
                 >
-                  <Phone className="w-4 h-4 text-[#0D7A75]" /> Call Clinic: {CLINIC_INFO.phoneDemo}
+                  <Phone className="w-4 h-4 text-[#0D7A75]" /> Call: {currentLocationObj?.phone}
                 </a>
               </div>
             </div>

@@ -16,7 +16,7 @@ export default function ProcessSection({ onOpenBooking }: ProcessSectionProps) {
       number: 1,
       title: "Book Appointment",
       desc: "Schedule your appointment online or by phone.",
-      detail: "Select Dr. Adam or Dr. Eve, pick your preferred Noida branch and time slot in under 60 seconds.",
+      detail: "Select our lead specialist or our specialist, pick your preferred Greater Noida branch and time slot in under 60 seconds.",
       icon: Calendar,
     },
     {
@@ -146,7 +146,7 @@ export default function ProcessSection({ onOpenBooking }: ProcessSectionProps) {
             onClick={onOpenBooking}
             className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#0D7A75] hover:bg-[#095C58] text-white text-sm font-semibold shadow-md hover:shadow-lg transition-all"
           >
-            <span>Start Step 1: Book Consultation in Noida</span>
+            <span>Start Step 1: Book Consultation in Greater Noida</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>

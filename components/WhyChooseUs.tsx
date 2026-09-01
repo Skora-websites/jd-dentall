@@ -15,7 +15,7 @@ export default function WhyChooseUs({ onOpenBooking }: WhyChooseUsProps) {
   const checklistItems = [
     {
       title: "Highly Qualified Dentists",
-      sub: "Led directly by Dr. Adam (Implantologist) & Dr. Eve (Orthodontist) with global surgical credentials.",
+      sub: "Led directly by our lead specialist (Implantologist) & our specialist (Orthodontist) with global surgical credentials.",
     },
     {
       title: "Modern Equipment",
@@ -35,7 +35,7 @@ export default function WhyChooseUs({ onOpenBooking }: WhyChooseUsProps) {
     { value: "15+", label: "Years of Experience", sub: "Clinical Excellence in NCR" },
     { value: "25k+", label: "Happy Patients", sub: "Verified Smiles Transformed" },
     { value: "98%", label: "Satisfaction Rate", sub: "5-Star Patient Reviews" },
-    { value: "24/7", label: "Emergency Support", sub: "On-Call Dental Care in Noida" },
+    { value: "24/7", label: "Emergency Support", sub: "On-Call Dental Care in Greater Noida" },
   ];
 
   return (
@@ -66,7 +66,7 @@ export default function WhyChooseUs({ onOpenBooking }: WhyChooseUsProps) {
               </h2>
 
               <p className="text-sm text-slate-200 leading-relaxed font-normal">
-                Our experienced team combines surgical expertise with genuine compassion to deliver the best dental experience in Noida. Led by Dr. Adam and Dr. Eve, we are with you at every step of your journey.
+                Our experienced team combines surgical expertise with genuine compassion to deliver the best dental experience in Greater Noida. Led by our specialists, we are with you at every step of your journey.
               </p>
 
               {/* Checklist with green/white checkmarks matching design.md */}
@@ -102,19 +102,19 @@ export default function WhyChooseUs({ onOpenBooking }: WhyChooseUsProps) {
                   onClick={onOpenBooking}
                   className="px-6 py-3 rounded-full bg-[#0D7A75] hover:bg-[#095C58] text-white font-semibold text-sm transition-all border border-[#A3E3DF]/30"
                 >
-                  Consult Dr. Adam & Dr. Eve
+                  Consult our specialists
                 </button>
               </div>
 
             </div>
 
-            {/* Center Visual: Doctor & Patient Consultation in Noida */}
+            {/* Center Visual: Doctor & Patient Consultation in Greater Greater Noida */}
             <div className="lg:col-span-4 flex justify-center">
               <Tilt3DCard maxTilt={7} scale={1.02} className="w-full max-w-sm">
                 <div className="relative rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl bg-slate-800">
                   <img
                     src="/images/why-us-consultation.jpg"
-                    alt="Dr. Adam and Dr. Eve consulting with happy patient in Noida"
+                    alt="our specialists consulting with happy patient in Greater Noida"
                     onError={(e) => { (e.target as HTMLImageElement).src = "/images/why-us-consultation.jpg"; }}
                     className="w-full h-80 sm:h-96 object-cover"
                   />
@@ -123,10 +123,10 @@ export default function WhyChooseUs({ onOpenBooking }: WhyChooseUsProps) {
                   <div className="absolute bottom-4 left-4 right-4 p-3.5 rounded-xl bg-white/90 backdrop-blur-md text-[#101828]">
                     <div className="text-xs font-bold flex items-center gap-1.5 text-[#063B36]">
                       <Award className="w-3.5 h-3.5 text-[#0D7A75]" />
-                      Noida Clinical Excellence Center
+                      Greater Greater Noida Clinical Excellence Center
                     </div>
                     <div className="text-[11px] text-slate-600 mt-0.5">
-                      Sector 62 Pinnacle Tower & Sector 18 Metro Plaza
+                      Greater Greater Noida Pinnacle Tower & Greater Greater Noida Metro Plaza
                     </div>
                   </div>
                 </div>
@@ -154,11 +154,11 @@ export default function WhyChooseUs({ onOpenBooking }: WhyChooseUsProps) {
 
                   <div className="pt-4 border-t border-slate-100">
                     <a
-                      href={`tel:${CLINIC_INFO.phoneDemo}`}
+                      href={`tel:${CLINIC_INFO.phone}`}
                       className="w-full py-2.5 px-3 rounded-xl bg-[#E6F5F4] hover:bg-[#CCECE8] text-[#0D7A75] text-xs font-bold text-center flex items-center justify-center gap-1.5 transition-colors"
                     >
                       <PhoneCall className="w-3.5 h-3.5" />
-                      24/7 Helpline: {CLINIC_INFO.phoneDemo}
+                      24/7 Helpline: {CLINIC_INFO.phone}
                     </a>
                   </div>
 
