@@ -17,7 +17,7 @@ export default function BlogSection({ onSelectPost }: BlogSectionProps) {
         
         {/* Header matching design.md */}
         <div className="text-left mb-12 space-y-2">
-          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#0D7A75]">
+          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#00a896]">
             <Sparkles className="w-3.5 h-3.5" />
             Our Blog
           </div>
@@ -51,7 +51,7 @@ export default function BlogSection({ onSelectPost }: BlogSectionProps) {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                   
-                  <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-xs text-[#0D7A75] text-[11px] font-bold shadow-xs">
+                  <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-xs text-[#00a896] text-[11px] font-bold shadow-xs">
                     {post.category}
                   </span>
                 </div>
@@ -70,7 +70,7 @@ export default function BlogSection({ onSelectPost }: BlogSectionProps) {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-base sm:text-lg font-bold text-[#101828] group-hover:text-[#0D7A75] transition-colors leading-snug line-clamp-2">
+                    <h3 className="text-base sm:text-lg font-bold text-[#101828] group-hover:text-[#00a896] transition-colors leading-snug line-clamp-2">
                       {post.title}
                     </h3>
 
@@ -81,7 +81,7 @@ export default function BlogSection({ onSelectPost }: BlogSectionProps) {
                   </div>
 
                   <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
-                    <span className="text-xs font-bold text-[#0D7A75] group-hover:underline inline-flex items-center gap-1">
+                    <span className="text-xs font-bold text-[#00a896] group-hover:underline inline-flex items-center gap-1">
                       Read Article <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </span>
                     <span className="text-[11px] text-slate-400 font-medium">By {post.author}</span>
@@ -98,7 +98,7 @@ export default function BlogSection({ onSelectPost }: BlogSectionProps) {
         <div className="mt-12 text-center">
           <button
             onClick={() => onSelectPost(BLOG_POSTS[0])}
-            className="px-8 py-3 rounded-full border border-slate-300 text-slate-700 font-semibold text-sm hover:bg-[#E6F5F4] hover:text-[#0D7A75] hover:border-[#0D7A75] transition-all shadow-xs"
+            className="px-8 py-3 rounded-full border border-slate-300 text-slate-700 font-semibold text-sm hover:bg-[#e5f6f4] hover:text-[#00a896] hover:border-[#00a896] transition-all shadow-xs"
           >
             View All Blog Articles
           </button>
@@ -108,3 +108,4 @@ export default function BlogSection({ onSelectPost }: BlogSectionProps) {
     </section>
   );
 }
+

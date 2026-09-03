@@ -90,8 +90,8 @@ export default function ServicesPage() {
                   onClick={() => setActiveFilter(cat)}
                   className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all ${
                     activeFilter === cat
-                      ? "bg-[#0D7A75] text-white shadow-sm scale-105"
-                      : "bg-white text-[#475569] hover:bg-[#E6F5F4] hover:text-[#0D7A75] border border-slate-200"
+                      ? "bg-[#00a896] text-white shadow-sm scale-105"
+                      : "bg-white text-[#475569] hover:bg-[#e5f6f4] hover:text-[#00a896] border border-slate-200"
                   }`}
                 >
                   {cat === "all" ? "All Treatments" : cat}
@@ -115,14 +115,14 @@ export default function ServicesPage() {
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                        <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-[#0D7A75] text-white text-[11px] font-medium">{service.badgeText}</span>
+                        <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-[#00a896] text-white text-[11px] font-medium">{service.badgeText}</span>
                       </div>
 
                       <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                         <div className="space-y-2">
                           <div className="flex justify-between items-start">
-                            <h3 className="text-xl font-bold text-[#101828] group-hover:text-[#0D7A75] transition-colors">{service.title}</h3>
-                            <span className="text-sm font-bold text-[#0D7A75] bg-[#E6F5F4] px-3 py-1 rounded-full">{service.priceEstimate}</span>
+                            <h3 className="text-xl font-bold text-[#101828] group-hover:text-[#00a896] transition-colors">{service.title}</h3>
+                            <span className="text-sm font-bold text-[#00a896] bg-[#e5f6f4] px-3 py-1 rounded-full">{service.priceEstimate}</span>
                           </div>
                           <p className="text-sm text-[#475569] leading-relaxed">{service.description}</p>
                         </div>
@@ -130,14 +130,14 @@ export default function ServicesPage() {
                         <div className="space-y-2 pt-2 border-t border-slate-100">
                           {service.benefits.slice(0, 3).map((benefit, idx) => (
                             <div key={idx} className="flex items-start gap-2 text-xs text-slate-600">
-                              <CheckCircle2 className="w-3.5 h-3.5 text-[#0D7A75] flex-shrink-0 mt-0.5" />
+                              <CheckCircle2 className="w-3.5 h-3.5 text-[#00a896] flex-shrink-0 mt-0.5" />
                               <span>{benefit}</span>
                             </div>
                           ))}
                         </div>
 
                         <div className="pt-4 flex items-center justify-between">
-                          <Link href={`/services/${service.slug}`} className="inline-flex items-center gap-1.5 text-sm font-bold text-[#0D7A75] hover:text-[#095C58] group/link transition-colors">
+                          <Link href={`/services/${service.slug}`} className="inline-flex items-center gap-1.5 text-sm font-bold text-[#00a896] hover:text-[#008f7f] group/link transition-colors">
                             <span>View Details</span>
                             <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                           </Link>
@@ -179,7 +179,7 @@ export default function ServicesPage() {
                         </div>
                       </div>
                       <div className="p-4">
-                        <h3 className="text-base font-bold text-[#101828] group-hover:text-[#0D7A75] transition-colors">{service.name}</h3>
+                        <h3 className="text-base font-bold text-[#101828] group-hover:text-[#00a896] transition-colors">{service.name}</h3>
                         <p className="text-xs text-slate-500 mt-1">{service.desc}</p>
                       </div>
                     </div>
@@ -197,3 +197,4 @@ export default function ServicesPage() {
     </div>
   );
 }
+

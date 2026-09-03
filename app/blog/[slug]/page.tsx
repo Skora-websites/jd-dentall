@@ -35,7 +35,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
             <p className="text-slate-500">The article you&apos;re looking for doesn&apos;t exist.</p>
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0D7A75] text-white font-semibold hover:bg-[#095C58] transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#00a896] text-white font-semibold hover:bg-[#008f7f] transition-all"
             >
               View All Articles <ArrowRight className="w-4 h-4" />
             </Link>
@@ -69,7 +69,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
             {/* Article Header */}
             <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500 pb-6 border-b border-slate-100 mb-8">
               <span className="flex items-center gap-1.5 font-medium text-[#101828]">
-                <User className="w-4 h-4 text-[#0D7A75]" /> {post.author}
+                <User className="w-4 h-4 text-[#00a896]" /> {post.author}
               </span>
               <span className="flex items-center gap-1.5">
                 <Calendar className="w-4 h-4 text-slate-400" /> {post.date}
@@ -77,7 +77,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
               <span className="flex items-center gap-1.5">
                 <Clock className="w-4 h-4 text-slate-400" /> {post.readTime}
               </span>
-              <span className="px-2.5 py-1 rounded-full bg-[#E6F5F4] text-[#0D7A75] text-xs font-semibold">
+              <span className="px-2.5 py-1 rounded-full bg-[#e5f6f4] text-[#00a896] text-xs font-semibold">
                 {post.category}
               </span>
             </div>
@@ -85,7 +85,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
             {/* Article Body */}
             <div className="space-y-6 text-slate-700 leading-relaxed">
               {/* Featured Excerpt */}
-              <div className="p-5 rounded-xl bg-[#E6F5F4]/40 border-l-4 border-[#0D7A75] text-slate-700 italic text-base">
+              <div className="p-5 rounded-xl bg-[#e5f6f4]/40 border-l-4 border-[#00a896] text-slate-700 italic text-base">
                 {post.excerpt}
               </div>
 
@@ -101,12 +101,12 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
             <div className="mt-12 pt-8 border-t border-slate-100">
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div className="flex items-center gap-2 text-sm text-slate-500">
-                  <BookOpen className="w-4 h-4 text-[#0D7A75]" />
+                  <BookOpen className="w-4 h-4 text-[#00a896]" />
                   <span>Published by J.D. Dentals Clinical Team, Greater Noida</span>
                 </div>
                 <Link
                   href="/blog"
-                  className="inline-flex items-center gap-2 text-sm font-bold text-[#0D7A75] hover:underline"
+                  className="inline-flex items-center gap-2 text-sm font-bold text-[#00a896] hover:underline"
                 >
                   <ArrowLeft className="w-4 h-4" />
                   Back to All Articles
@@ -126,12 +126,12 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
                   <Tilt3DCard key={relPost.id} maxTilt={5} scale={1.02} className="h-full">
                     <Link href={`/blog/${relPost.slug}`}>
                       <div className="h-full rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-[#A3E3DF] overflow-hidden flex flex-col cursor-pointer group transition-all duration-300">
-                        <div className="relative h-48 w-full overflow-hidden bg-gradient-to-br from-[#E6F5F4] to-[#CCECE8]">
+                        <div className="relative h-48 w-full overflow-hidden bg-gradient-to-br from-[#e5f6f4] to-[#ccf0eb]">
                           <div className="absolute inset-0 flex items-center justify-center">
-                            <BookOpen className="w-10 h-10 text-[#0D7A75] opacity-30" />
+                            <BookOpen className="w-10 h-10 text-[#00a896] opacity-30" />
                           </div>
                           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                          <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 text-[#0D7A75] text-[11px] font-bold">
+                          <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 text-[#00a896] text-[11px] font-bold">
                             {relPost.category}
                           </span>
                         </div>
@@ -143,10 +143,10 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
                             <Clock className="w-3 h-3" />
                             {relPost.readTime}
                           </div>
-                          <h3 className="text-base font-bold text-[#101828] group-hover:text-[#0D7A75] transition-colors line-clamp-2">
+                          <h3 className="text-base font-bold text-[#101828] group-hover:text-[#00a896] transition-colors line-clamp-2">
                             {relPost.title}
                           </h3>
-                          <span className="text-xs font-bold text-[#0D7A75] inline-flex items-center gap-1">
+                          <span className="text-xs font-bold text-[#00a896] inline-flex items-center gap-1">
                             Read More <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                           </span>
                         </div>

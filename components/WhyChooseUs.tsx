@@ -42,12 +42,12 @@ export default function WhyChooseUs({ onOpenBooking }: WhyChooseUsProps) {
     <section id="why-us" className="py-16 md:py-24 bg-[#FBFDFC] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Dark Forest Green Container matching design.md (#063B36) */}
-        <div className="relative rounded-3xl bg-[#063B36] text-white p-8 sm:p-12 lg:p-16 overflow-hidden shadow-2xl border border-[#0A4A44]">
+        {/* Dark Forest Green Container matching design.md (#0f3057) */}
+        <div className="relative rounded-3xl bg-[#0f3057] text-white p-8 sm:p-12 lg:p-16 overflow-hidden shadow-2xl border border-[#1a4f8c]">
           
           {/* Subtle Ambient Background Highlights */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#0D7A75]/20 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#16938D]/15 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#00a896]/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#00c4b0]/15 rounded-full blur-3xl pointer-events-none" />
 
           {/* 3-Column Grid matching design.md */}
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
@@ -55,7 +55,7 @@ export default function WhyChooseUs({ onOpenBooking }: WhyChooseUsProps) {
             {/* Left Column: Copy & Checklist */}
             <div className="lg:col-span-5 space-y-6">
               
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#0A4A44] border border-[#A3E3DF]/20 text-[#A3E3DF] text-xs font-semibold uppercase tracking-wider">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#1a4f8c] border border-[#A3E3DF]/20 text-[#A3E3DF] text-xs font-semibold uppercase tracking-wider">
                 <ShieldCheck className="w-3.5 h-3.5" />
                 Why Choose Us
               </div>
@@ -73,7 +73,7 @@ export default function WhyChooseUs({ onOpenBooking }: WhyChooseUsProps) {
               <div className="space-y-3 pt-2">
                 {checklistItems.map((item, idx) => (
                   <div key={idx} className="flex items-start gap-3 group">
-                    <div className="w-5 h-5 rounded-full bg-[#16938D] text-white flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform">
+                    <div className="w-5 h-5 rounded-full bg-[#00c4b0] text-white flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform">
                       <Check className="w-3 h-3 stroke-[3]" />
                     </div>
                     <div>
@@ -92,15 +92,15 @@ export default function WhyChooseUs({ onOpenBooking }: WhyChooseUsProps) {
               <div className="pt-4 flex flex-wrap items-center gap-4">
                 <a
                   href="#doctors"
-                  className="px-7 py-3 rounded-full bg-white hover:bg-slate-100 text-[#063B36] font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center gap-2 group"
+                  className="px-7 py-3 rounded-full bg-white hover:bg-slate-100 text-[#0f3057] font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center gap-2 group"
                 >
                   <span>More About Us</span>
-                  <ArrowRight className="w-4 h-4 text-[#063B36] group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 text-[#0f3057] group-hover:translate-x-1 transition-transform" />
                 </a>
 
                 <button
                   onClick={onOpenBooking}
-                  className="px-6 py-3 rounded-full bg-[#0D7A75] hover:bg-[#095C58] text-white font-semibold text-sm transition-all border border-[#A3E3DF]/30"
+                  className="px-6 py-3 rounded-full bg-[#00a896] hover:bg-[#008f7f] text-white font-semibold text-sm transition-all border border-[#A3E3DF]/30"
                 >
                   Consult our specialists
                 </button>
@@ -118,11 +118,11 @@ export default function WhyChooseUs({ onOpenBooking }: WhyChooseUsProps) {
                     onError={(e) => { (e.target as HTMLImageElement).src = "/images/why-us-consultation.jpg"; }}
                     className="w-full h-80 sm:h-96 object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#063B36]/80 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0f3057]/80 via-transparent to-transparent" />
                   
                   <div className="absolute bottom-4 left-4 right-4 p-3.5 rounded-xl bg-white/90 backdrop-blur-md text-[#101828]">
-                    <div className="text-xs font-bold flex items-center gap-1.5 text-[#063B36]">
-                      <Award className="w-3.5 h-3.5 text-[#0D7A75]" />
+                    <div className="text-xs font-bold flex items-center gap-1.5 text-[#0f3057]">
+                      <Award className="w-3.5 h-3.5 text-[#00a896]" />
                       Greater Greater Noida Clinical Excellence Center
                     </div>
                     <div className="text-[11px] text-slate-600 mt-0.5">
@@ -140,7 +140,7 @@ export default function WhyChooseUs({ onOpenBooking }: WhyChooseUsProps) {
                   
                   {stats.map((stat, idx) => (
                     <div key={idx} className={idx > 0 ? "pt-4 border-t border-slate-100" : ""}>
-                      <div className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#101828] group-hover:text-[#0D7A75]">
+                      <div className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#101828] group-hover:text-[#00a896]">
                         {stat.value}
                       </div>
                       <div className="text-xs font-bold text-slate-800 uppercase tracking-wider mt-0.5">
@@ -155,7 +155,7 @@ export default function WhyChooseUs({ onOpenBooking }: WhyChooseUsProps) {
                   <div className="pt-4 border-t border-slate-100">
                     <a
                       href={`tel:${CLINIC_INFO.phone}`}
-                      className="w-full py-2.5 px-3 rounded-xl bg-[#E6F5F4] hover:bg-[#CCECE8] text-[#0D7A75] text-xs font-bold text-center flex items-center justify-center gap-1.5 transition-colors"
+                      className="w-full py-2.5 px-3 rounded-xl bg-[#e5f6f4] hover:bg-[#ccf0eb] text-[#00a896] text-xs font-bold text-center flex items-center justify-center gap-1.5 transition-colors"
                     >
                       <PhoneCall className="w-3.5 h-3.5" />
                       24/7 Helpline: {CLINIC_INFO.phone}
@@ -174,3 +174,4 @@ export default function WhyChooseUs({ onOpenBooking }: WhyChooseUsProps) {
     </section>
   );
 }
+

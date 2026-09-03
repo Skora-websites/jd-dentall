@@ -59,28 +59,22 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-10 h-10 rounded-xl bg-[#E6F5F4] border border-[#A3E3DF]/50 flex items-center justify-center text-[#0D7A75] group-hover:scale-105 transition-transform">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-6 h-6"
-              >
-                <path d="M12 2C8.5 2 6 4.5 6 8c0 3 1.5 5.5 2 9 .5 3 2 4.5 4 4.5s3.5-1.5 4-4.5c.5-3.5 2-6 2-9 0-3.5-2.5-6-6-6z" />
-                <path d="M9 8c.5-1.5 2-2 3-2s2.5.5 3 2" />
-              </svg>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-2xl font-extrabold tracking-tight text-[#101828]">
-                J.D.<span className="text-[#0D7A75]"> Dentals</span>
-              </span>
-              <span className="text-[10px] uppercase font-bold tracking-widest text-[#0D7A75] -mt-1">
-                Dental Clinic
-              </span>
+          <Link href="/" className="flex items-center group">
+            {/* The actual logo image file */}
+            <img 
+              src="/logo.jpg" 
+              alt="J.D. Dentals" 
+              className="h-12 sm:h-14 w-auto group-hover:scale-[1.02] transition-transform duration-300"
+              onError={(e) => {
+                // Fallback text if the image isn't placed yet
+                (e.target as HTMLImageElement).style.display = 'none';
+                (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
+              }}
+            />
+            {/* Fallback displayed only if image is missing */}
+            <div className="hidden flex flex-col justify-center ml-2">
+              <span className="text-2xl font-extrabold text-[#07335E]">J.D. DENTALS</span>
+              <span className="text-[10px] text-slate-500">Please add public/logo.jpg</span>
             </div>
           </Link>
 

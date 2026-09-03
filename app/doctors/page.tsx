@@ -83,7 +83,7 @@ export default function DoctorsPage() {
                     <Tilt3DCard maxTilt={5} scale={1.02} className="h-full">
                       <div className={`h-full rounded-3xl transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-md hover:shadow-2xl border ${
                         isFeatured
-                          ? "bg-gradient-to-b from-[#063B36] to-[#0A4A44] text-white border-[#0D7A75] ring-2 ring-[#0D7A75]/40"
+                          ? "bg-gradient-to-b from-[#0f3057] to-[#1a4f8c] text-white border-[#00a896] ring-2 ring-[#00a896]/40"
                           : "bg-white text-[#101828] border-slate-200 hover:border-[#A3E3DF]"
                       }`}>
                         <div className="relative h-80 sm:h-96 w-full overflow-hidden">
@@ -92,10 +92,10 @@ export default function DoctorsPage() {
                             alt={doc.name}
                             className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
                           />
-                          <div className={`absolute inset-0 bg-gradient-to-t ${isFeatured ? "from-[#063B36] via-[#063B36]/20 to-transparent" : "from-white/60 via-transparent to-transparent"}`} />
+                          <div className={`absolute inset-0 bg-gradient-to-t ${isFeatured ? "from-[#0f3057] via-[#0f3057]/20 to-transparent" : "from-white/60 via-transparent to-transparent"}`} />
 
                           <div className="absolute top-4 right-4 flex items-center gap-2">
-                            <span className={`px-3 py-1 rounded-full text-xs font-bold shadow-md flex items-center gap-1.5 ${isFeatured ? "bg-white text-[#0D7A75]" : "bg-[#0D7A75] text-white"}`}>
+                            <span className={`px-3 py-1 rounded-full text-xs font-bold shadow-md flex items-center gap-1.5 ${isFeatured ? "bg-white text-[#00a896]" : "bg-[#00a896] text-white"}`}>
                               <Award className="w-3.5 h-3.5" />
                               {isFeatured ? "Lead Implantologist" : "Chief Orthodontist"}
                             </span>
@@ -114,13 +114,13 @@ export default function DoctorsPage() {
                         <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
                           <div className="space-y-3">
                             <h3 className={`text-2xl font-extrabold tracking-tight ${isFeatured ? "text-white" : "text-[#101828]"}`}>{doc.name}</h3>
-                            <p className={`text-sm font-semibold ${isFeatured ? "text-[#A3E3DF]" : "text-[#0D7A75]"}`}>{doc.role}</p>
+                            <p className={`text-sm font-semibold ${isFeatured ? "text-[#A3E3DF]" : "text-[#00a896]"}`}>{doc.role}</p>
                             <p className={`text-xs leading-relaxed font-medium ${isFeatured ? "text-teal-100" : "text-slate-500"}`}>{doc.qualifications}</p>
                             <p className={`text-sm leading-relaxed ${isFeatured ? "text-slate-200" : "text-slate-600"}`}>{doc.bio}</p>
 
-                            <div className={`p-3 rounded-xl text-xs space-y-2 ${isFeatured ? "bg-[#0A4A44]/80 text-teal-100 border border-[#0D7A75]" : "bg-[#E6F5F4]/60 text-slate-700 border border-[#A3E3DF]/50"}`}>
+                            <div className={`p-3 rounded-xl text-xs space-y-2 ${isFeatured ? "bg-[#1a4f8c]/80 text-teal-100 border border-[#00a896]" : "bg-[#e5f6f4]/60 text-slate-700 border border-[#A3E3DF]/50"}`}>
                               <div className="font-bold flex items-center gap-1.5">
-                                <ShieldCheck className="w-3.5 h-3.5 text-[#0D7A75]" />
+                                <ShieldCheck className="w-3.5 h-3.5 text-[#00a896]" />
                                 Focus: {doc.speciality}
                               </div>
                               <div className="text-[11px] opacity-90">Available: {doc.availableDays}</div>
@@ -130,7 +130,7 @@ export default function DoctorsPage() {
                               <span className={`text-xs font-bold ${isFeatured ? "text-teal-100" : "text-slate-500"}`}>Available at:</span>
                               <div className="flex flex-wrap gap-2">
                                 {doc.clinics.map((clinic, idx) => (
-                                  <span key={idx} className={`px-2 py-1 rounded-full text-[10px] font-semibold ${isFeatured ? "bg-white/10 text-white" : "bg-[#E6F5F4] text-[#0D7A75]"}`}>
+                                  <span key={idx} className={`px-2 py-1 rounded-full text-[10px] font-semibold ${isFeatured ? "bg-white/10 text-white" : "bg-[#e5f6f4] text-[#00a896]"}`}>
                                     <MapPin className="w-3 h-3 inline mr-1" />
                                     {clinic}
                                   </span>
@@ -143,7 +143,7 @@ export default function DoctorsPage() {
                             <button
                               onClick={() => { setSelectedDoctorId(doc.id); setIsBookingOpen(true); }}
                               className={`w-full py-3.5 px-5 rounded-full text-sm font-bold transition-all flex items-center justify-center gap-2 shadow-md hover:scale-[1.02] active:scale-[0.98] ${
-                                isFeatured ? "bg-white text-[#063B36] hover:bg-slate-100" : "bg-[#0D7A75] text-white hover:bg-[#095C58]"
+                                isFeatured ? "bg-white text-[#0f3057] hover:bg-slate-100" : "bg-[#00a896] text-white hover:bg-[#008f7f]"
                               }`}
                             >
                               <Calendar className="w-4 h-4" />
@@ -174,7 +174,7 @@ export default function DoctorsPage() {
               {doctorHighlights.map((item, idx) => (
                 <div key={idx} className="p-6 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#A3E3DF] transition-all group">
                   <div className="text-3xl mb-3 group-hover:scale-110 transition-transform">{item.icon}</div>
-                  <h3 className="text-base font-bold text-[#101828] group-hover:text-[#0D7A75] transition-colors">{item.title}</h3>
+                  <h3 className="text-base font-bold text-[#101828] group-hover:text-[#00a896] transition-colors">{item.title}</h3>
                   <p className="text-xs text-slate-500 mt-2 leading-relaxed">{item.desc}</p>
                 </div>
               ))}
@@ -189,3 +189,4 @@ export default function DoctorsPage() {
     </div>
   );
 }
+

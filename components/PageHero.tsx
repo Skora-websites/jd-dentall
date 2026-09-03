@@ -19,7 +19,7 @@ export default function PageHero({
   subtitle,
   breadcrumbs,
   badge,
-  bgGradient = "from-[#F0FDFB]/60 via-[#FBFDFC] to-white",
+  bgGradient = "from-[#f2fbf9]/60 via-[#FBFDFC] to-white",
   children,
 }: PageHeroProps) {
   return (
@@ -27,8 +27,8 @@ export default function PageHero({
       className={`relative pt-8 pb-16 md:pt-12 md:pb-24 overflow-hidden bg-gradient-to-b ${bgGradient}`}
     >
       {/* Background Decorative Elements */}
-      <div className="absolute top-10 left-1/4 w-96 h-96 bg-[#CCECE8]/40 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse-subtle" />
-      <div className="absolute top-1/3 right-10 w-80 h-80 bg-[#E6F5F4]/50 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-10 left-1/4 w-96 h-96 bg-[#ccf0eb]/40 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse-subtle" />
+      <div className="absolute top-1/3 right-10 w-80 h-80 bg-[#e5f6f4]/50 rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumbs */}
@@ -37,8 +37,8 @@ export default function PageHero({
         <div className="mt-6 space-y-4 max-w-3xl">
           {/* Badge */}
           {badge && (
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E6F5F4] border border-[#A3E3DF] text-[#0D7A75] text-xs sm:text-sm font-semibold tracking-wide shadow-xs">
-              <Sparkles className="w-4 h-4 text-[#0D7A75]" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e5f6f4] border border-[#A3E3DF] text-[#00a896] text-xs sm:text-sm font-semibold tracking-wide shadow-xs">
+              <Sparkles className="w-4 h-4 text-[#00a896]" />
               <span>{badge}</span>
             </div>
           )}
@@ -60,3 +60,4 @@ export default function PageHero({
     </section>
   );
 }
+

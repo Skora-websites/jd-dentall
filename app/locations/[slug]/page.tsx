@@ -37,7 +37,7 @@ export default function LocationDetailPage({ params }: { params: Promise<{ slug:
             <p className="text-slate-500">The location you&apos;re looking for doesn&apos;t exist.</p>
             <Link
               href="/locations"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0D7A75] text-white font-semibold hover:bg-[#095C58] transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#00a896] text-white font-semibold hover:bg-[#008f7f] transition-all"
             >
               View All Locations <ArrowRight className="w-4 h-4" />
             </Link>
@@ -109,7 +109,7 @@ export default function LocationDetailPage({ params }: { params: Promise<{ slug:
                         key={idx}
                         className="flex items-center gap-3 p-4 rounded-xl bg-[#FBFDFC] border border-slate-100 hover:border-[#A3E3DF] transition-all"
                       >
-                        <div className="w-10 h-10 rounded-xl bg-[#E6F5F4] text-[#0D7A75] flex items-center justify-center flex-shrink-0">
+                        <div className="w-10 h-10 rounded-xl bg-[#e5f6f4] text-[#00a896] flex items-center justify-center flex-shrink-0">
                           <CheckCircle2 className="w-5 h-5" />
                         </div>
                         <span className="text-sm font-semibold text-[#101828]">{feature}</span>
@@ -121,16 +121,16 @@ export default function LocationDetailPage({ params }: { params: Promise<{ slug:
                 {/* How to Reach */}
                 <div className="space-y-4">
                   <h2 className="text-2xl font-extrabold text-[#101828]">How to Reach Us</h2>
-                  <div className="p-6 rounded-2xl bg-[#E6F5F4]/60 border border-[#CCECE8] space-y-3">
+                  <div className="p-6 rounded-2xl bg-[#e5f6f4]/60 border border-[#ccf0eb] space-y-3">
                     <div className="flex items-start gap-3">
-                      <MapPin className="w-5 h-5 text-[#0D7A75] flex-shrink-0 mt-0.5" />
+                      <MapPin className="w-5 h-5 text-[#00a896] flex-shrink-0 mt-0.5" />
                       <div>
                         <span className="text-sm font-bold text-[#101828]">Full Address:</span>
                         <p className="text-sm text-slate-600">{clinic.fullAddress}</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <Navigation className="w-5 h-5 text-[#0D7A75] flex-shrink-0 mt-0.5" />
+                      <Navigation className="w-5 h-5 text-[#00a896] flex-shrink-0 mt-0.5" />
                       <div>
                         <span className="text-sm font-bold text-[#101828]">Landmark:</span>
                         <p className="text-sm text-slate-600">{clinic.landmark}</p>
@@ -141,7 +141,7 @@ export default function LocationDetailPage({ params }: { params: Promise<{ slug:
                         href={clinic.mapUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0D7A75] text-white text-sm font-semibold hover:bg-[#095C58] transition-all"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#00a896] text-white text-sm font-semibold hover:bg-[#008f7f] transition-all"
                       >
                         <Navigation className="w-4 h-4" />
                         Open in Google Maps
@@ -159,7 +159,7 @@ export default function LocationDetailPage({ params }: { params: Promise<{ slug:
 
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-[#E6F5F4] text-[#0D7A75] flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 rounded-xl bg-[#e5f6f4] text-[#00a896] flex items-center justify-center flex-shrink-0">
                         <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
                       </div>
                       <div>
@@ -171,12 +171,12 @@ export default function LocationDetailPage({ params }: { params: Promise<{ slug:
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <Phone className="w-5 h-5 text-[#0D7A75] flex-shrink-0 mt-0.5" />
+                      <Phone className="w-5 h-5 text-[#00a896] flex-shrink-0 mt-0.5" />
                       <div>
                         <span className="text-xs text-slate-500 block">Phone</span>
                         <a
                           href={`tel:${clinic.phone}`}
-                          className="text-sm font-bold text-[#0D7A75] hover:underline"
+                          className="text-sm font-bold text-[#00a896] hover:underline"
                         >
                           {clinic.phone}
                         </a>
@@ -184,12 +184,12 @@ export default function LocationDetailPage({ params }: { params: Promise<{ slug:
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <Mail className="w-5 h-5 text-[#0D7A75] flex-shrink-0 mt-0.5" />
+                      <Mail className="w-5 h-5 text-[#00a896] flex-shrink-0 mt-0.5" />
                       <div>
                         <span className="text-xs text-slate-500 block">Email</span>
                         <a
                           href={`mailto:${clinic.email}`}
-                          className="text-sm font-medium text-[#0D7A75] hover:underline"
+                          className="text-sm font-medium text-[#00a896] hover:underline"
                         >
                           {clinic.email}
                         </a>
@@ -197,7 +197,7 @@ export default function LocationDetailPage({ params }: { params: Promise<{ slug:
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <Clock className="w-5 h-5 text-[#0D7A75] flex-shrink-0 mt-0.5" />
+                      <Clock className="w-5 h-5 text-[#00a896] flex-shrink-0 mt-0.5" />
                       <div className="space-y-1">
                         <span className="text-xs text-slate-500 block">Hours</span>
                         <div className="text-xs space-y-0.5">
@@ -221,7 +221,7 @@ export default function LocationDetailPage({ params }: { params: Promise<{ slug:
                   <div className="pt-4 border-t border-slate-100 space-y-3">
                     <button
                       onClick={() => setIsBookingOpen(true)}
-                      className="w-full py-3 rounded-full bg-[#0D7A75] text-white font-semibold hover:bg-[#095C58] transition-all shadow-md flex items-center justify-center gap-2"
+                      className="w-full py-3 rounded-full bg-[#00a896] text-white font-semibold hover:bg-[#008f7f] transition-all shadow-md flex items-center justify-center gap-2"
                     >
                       <Calendar className="w-4 h-4" />
                       Book Appointment
@@ -230,7 +230,7 @@ export default function LocationDetailPage({ params }: { params: Promise<{ slug:
                       href={`tel:${clinic.phone}`}
                       className="w-full py-3 rounded-full border border-slate-200 text-slate-700 font-semibold text-center flex items-center justify-center gap-2 hover:bg-slate-50 transition-all"
                     >
-                      <Phone className="w-4 h-4 text-[#0D7A75]" />
+                      <Phone className="w-4 h-4 text-[#00a896]" />
                       Call Now
                     </a>
                   </div>

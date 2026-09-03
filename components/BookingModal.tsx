@@ -78,7 +78,7 @@ export default function BookingModal({
       <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-slate-100 overflow-hidden animate-in fade-in zoom-in-95 duration-200">
         
         {/* Header */}
-        <div className="bg-[#063B36] text-white p-6 sm:p-8 relative">
+        <div className="bg-[#0f3057] text-white p-6 sm:p-8 relative">
           <button
             onClick={onClose}
             className="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors"
@@ -87,7 +87,7 @@ export default function BookingModal({
             <X className="w-5 h-5" />
           </button>
           
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0D7A75]/40 border border-[#A3E3DF]/30 text-[#A3E3DF] text-xs font-semibold uppercase tracking-wider mb-2">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00a896]/40 border border-[#A3E3DF]/30 text-[#A3E3DF] text-xs font-semibold uppercase tracking-wider mb-2">
             <Sparkles className="w-3.5 h-3.5" />
             Greater Noida Dental Appointment
           </div>
@@ -107,7 +107,7 @@ export default function BookingModal({
                 <div key={num} className="flex-1 flex items-center gap-2">
                   <div
                     className={`h-1.5 w-full rounded-full transition-all duration-300 ${
-                      step >= num ? "bg-[#16938D]" : "bg-white/20"
+                      step >= num ? "bg-[#00c4b0]" : "bg-white/20"
                     }`}
                   />
                 </div>
@@ -132,23 +132,23 @@ export default function BookingModal({
                       onClick={() => setSelectedDoctor(doc.id)}
                       className={`p-4 rounded-2xl text-left border transition-all duration-200 flex items-center gap-3.5 ${
                         selectedDoctor === doc.id
-                          ? "border-[#0D7A75] bg-[#E6F5F4]/60 ring-2 ring-[#0D7A75]"
+                          ? "border-[#00a896] bg-[#e5f6f4]/60 ring-2 ring-[#00a896]"
                           : "border-slate-200 hover:border-slate-300 bg-white"
                       }`}
                     >
-                      <div className="w-14 h-14 rounded-full bg-[#E6F5F4] flex items-center justify-center text-[#0D7A75] font-bold text-sm flex-shrink-0">
+                      <div className="w-14 h-14 rounded-full bg-[#e5f6f4] flex items-center justify-center text-[#00a896] font-bold text-sm flex-shrink-0">
                         {doc.name.charAt(0)}
                       </div>
                       <div className="min-w-0">
                         <div className="font-bold text-[#101828] text-sm truncate flex items-center gap-1.5">
                           {doc.name}
                           {doc.isFeatured && (
-                            <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#0D7A75] text-white font-bold">
+                            <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#00a896] text-white font-bold">
                               Lead
                             </span>
                           )}
                         </div>
-                        <div className="text-xs text-[#0D7A75] font-semibold truncate">{doc.role}</div>
+                        <div className="text-xs text-[#00a896] font-semibold truncate">{doc.role}</div>
                         <div className="text-[11px] text-slate-500 truncate">{doc.experience}</div>
                       </div>
                     </button>
@@ -168,13 +168,13 @@ export default function BookingModal({
                       onClick={() => setSelectedService(srv.id)}
                       className={`p-3.5 rounded-xl text-left border transition-all duration-200 ${
                         selectedService === srv.id
-                          ? "border-[#0D7A75] bg-[#E6F5F4]/60 font-semibold text-[#0D7A75] ring-2 ring-[#0D7A75]"
+                          ? "border-[#00a896] bg-[#e5f6f4]/60 font-semibold text-[#00a896] ring-2 ring-[#00a896]"
                           : "border-slate-200 hover:border-slate-300 text-slate-700 bg-white"
                       }`}
                     >
                       <div className="flex justify-between items-center">
                         <div className="text-sm font-semibold text-[#101828]">{srv.title}</div>
-                        <div className="text-xs font-bold text-[#0D7A75]">{srv.priceEstimate}</div>
+                        <div className="text-xs font-bold text-[#00a896]">{srv.priceEstimate}</div>
                       </div>
                       <div className="text-xs text-slate-500 mt-1">{srv.category} • {srv.duration}</div>
                     </button>
@@ -186,7 +186,7 @@ export default function BookingModal({
                 <button
                   type="button"
                   onClick={() => setStep(2)}
-                  className="px-7 py-3 rounded-full bg-[#0D7A75] text-white font-semibold hover:bg-[#095C58] transition-all shadow-md"
+                  className="px-7 py-3 rounded-full bg-[#00a896] text-white font-semibold hover:bg-[#008f7f] transition-all shadow-md"
                 >
                   Continue to Location & Slot →
                 </button>
@@ -198,7 +198,7 @@ export default function BookingModal({
             <div className="space-y-6">
               <div>
                 <label className="block text-sm font-semibold text-[#101828] mb-2 flex items-center gap-1.5">
-                  <MapPin className="w-4 h-4 text-[#0D7A75]" />
+                  <MapPin className="w-4 h-4 text-[#00a896]" />
                   Select Clinic Location:
                 </label>
                 <div className="grid grid-cols-1 gap-2.5">
@@ -209,13 +209,13 @@ export default function BookingModal({
                       onClick={() => setSelectedLocation(clinic.slug)}
                       className={`p-3.5 rounded-xl text-left text-sm border transition-all ${
                         selectedLocation === clinic.slug
-                          ? "border-[#0D7A75] bg-[#E6F5F4]/60 text-[#101828] font-semibold ring-2 ring-[#0D7A75]"
+                          ? "border-[#00a896] bg-[#e5f6f4]/60 text-[#101828] font-semibold ring-2 ring-[#00a896]"
                           : "border-slate-200 hover:border-slate-300 text-slate-600 bg-white"
                       }`}
                     >
                       <div className="font-semibold">{clinic.name}</div>
                       <div className="text-xs text-slate-500 mt-1">{clinic.address}</div>
-                      <div className="text-xs text-[#0D7A75] mt-1">📞 {clinic.phone}</div>
+                      <div className="text-xs text-[#00a896] mt-1">📞 {clinic.phone}</div>
                     </button>
                   ))}
                 </div>
@@ -224,7 +224,7 @@ export default function BookingModal({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-semibold text-[#101828] mb-2 flex items-center gap-1.5">
-                    <Calendar className="w-4 h-4 text-[#0D7A75]" />
+                    <Calendar className="w-4 h-4 text-[#00a896]" />
                     Preferred Date:
                   </label>
                   <input
@@ -232,13 +232,13 @@ export default function BookingModal({
                     min={new Date().toISOString().split("T")[0]}
                     value={selectedDate}
                     onChange={(e) => setSelectedDate(e.target.value)}
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#0D7A75] text-sm text-[#101828]"
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00a896] text-sm text-[#101828]"
                   />
                 </div>
 
                 <div>
                   <label className="block text-sm font-semibold text-[#101828] mb-2 flex items-center gap-1.5">
-                    <Clock className="w-4 h-4 text-[#0D7A75]" />
+                    <Clock className="w-4 h-4 text-[#00a896]" />
                     Available Time Slots:
                   </label>
                   <div className="grid grid-cols-2 gap-2">
@@ -249,7 +249,7 @@ export default function BookingModal({
                         onClick={() => setSelectedSlot(slot)}
                         className={`py-2 px-2 text-xs rounded-lg border font-medium transition-all ${
                           selectedSlot === slot
-                            ? "border-[#0D7A75] bg-[#0D7A75] text-white"
+                            ? "border-[#00a896] bg-[#00a896] text-white"
                             : "border-slate-200 hover:border-slate-300 text-slate-700 bg-white"
                         }`}
                       >
@@ -271,7 +271,7 @@ export default function BookingModal({
                 <button
                   type="button"
                   onClick={() => setStep(3)}
-                  className="px-7 py-3 rounded-full bg-[#0D7A75] text-white font-semibold hover:bg-[#095C58] transition-all shadow-md text-sm"
+                  className="px-7 py-3 rounded-full bg-[#00a896] text-white font-semibold hover:bg-[#008f7f] transition-all shadow-md text-sm"
                 >
                   Patient Details →
                 </button>
@@ -281,7 +281,7 @@ export default function BookingModal({
 
           {step === 3 && (
             <form onSubmit={handleNext} className="space-y-4">
-              <div className="p-3.5 rounded-xl bg-[#E6F5F4]/50 border border-[#CCECE8] flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs gap-2">
+              <div className="p-3.5 rounded-xl bg-[#e5f6f4]/50 border border-[#ccf0eb] flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs gap-2">
                 <div>
                   <span className="text-slate-500">Doctor: </span>
                   <span className="font-bold text-[#101828]">{currentDoctorObj?.name}</span>
@@ -289,12 +289,12 @@ export default function BookingModal({
                   <span className="text-slate-500">Service: </span>
                   <span className="font-bold text-[#101828]">{currentServiceObj?.title}</span>
                 </div>
-                <div className="font-bold text-[#0D7A75]">{selectedDate} @ {selectedSlot}</div>
+                <div className="font-bold text-[#00a896]">{selectedDate} @ {selectedSlot}</div>
               </div>
 
               <div>
                 <label className="block text-xs font-semibold text-[#101828] mb-1 flex items-center gap-1">
-                  <User className="w-3.5 h-3.5 text-[#0D7A75]" /> Full Name *
+                  <User className="w-3.5 h-3.5 text-[#00a896]" /> Full Name *
                 </label>
                 <input
                   type="text"
@@ -302,14 +302,14 @@ export default function BookingModal({
                   placeholder="e.g. Rahul Sharma / Ananya Verma"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#0D7A75] text-sm"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00a896] text-sm"
                 />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label className="block text-xs font-semibold text-[#101828] mb-1 flex items-center gap-1">
-                    <Phone className="w-3.5 h-3.5 text-[#0D7A75]" /> Phone Number *
+                    <Phone className="w-3.5 h-3.5 text-[#00a896]" /> Phone Number *
                   </label>
                   <input
                     type="tel"
@@ -317,19 +317,19 @@ export default function BookingModal({
                     placeholder="+91 98765 00000"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#0D7A75] text-sm"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00a896] text-sm"
                   />
                 </div>
                 <div>
                   <label className="block text-xs font-semibold text-[#101828] mb-1 flex items-center gap-1">
-                    <Mail className="w-3.5 h-3.5 text-[#0D7A75]" /> Email Address (Optional)
+                    <Mail className="w-3.5 h-3.5 text-[#00a896]" /> Email Address (Optional)
                   </label>
                   <input
                     type="email"
                     placeholder="patient@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#0D7A75] text-sm"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00a896] text-sm"
                   />
                 </div>
               </div>
@@ -343,12 +343,12 @@ export default function BookingModal({
                   placeholder="e.g. Tooth sensitivity in lower molar, interested in invisible aligners, routine annual cleaning..."
                   value={formData.notes}
                   onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                  className="w-full px-3.5 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#0D7A75] text-sm resize-none"
+                  className="w-full px-3.5 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00a896] text-sm resize-none"
                 />
               </div>
 
               <div className="p-3 rounded-lg bg-emerald-50 border border-emerald-200/60 flex items-start gap-2 text-xs text-emerald-900">
-                <AlertCircle className="w-4 h-4 text-[#0D7A75] flex-shrink-0 mt-0.5" />
+                <AlertCircle className="w-4 h-4 text-[#00a896] flex-shrink-0 mt-0.5" />
                 <span>
                   Zero advance booking fee. WhatsApp appointment confirmation will be sent to your phone.
                 </span>
@@ -365,7 +365,7 @@ export default function BookingModal({
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="px-8 py-3 rounded-full bg-[#0D7A75] text-white font-semibold hover:bg-[#095C58] transition-all shadow-md text-sm flex items-center gap-2"
+                  className="px-8 py-3 rounded-full bg-[#00a896] text-white font-semibold hover:bg-[#008f7f] transition-all shadow-md text-sm flex items-center gap-2"
                 >
                   {isSubmitting ? "Confirming..." : "Confirm Appointment ✓"}
                 </button>
@@ -375,7 +375,7 @@ export default function BookingModal({
 
           {step === 4 && (
             <div className="text-center py-4 space-y-6">
-              <div className="w-16 h-16 bg-[#E6F5F4] text-[#0D7A75] rounded-full flex items-center justify-center mx-auto ring-8 ring-[#E6F5F4]/50">
+              <div className="w-16 h-16 bg-[#e5f6f4] text-[#00a896] rounded-full flex items-center justify-center mx-auto ring-8 ring-[#e5f6f4]/50">
                 <CheckCircle2 className="w-10 h-10" />
               </div>
 
@@ -389,7 +389,7 @@ export default function BookingModal({
               <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 text-left space-y-3 max-w-md mx-auto text-xs sm:text-sm">
                 <div className="flex justify-between border-b border-slate-200 pb-2">
                   <span className="text-slate-500">Booking Reference:</span>
-                  <span className="font-mono font-bold text-[#0D7A75]">{bookingRef}</span>
+                  <span className="font-mono font-bold text-[#00a896]">{bookingRef}</span>
                 </div>
                 <div className="flex justify-between border-b border-slate-200 pb-2">
                   <span className="text-slate-500">Attending Doctor:</span>
@@ -401,7 +401,7 @@ export default function BookingModal({
                 </div>
                 <div className="flex justify-between border-b border-slate-200 pb-2">
                   <span className="text-slate-500">Estimated Price:</span>
-                  <span className="font-bold text-[#0D7A75]">{currentServiceObj?.priceEstimate}</span>
+                  <span className="font-bold text-[#00a896]">{currentServiceObj?.priceEstimate}</span>
                 </div>
                 <div className="flex justify-between border-b border-slate-200 pb-2">
                   <span className="text-slate-500">Date & Slot:</span>
@@ -417,7 +417,7 @@ export default function BookingModal({
                 <button
                   type="button"
                   onClick={handleReset}
-                  className="px-6 py-2.5 rounded-full bg-[#0D7A75] text-white font-semibold text-sm hover:bg-[#095C58] transition-all"
+                  className="px-6 py-2.5 rounded-full bg-[#00a896] text-white font-semibold text-sm hover:bg-[#008f7f] transition-all"
                 >
                   Done & Close
                 </button>
@@ -425,7 +425,7 @@ export default function BookingModal({
                   href={`tel:${currentLocationObj?.phone}`}
                   className="px-6 py-2.5 rounded-full border border-slate-300 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-all inline-flex items-center justify-center gap-2"
                 >
-                  <Phone className="w-4 h-4 text-[#0D7A75]" /> Call: {currentLocationObj?.phone}
+                  <Phone className="w-4 h-4 text-[#00a896]" /> Call: {currentLocationObj?.phone}
                 </a>
               </div>
             </div>
@@ -435,3 +435,4 @@ export default function BookingModal({
     </div>
   );
 }
+

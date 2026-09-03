@@ -49,7 +49,7 @@ export default function ProcessSection({ onOpenBooking }: ProcessSectionProps) {
         {/* Header matching design.md */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div className="space-y-2 max-w-lg">
-            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#0D7A75]">
+            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#00a896]">
               <Sparkles className="w-3.5 h-3.5" />
               Our Process
             </div>
@@ -86,7 +86,7 @@ export default function ProcessSection({ onOpenBooking }: ProcessSectionProps) {
                     onClick={() => setActiveStep(step.number)}
                     className={`p-6 rounded-2xl border text-center transition-all duration-300 h-full flex flex-col items-center justify-between cursor-pointer group ${
                       isActive
-                        ? "bg-white border-[#0D7A75] ring-2 ring-[#0D7A75]/20 shadow-xl"
+                        ? "bg-white border-[#00a896] ring-2 ring-[#00a896]/20 shadow-xl"
                         : "bg-[#FBFDFC] border-slate-200/80 hover:border-[#A3E3DF] hover:bg-white shadow-xs"
                     }`}
                   >
@@ -97,8 +97,8 @@ export default function ProcessSection({ onOpenBooking }: ProcessSectionProps) {
                       <div
                         className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 ${
                           isActive
-                            ? "bg-[#0D7A75] text-white shadow-lg shadow-[#0D7A75]/30 scale-110"
-                            : "bg-[#E6F5F4] text-[#0D7A75] group-hover:scale-105"
+                            ? "bg-[#00a896] text-white shadow-lg shadow-[#00a896]/30 scale-110"
+                            : "bg-[#e5f6f4] text-[#00a896] group-hover:scale-105"
                         }`}
                       >
                         <Icon className="w-7 h-7" />
@@ -109,7 +109,7 @@ export default function ProcessSection({ onOpenBooking }: ProcessSectionProps) {
                         className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-colors ${
                           isActive
                             ? "bg-[#101828] text-white"
-                            : "bg-slate-100 text-slate-700 border border-slate-200 group-hover:bg-[#0D7A75] group-hover:text-white"
+                            : "bg-slate-100 text-slate-700 border border-slate-200 group-hover:bg-[#00a896] group-hover:text-white"
                         }`}
                       >
                         {step.number}
@@ -117,7 +117,7 @@ export default function ProcessSection({ onOpenBooking }: ProcessSectionProps) {
 
                       {/* Title & Description */}
                       <div className="space-y-2">
-                        <h3 className="text-base sm:text-lg font-bold text-[#101828] group-hover:text-[#0D7A75] transition-colors">
+                        <h3 className="text-base sm:text-lg font-bold text-[#101828] group-hover:text-[#00a896] transition-colors">
                           {step.title}
                         </h3>
                         <p className="text-xs text-[#475569] leading-relaxed">
@@ -144,7 +144,7 @@ export default function ProcessSection({ onOpenBooking }: ProcessSectionProps) {
         <div className="mt-12 text-center">
           <button
             onClick={onOpenBooking}
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#0D7A75] hover:bg-[#095C58] text-white text-sm font-semibold shadow-md hover:shadow-lg transition-all"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#00a896] hover:bg-[#008f7f] text-white text-sm font-semibold shadow-md hover:shadow-lg transition-all"
           >
             <span>Start Step 1: Book Consultation in Greater Noida</span>
             <ArrowRight className="w-4 h-4" />
@@ -155,3 +155,4 @@ export default function ProcessSection({ onOpenBooking }: ProcessSectionProps) {
     </section>
   );
 }
+

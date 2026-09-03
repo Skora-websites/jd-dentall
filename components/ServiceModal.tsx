@@ -38,7 +38,7 @@ export default function ServiceModal({ service, onClose, onBookNow }: ServiceMod
           </button>
 
           <div className="absolute bottom-4 left-6 right-6 text-white">
-            <span className="inline-block px-3 py-1 rounded-full bg-[#0D7A75] text-white text-xs font-semibold uppercase tracking-wider mb-2">
+            <span className="inline-block px-3 py-1 rounded-full bg-[#00a896] text-white text-xs font-semibold uppercase tracking-wider mb-2">
               {service.badgeText} • {service.category}
             </span>
             <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
@@ -50,7 +50,7 @@ export default function ServiceModal({ service, onClose, onBookNow }: ServiceMod
         {/* Content Body */}
         <div className="p-6 sm:p-8 space-y-6 max-h-[60vh] overflow-y-auto">
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-wider text-[#0D7A75] mb-2 flex items-center gap-1.5">
+            <h4 className="text-sm font-bold uppercase tracking-wider text-[#00a896] mb-2 flex items-center gap-1.5">
               <Sparkles className="w-4 h-4" /> Clinical Overview
             </h4>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
@@ -58,12 +58,12 @@ export default function ServiceModal({ service, onClose, onBookNow }: ServiceMod
             </p>
           </div>
 
-          <div className="p-4 rounded-2xl bg-[#E6F5F4]/60 border border-[#CCECE8]">
+          <div className="p-4 rounded-2xl bg-[#e5f6f4]/60 border border-[#ccf0eb]">
             <h4 className="text-sm font-bold text-[#101828] mb-3">Key Treatment Benefits:</h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
               {service.benefits.map((benefit, idx) => (
                 <div key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
-                  <CheckCircle2 className="w-4 h-4 text-[#0D7A75] flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-[#00a896] flex-shrink-0 mt-0.5" />
                   <span>{benefit}</span>
                 </div>
               ))}
@@ -73,11 +73,11 @@ export default function ServiceModal({ service, onClose, onBookNow }: ServiceMod
           <div className="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-slate-100">
             <div className="flex items-center gap-4 text-xs sm:text-sm text-slate-600">
               <div className="flex items-center gap-1.5 font-medium">
-                <Clock className="w-4 h-4 text-[#0D7A75]" />
+                <Clock className="w-4 h-4 text-[#00a896]" />
                 <span>{service.duration}</span>
               </div>
               <div className="font-bold text-[#101828] text-base">
-                Est. Fee: <span className="text-[#0D7A75]">{service.priceEstimate}</span>
+                Est. Fee: <span className="text-[#00a896]">{service.priceEstimate}</span>
               </div>
             </div>
 
@@ -95,7 +95,7 @@ export default function ServiceModal({ service, onClose, onBookNow }: ServiceMod
                   onClose();
                   onBookNow(service.id);
                 }}
-                className="px-6 py-2.5 rounded-full bg-[#0D7A75] text-white font-semibold text-sm hover:bg-[#095C58] transition-all shadow-md flex items-center gap-2"
+                className="px-6 py-2.5 rounded-full bg-[#00a896] text-white font-semibold text-sm hover:bg-[#008f7f] transition-all shadow-md flex items-center gap-2"
               >
                 <Calendar className="w-4 h-4" /> Book This Treatment
               </button>
@@ -106,3 +106,4 @@ export default function ServiceModal({ service, onClose, onBookNow }: ServiceMod
     </div>
   );
 }
+

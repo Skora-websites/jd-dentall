@@ -32,14 +32,14 @@ export default function ServicesSection({ onSelectService, onOpenBooking }: Serv
   const getBadgeIcon = (iconName: string) => {
     switch (iconName) {
       case "Stethoscope":
-        return <Stethoscope className="w-4 h-4 text-[#0D7A75]" />;
+        return <Stethoscope className="w-4 h-4 text-[#00a896]" />;
       case "Sparkles":
-        return <Sparkles className="w-4 h-4 text-[#0D7A75]" />;
+        return <Sparkles className="w-4 h-4 text-[#00a896]" />;
       case "ShieldCheck":
-        return <ShieldCheck className="w-4 h-4 text-[#0D7A75]" />;
+        return <ShieldCheck className="w-4 h-4 text-[#00a896]" />;
       case "Smile":
       default:
-        return <Smile className="w-4 h-4 text-[#0D7A75]" />;
+        return <Smile className="w-4 h-4 text-[#00a896]" />;
     }
   };
 
@@ -52,7 +52,7 @@ export default function ServicesSection({ onSelectService, onOpenBooking }: Serv
           
           {/* Header Left */}
           <div className="space-y-2 max-w-xl">
-            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#0D7A75]">
+            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#00a896]">
               <Sparkles className="w-3.5 h-3.5" />
               Our Dental Services
             </div>
@@ -70,14 +70,14 @@ export default function ServicesSection({ onSelectService, onOpenBooking }: Serv
             <div className="flex items-center gap-2">
               <button
                 onClick={handlePrev}
-                className="w-10 h-10 rounded-full border border-slate-200 bg-white hover:bg-[#0D7A75] hover:text-white hover:border-[#0D7A75] text-[#101828] flex items-center justify-center transition-all shadow-xs"
+                className="w-10 h-10 rounded-full border border-slate-200 bg-white hover:bg-[#00a896] hover:text-white hover:border-[#00a896] text-[#101828] flex items-center justify-center transition-all shadow-xs"
                 aria-label="Previous Service"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
               <button
                 onClick={handleNext}
-                className="w-10 h-10 rounded-full border border-slate-200 bg-white hover:bg-[#0D7A75] hover:text-white hover:border-[#0D7A75] text-[#101828] flex items-center justify-center transition-all shadow-xs"
+                className="w-10 h-10 rounded-full border border-slate-200 bg-white hover:bg-[#00a896] hover:text-white hover:border-[#00a896] text-[#101828] flex items-center justify-center transition-all shadow-xs"
                 aria-label="Next Service"
               >
                 <ChevronRight className="w-5 h-5" />
@@ -95,8 +95,8 @@ export default function ServicesSection({ onSelectService, onOpenBooking }: Serv
               onClick={() => setActiveFilter(cat)}
               className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all ${
                 activeFilter === cat
-                  ? "bg-[#0D7A75] text-white shadow-sm"
-                  : "bg-white text-[#475569] hover:bg-[#E6F5F4] hover:text-[#0D7A75] border border-slate-200"
+                  ? "bg-[#00a896] text-white shadow-sm"
+                  : "bg-white text-[#475569] hover:bg-[#e5f6f4] hover:text-[#00a896] border border-slate-200"
               }`}
             >
               {cat === "all" ? "All Specialized Treatments" : cat}
@@ -141,10 +141,10 @@ export default function ServicesSection({ onSelectService, onOpenBooking }: Serv
                 <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                   <div className="space-y-2">
                     <div className="flex justify-between items-start">
-                      <h3 className="text-lg font-bold text-[#101828] group-hover:text-[#0D7A75] transition-colors">
+                      <h3 className="text-lg font-bold text-[#101828] group-hover:text-[#00a896] transition-colors">
                         {service.title}
                       </h3>
-                      <span className="text-xs font-bold text-[#0D7A75] bg-[#E6F5F4] px-2 py-0.5 rounded-full">
+                      <span className="text-xs font-bold text-[#00a896] bg-[#e5f6f4] px-2 py-0.5 rounded-full">
                         {service.priceEstimate}
                       </span>
                     </div>
@@ -156,7 +156,7 @@ export default function ServicesSection({ onSelectService, onOpenBooking }: Serv
                   <div className="pt-2 border-t border-slate-100 flex items-center justify-between">
                     <button
                       onClick={() => onSelectService(service)}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0D7A75] hover:text-[#095C58] group/link transition-colors"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#00a896] hover:text-[#008f7f] group/link transition-colors"
                     >
                       <span>Learn More</span>
                       <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
@@ -176,3 +176,4 @@ export default function ServicesSection({ onSelectService, onOpenBooking }: Serv
     </section>
   );
 }
+

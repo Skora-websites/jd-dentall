@@ -39,7 +39,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
             <p className="text-slate-500">The service you&apos;re looking for doesn&apos;t exist.</p>
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0D7A75] text-white font-semibold hover:bg-[#095C58] transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#00a896] text-white font-semibold hover:bg-[#008f7f] transition-all"
             >
               View All Services <ArrowRight className="w-4 h-4" />
             </Link>
@@ -53,14 +53,14 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
   const getBadgeIcon = (iconName: string) => {
     switch (iconName) {
       case "Stethoscope":
-        return <Stethoscope className="w-8 h-8 text-[#0D7A75]" />;
+        return <Stethoscope className="w-8 h-8 text-[#00a896]" />;
       case "Sparkles":
-        return <Sparkles className="w-8 h-8 text-[#0D7A75]" />;
+        return <Sparkles className="w-8 h-8 text-[#00a896]" />;
       case "ShieldCheck":
-        return <ShieldCheck className="w-8 h-8 text-[#0D7A75]" />;
+        return <ShieldCheck className="w-8 h-8 text-[#00a896]" />;
       case "Smile":
       default:
-        return <Smile className="w-8 h-8 text-[#0D7A75]" />;
+        return <Smile className="w-8 h-8 text-[#00a896]" />;
     }
   };
 
@@ -88,32 +88,32 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
               {/* Main Content */}
               <div className="lg:col-span-8 space-y-8">
                 {/* Service Image */}
-                <div className="relative h-72 md:h-96 rounded-3xl overflow-hidden bg-gradient-to-br from-[#E6F5F4] to-[#CCECE8]">
+                <div className="relative h-72 md:h-96 rounded-3xl overflow-hidden bg-gradient-to-br from-[#e5f6f4] to-[#ccf0eb]">
                   <div className="absolute inset-0 flex items-center justify-center">
                     {getBadgeIcon(service.iconName)}
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                   <div className="absolute bottom-4 left-4 px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm shadow-md">
-                    <span className="text-sm font-bold text-[#0D7A75]">{service.badgeText}</span>
+                    <span className="text-sm font-bold text-[#00a896]">{service.badgeText}</span>
                   </div>
                 </div>
 
                 {/* Overview */}
                 <div className="space-y-4">
                   <h2 className="text-2xl font-extrabold text-[#101828] flex items-center gap-2">
-                    <Sparkles className="w-5 h-5 text-[#0D7A75]" />
+                    <Sparkles className="w-5 h-5 text-[#00a896]" />
                     Clinical Overview
                   </h2>
                   <p className="text-slate-600 leading-relaxed">{service.fullDetails}</p>
                 </div>
 
                 {/* Benefits */}
-                <div className="p-6 rounded-2xl bg-[#E6F5F4]/60 border border-[#CCECE8] space-y-4">
+                <div className="p-6 rounded-2xl bg-[#e5f6f4]/60 border border-[#ccf0eb] space-y-4">
                   <h3 className="text-lg font-bold text-[#101828]">Key Treatment Benefits</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {service.benefits.map((benefit, idx) => (
                       <div key={idx} className="flex items-start gap-2 text-sm text-slate-700">
-                        <CheckCircle2 className="w-5 h-5 text-[#0D7A75] flex-shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-5 h-5 text-[#00a896] flex-shrink-0 mt-0.5" />
                         <span>{benefit}</span>
                       </div>
                     ))}
@@ -150,7 +150,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                         key={item.step}
                         className="flex items-start gap-4 p-4 rounded-xl bg-white border border-slate-100 hover:border-[#A3E3DF] transition-all"
                       >
-                        <div className="w-10 h-10 rounded-full bg-[#0D7A75] text-white flex items-center justify-center font-bold flex-shrink-0">
+                        <div className="w-10 h-10 rounded-full bg-[#00a896] text-white flex items-center justify-center font-bold flex-shrink-0">
                           {item.step}
                         </div>
                         <div>
@@ -168,7 +168,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                 {/* Price Card */}
                 <div className="sticky top-24 rounded-2xl bg-white border border-slate-200 shadow-lg p-6 space-y-6">
                   <div className="text-center space-y-2">
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#0D7A75]">
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#00a896]">
                       Starting From
                     </span>
                     <div className="text-4xl font-black text-[#101828]">{service.priceEstimate}</div>
@@ -176,11 +176,11 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
 
                   <div className="space-y-3 text-sm">
                     <div className="flex items-center gap-2 text-slate-600">
-                      <Clock className="w-4 h-4 text-[#0D7A75]" />
+                      <Clock className="w-4 h-4 text-[#00a896]" />
                       <span>Duration: {service.duration}</span>
                     </div>
                     <div className="flex items-center gap-2 text-slate-600">
-                      <Stethoscope className="w-4 h-4 text-[#0D7A75]" />
+                      <Stethoscope className="w-4 h-4 text-[#00a896]" />
                       <span>Category: {service.category}</span>
                     </div>
                   </div>
@@ -190,7 +190,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                       setSelectedServiceId(service.slug);
                       setIsBookingOpen(true);
                     }}
-                    className="w-full py-3 rounded-full bg-[#0D7A75] text-white font-semibold hover:bg-[#095C58] transition-all shadow-md flex items-center justify-center gap-2"
+                    className="w-full py-3 rounded-full bg-[#00a896] text-white font-semibold hover:bg-[#008f7f] transition-all shadow-md flex items-center justify-center gap-2"
                   >
                     <Calendar className="w-4 h-4" />
                     Book This Treatment
@@ -200,7 +200,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                     href="tel:09800000881"
                     className="w-full py-3 rounded-full border border-slate-200 text-slate-700 font-semibold text-center flex items-center justify-center gap-2 hover:bg-slate-50 transition-all"
                   >
-                    <Phone className="w-4 h-4 text-[#0D7A75]" />
+                    <Phone className="w-4 h-4 text-[#00a896]" />
                     Call: 098000 00881
                   </a>
 
@@ -217,15 +217,15 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                       <Link
                         key={rel.id}
                         href={`/services/${rel.slug}`}
-                        className="flex items-center justify-between p-3 rounded-xl bg-[#FBFDFC] border border-slate-100 hover:border-[#A3E3DF] hover:bg-[#E6F5F4]/30 transition-all group"
+                        className="flex items-center justify-between p-3 rounded-xl bg-[#FBFDFC] border border-slate-100 hover:border-[#A3E3DF] hover:bg-[#e5f6f4]/30 transition-all group"
                       >
                         <div>
-                          <div className="text-sm font-bold text-[#101828] group-hover:text-[#0D7A75] transition-colors">
+                          <div className="text-sm font-bold text-[#101828] group-hover:text-[#00a896] transition-colors">
                             {rel.title}
                           </div>
                           <div className="text-xs text-slate-500">{rel.priceEstimate}</div>
                         </div>
-                        <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-[#0D7A75] group-hover:translate-x-1 transition-all" />
+                        <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-[#00a896] group-hover:translate-x-1 transition-all" />
                       </Link>
                     ))}
                   </div>
@@ -237,7 +237,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                   <div className="space-y-3">
                     {DOCTORS.map((doc) => (
                       <div key={doc.id} className="flex items-center gap-3">
-                        <div className="w-12 h-12 rounded-full bg-[#E6F5F4] flex items-center justify-center text-[#0D7A75] font-bold text-sm">
+                        <div className="w-12 h-12 rounded-full bg-[#e5f6f4] flex items-center justify-center text-[#00a896] font-bold text-sm">
                           {doc.name.charAt(0)}
                         </div>
                         <div>

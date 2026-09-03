@@ -14,8 +14,8 @@ export default function CtaBanner({ onOpenBooking }: CtaBannerProps) {
     <section className="py-12 md:py-20 bg-[#FBFDFC] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Vibrant Teal Rounded Container matching design.md (#16938D / #0D7A75) */}
-        <div className="relative rounded-3xl bg-gradient-to-r from-[#16938D] to-[#0D7A75] text-white p-8 sm:p-12 lg:p-14 overflow-hidden shadow-2xl">
+        {/* Vibrant Teal Rounded Container matching design.md (#00c4b0 / #00a896) */}
+        <div className="relative rounded-3xl bg-gradient-to-r from-[#00c4b0] to-[#00a896] text-white p-8 sm:p-12 lg:p-14 overflow-hidden shadow-2xl">
           
           {/* Subtle Ambient Radial Highlights */}
           <div className="absolute top-0 right-1/4 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none" />
@@ -44,9 +44,9 @@ export default function CtaBanner({ onOpenBooking }: CtaBannerProps) {
               <div className="pt-4 flex flex-wrap items-center gap-4">
                 <button
                   onClick={onOpenBooking}
-                  className="px-8 py-3.5 rounded-full bg-white text-[#0D7A75] font-extrabold text-sm sm:text-base hover:bg-slate-50 transition-all shadow-xl hover:scale-105 active:scale-95 flex items-center gap-2 group"
+                  className="px-8 py-3.5 rounded-full bg-white text-[#00a896] font-extrabold text-sm sm:text-base hover:bg-slate-50 transition-all shadow-xl hover:scale-105 active:scale-95 flex items-center gap-2 group"
                 >
-                  <CalendarCheck className="w-4 h-4 text-[#0D7A75]" />
+                  <CalendarCheck className="w-4 h-4 text-[#00a896]" />
                   <span>Book Appointment</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
@@ -92,3 +92,4 @@ export default function CtaBanner({ onOpenBooking }: CtaBannerProps) {
     </section>
   );
 }
+

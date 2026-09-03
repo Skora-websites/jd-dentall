@@ -91,7 +91,7 @@ export default function LocationsPage() {
                       {/* Content */}
                       <div className="p-6 sm:p-8 space-y-5">
                         <div className="flex items-start gap-3 p-3 rounded-xl bg-[#FBFDFC] border border-slate-100">
-                          <MapPin className="w-5 h-5 text-[#0D7A75] flex-shrink-0 mt-0.5" />
+                          <MapPin className="w-5 h-5 text-[#00a896] flex-shrink-0 mt-0.5" />
                           <div>
                             <span className="text-sm font-semibold text-[#101828] block">Address</span>
                             <span className="text-xs text-slate-600">{clinic.fullAddress}</span>
@@ -99,15 +99,15 @@ export default function LocationsPage() {
                         </div>
 
                         <div className="flex items-center gap-3 p-3 rounded-xl bg-[#FBFDFC] border border-slate-100">
-                          <Phone className="w-5 h-5 text-[#0D7A75] flex-shrink-0" />
+                          <Phone className="w-5 h-5 text-[#00a896] flex-shrink-0" />
                           <div>
                             <span className="text-sm font-semibold text-[#101828] block">Phone</span>
-                            <a href={`tel:${clinic.phone}`} className="text-sm text-[#0D7A75] font-bold hover:underline">{clinic.phone}</a>
+                            <a href={`tel:${clinic.phone}`} className="text-sm text-[#00a896] font-bold hover:underline">{clinic.phone}</a>
                           </div>
                         </div>
 
                         <div className="flex items-start gap-3 p-3 rounded-xl bg-[#FBFDFC] border border-slate-100">
-                          <Clock className="w-5 h-5 text-[#0D7A75] flex-shrink-0 mt-0.5" />
+                          <Clock className="w-5 h-5 text-[#00a896] flex-shrink-0 mt-0.5" />
                           <div className="space-y-1">
                             <span className="text-sm font-semibold text-[#101828] block">Opening Hours</span>
                             <div className="text-xs space-y-0.5">
@@ -131,7 +131,7 @@ export default function LocationsPage() {
                           <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Services Available</span>
                           <div className="flex flex-wrap gap-2 mt-2">
                             {clinic.features.map((feature, idx) => (
-                              <span key={idx} className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#E6F5F4] text-[#0D7A75] text-[11px] font-semibold">
+                              <span key={idx} className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#e5f6f4] text-[#00a896] text-[11px] font-semibold">
                                 <CheckCircle2 className="w-3 h-3" />
                                 {feature}
                               </span>
@@ -140,12 +140,12 @@ export default function LocationsPage() {
                         </div>
 
                         <div className="flex gap-3 pt-2">
-                          <a href={clinic.mapUrl} target="_blank" rel="noopener noreferrer" className="flex-1 py-3 rounded-full bg-[#0D7A75] text-white text-sm font-semibold text-center hover:bg-[#095C58] transition-all flex items-center justify-center gap-2">
+                          <a href={clinic.mapUrl} target="_blank" rel="noopener noreferrer" className="flex-1 py-3 rounded-full bg-[#00a896] text-white text-sm font-semibold text-center hover:bg-[#008f7f] transition-all flex items-center justify-center gap-2">
                             <Navigation className="w-4 h-4" />
                             Get Directions
                           </a>
                           <a href={`tel:${clinic.phone}`} className="px-5 py-3 rounded-full border border-slate-200 text-slate-700 text-sm font-semibold hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
-                            <Phone className="w-4 h-4 text-[#0D7A75]" />
+                            <Phone className="w-4 h-4 text-[#00a896]" />
                             Call
                           </a>
                         </div>
@@ -165,3 +165,4 @@ export default function LocationsPage() {
     </div>
   );
 }
+

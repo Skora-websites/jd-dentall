@@ -24,7 +24,7 @@ export default function TestimonialsSection() {
         
         {/* Header matching design.md */}
         <div className="text-left mb-12 space-y-2">
-          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#0D7A75]">
+          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#00a896]">
             <MessageSquareQuote className="w-4 h-4" />
             What Our Patients Say
           </div>
@@ -42,7 +42,7 @@ export default function TestimonialsSection() {
               <div className="rounded-3xl bg-[#FBFDFC] border border-slate-200/90 p-8 sm:p-10 shadow-lg relative flex flex-col justify-between min-h-[380px]">
                 
                 {/* Decorative Giant Quote Mark */}
-                <div className="text-6xl font-serif text-[#0D7A75] leading-none mb-2 select-none">
+                <div className="text-6xl font-serif text-[#00a896] leading-none mb-2 select-none">
                   “
                 </div>
 
@@ -66,7 +66,7 @@ export default function TestimonialsSection() {
                 {/* Author Info & Navigation Controls */}
                 <div className="pt-6 border-t border-slate-200/80 flex items-center justify-between mt-6">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-full bg-[#E6F5F4] border-2 border-[#0D7A75] flex items-center justify-center text-[#0D7A75] font-bold overflow-hidden shadow-xs">
+                    <div className="w-12 h-12 rounded-full bg-[#e5f6f4] border-2 border-[#00a896] flex items-center justify-center text-[#00a896] font-bold overflow-hidden shadow-xs">
                       <img
                         src={currentTestimonial.image}
                         alt={currentTestimonial.name}
@@ -80,7 +80,7 @@ export default function TestimonialsSection() {
                       <div className="font-bold text-[#101828] text-base">
                         {currentTestimonial.name}
                       </div>
-                      <div className="text-xs font-semibold text-[#0D7A75] flex items-center gap-1">
+                      <div className="text-xs font-semibold text-[#00a896] flex items-center gap-1">
                         <CheckCircle2 className="w-3.5 h-3.5" />
                         {currentTestimonial.role} • {currentTestimonial.location}
                       </div>
@@ -94,14 +94,14 @@ export default function TestimonialsSection() {
                   <div className="flex items-center gap-2">
                     <button
                       onClick={handlePrev}
-                      className="w-10 h-10 rounded-full border border-slate-200 bg-white hover:bg-[#0D7A75] hover:text-white hover:border-[#0D7A75] text-[#101828] flex items-center justify-center transition-all shadow-xs"
+                      className="w-10 h-10 rounded-full border border-slate-200 bg-white hover:bg-[#00a896] hover:text-white hover:border-[#00a896] text-[#101828] flex items-center justify-center transition-all shadow-xs"
                       aria-label="Previous Testimonial"
                     >
                       <ChevronLeft className="w-5 h-5" />
                     </button>
                     <button
                       onClick={handleNext}
-                      className="w-10 h-10 rounded-full border border-slate-200 bg-white hover:bg-[#0D7A75] hover:text-white hover:border-[#0D7A75] text-[#101828] flex items-center justify-center transition-all shadow-xs"
+                      className="w-10 h-10 rounded-full border border-slate-200 bg-white hover:bg-[#00a896] hover:text-white hover:border-[#00a896] text-[#101828] flex items-center justify-center transition-all shadow-xs"
                       aria-label="Next Testimonial"
                     >
                       <ChevronRight className="w-5 h-5" />
@@ -116,7 +116,7 @@ export default function TestimonialsSection() {
                       key={idx}
                       onClick={() => setCurrentIndex(idx)}
                       className={`h-2 rounded-full transition-all ${
-                        currentIndex === idx ? "w-6 bg-[#0D7A75]" : "w-2 bg-slate-300"
+                        currentIndex === idx ? "w-6 bg-[#00a896]" : "w-2 bg-slate-300"
                       }`}
                       aria-label={`Testimonial slide ${idx + 1}`}
                     />
@@ -139,18 +139,18 @@ export default function TestimonialsSection() {
                   }}
                   className="w-full h-[440px] object-cover object-top"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#063B36]/60 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0f3057]/60 via-transparent to-transparent" />
                 
                 <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl glass-panel text-[#101828] shadow-xl flex items-center justify-between">
                   <div>
-                    <div className="text-xs font-bold text-[#0D7A75] uppercase tracking-wider">
+                    <div className="text-xs font-bold text-[#00a896] uppercase tracking-wider">
                       Verified Smile Transformation
                     </div>
                     <div className="text-sm font-extrabold text-[#101828] mt-0.5">
                       100% Pain-Free Experience
                     </div>
                   </div>
-                  <div className="px-3 py-1.5 rounded-full bg-[#0D7A75] text-white text-xs font-bold shadow-xs">
+                  <div className="px-3 py-1.5 rounded-full bg-[#00a896] text-white text-xs font-bold shadow-xs">
                     ★ 5.0 Rating
                   </div>
                 </div>
@@ -164,3 +164,4 @@ export default function TestimonialsSection() {
     </section>
   );
 }
+

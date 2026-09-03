@@ -37,7 +37,7 @@ export default function BlogModal({ post, onClose }: BlogModalProps) {
           </button>
 
           <div className="absolute bottom-4 left-6 right-6 text-white">
-            <span className="inline-block px-3 py-1 rounded-full bg-[#0D7A75] text-white text-xs font-semibold uppercase tracking-wider mb-2">
+            <span className="inline-block px-3 py-1 rounded-full bg-[#00a896] text-white text-xs font-semibold uppercase tracking-wider mb-2">
               {post.category}
             </span>
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-white line-clamp-2">
@@ -50,7 +50,7 @@ export default function BlogModal({ post, onClose }: BlogModalProps) {
         <div className="p-6 sm:p-8 overflow-y-auto space-y-5">
           <div className="flex flex-wrap items-center gap-4 text-xs text-slate-500 pb-3 border-b border-slate-100">
             <span className="flex items-center gap-1 font-medium text-[#101828]">
-              <User className="w-3.5 h-3.5 text-[#0D7A75]" /> By {post.author}
+              <User className="w-3.5 h-3.5 text-[#00a896]" /> By {post.author}
             </span>
             <span className="flex items-center gap-1">
               <Calendar className="w-3.5 h-3.5 text-slate-400" /> {post.date}
@@ -60,7 +60,7 @@ export default function BlogModal({ post, onClose }: BlogModalProps) {
             </span>
           </div>
 
-          <div className="p-4 rounded-xl bg-[#E6F5F4]/40 border-l-4 border-[#0D7A75] text-slate-700 italic text-sm">
+          <div className="p-4 rounded-xl bg-[#e5f6f4]/40 border-l-4 border-[#00a896] text-slate-700 italic text-sm">
             {post.excerpt}
           </div>
 
@@ -72,12 +72,12 @@ export default function BlogModal({ post, onClose }: BlogModalProps) {
 
           <div className="pt-6 border-t border-slate-100 flex justify-between items-center">
             <div className="flex items-center gap-2 text-xs text-slate-500">
-              <BookOpen className="w-4 h-4 text-[#0D7A75]" />
+              <BookOpen className="w-4 h-4 text-[#00a896]" />
               <span>Published by J.D. Dentals Clinical Team (Greater Noida)</span>
             </div>
             <button
               onClick={onClose}
-              className="px-6 py-2 rounded-full bg-[#0D7A75] text-white font-semibold text-sm hover:bg-[#095C58] transition-all"
+              className="px-6 py-2 rounded-full bg-[#00a896] text-white font-semibold text-sm hover:bg-[#008f7f] transition-all"
             >
               Done Reading
             </button>
@@ -87,3 +87,4 @@ export default function BlogModal({ post, onClose }: BlogModalProps) {
     </div>
   );
 }
+

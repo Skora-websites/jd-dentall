@@ -18,24 +18,22 @@ export default function Footer() {
           {/* Column 1: Brand & About */}
           <div className="lg:col-span-4 space-y-4">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2.5">
-              <div className="w-10 h-10 rounded-xl bg-[#0A4A44] border border-[#16938D]/40 flex items-center justify-center text-[#A3E3DF]">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="w-6 h-6"
-                >
-                  <path d="M12 2C8.5 2 6 4.5 6 8c0 3 1.5 5.5 2 9 .5 3 2 4.5 4 4.5s3.5-1.5 4-4.5c.5-3.5 2-6 2-9 0-3.5-2.5-6-6-6z" />
-                  <path d="M9 8c.5-1.5 2-2 3-2s2.5.5 3 2" />
-                </svg>
+            <Link href="/" className="flex items-center group">
+              {/* The actual logo image file */}
+              <img 
+                src="/logo.jpg" 
+                alt="J.D. Dentals" 
+                className="h-12 sm:h-14 w-auto rounded-xl bg-white group-hover:scale-[1.02] transition-transform duration-300"
+                onError={(e) => {
+                  // Fallback text if the image isn't placed yet
+                  (e.target as HTMLImageElement).style.display = 'none';
+                  (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
+                }}
+              />
+              {/* Fallback displayed only if image is missing */}
+              <div className="hidden flex flex-col justify-center ml-2">
+                <span className="text-xl font-extrabold text-white">J.D. DENTALS</span>
               </div>
-              <span className="text-2xl font-extrabold text-white tracking-tight">
-                J.D.<span className="text-[#16938D]"> Dentals</span>
-              </span>
             </Link>
 
             <p className="text-sm text-slate-300 leading-relaxed max-w-sm">

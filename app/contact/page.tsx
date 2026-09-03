@@ -67,7 +67,7 @@ export default function ContactPage() {
 
                   {isSubmitted ? (
                     <div className="text-center py-12 space-y-4">
-                      <div className="w-16 h-16 bg-[#E6F5F4] text-[#0D7A75] rounded-full flex items-center justify-center mx-auto">
+                      <div className="w-16 h-16 bg-[#e5f6f4] text-[#00a896] rounded-full flex items-center justify-center mx-auto">
                         <CheckCircle2 className="w-10 h-10" />
                       </div>
                       <h3 className="text-xl font-bold text-[#101828]">Message Sent!</h3>
@@ -79,7 +79,7 @@ export default function ContactPage() {
                           setIsSubmitted(false);
                           setFormData({ name: "", phone: "", email: "", subject: "", message: "" });
                         }}
-                        className="px-6 py-2.5 rounded-full bg-[#0D7A75] text-white font-semibold text-sm hover:bg-[#095C58] transition-all"
+                        className="px-6 py-2.5 rounded-full bg-[#00a896] text-white font-semibold text-sm hover:bg-[#008f7f] transition-all"
                       >
                         Send Another Message
                       </button>
@@ -97,7 +97,7 @@ export default function ContactPage() {
                             value={formData.name}
                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                             placeholder="Your name"
-                            className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#0D7A75] text-sm"
+                            className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00a896] text-sm"
                           />
                         </div>
                         <div>
@@ -110,7 +110,7 @@ export default function ContactPage() {
                             value={formData.phone}
                             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                             placeholder="+91 98765 00000"
-                            className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#0D7A75] text-sm"
+                            className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00a896] text-sm"
                           />
                         </div>
                       </div>
@@ -125,7 +125,7 @@ export default function ContactPage() {
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                             placeholder="your@email.com"
-                            className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#0D7A75] text-sm"
+                            className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00a896] text-sm"
                           />
                         </div>
                         <div>
@@ -135,7 +135,7 @@ export default function ContactPage() {
                           <select
                             value={formData.subject}
                             onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                            className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#0D7A75] text-sm bg-white"
+                            className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00a896] text-sm bg-white"
                           >
                             <option value="">Select a topic</option>
                             <option value="appointment">Book Appointment</option>
@@ -157,7 +157,7 @@ export default function ContactPage() {
                           value={formData.message}
                           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                           placeholder="Tell us about your dental concern or question..."
-                          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#0D7A75] text-sm resize-none"
+                          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#00a896] text-sm resize-none"
                         />
                       </div>
 
@@ -168,7 +168,7 @@ export default function ContactPage() {
                         <button
                           type="submit"
                           disabled={isSubmitting}
-                          className="px-8 py-3 rounded-full bg-[#0D7A75] text-white font-semibold text-sm hover:bg-[#095C58] transition-all shadow-md flex items-center gap-2"
+                          className="px-8 py-3 rounded-full bg-[#00a896] text-white font-semibold text-sm hover:bg-[#008f7f] transition-all shadow-md flex items-center gap-2"
                         >
                           {isSubmitting ? (
                             "Sending..."
@@ -188,14 +188,14 @@ export default function ContactPage() {
               {/* Contact Info Sidebar */}
               <div className="lg:col-span-5 space-y-6">
                 {/* Quick Contact */}
-                <div className="rounded-2xl bg-[#063B36] text-white p-6 space-y-5">
+                <div className="rounded-2xl bg-[#0f3057] text-white p-6 space-y-5">
                   <h3 className="text-lg font-bold">Quick Contact</h3>
                   <div className="space-y-4">
                     <a
                       href={`tel:${CLINIC_INFO.phone}`}
                       className="flex items-center gap-3 p-3 rounded-xl bg-white/10 hover:bg-white/15 transition-all"
                     >
-                      <div className="w-10 h-10 rounded-full bg-[#0D7A75] flex items-center justify-center">
+                      <div className="w-10 h-10 rounded-full bg-[#00a896] flex items-center justify-center">
                         <Phone className="w-5 h-5" />
                       </div>
                       <div>
@@ -207,7 +207,7 @@ export default function ContactPage() {
                       href={`mailto:${CLINIC_INFO.email}`}
                       className="flex items-center gap-3 p-3 rounded-xl bg-white/10 hover:bg-white/15 transition-all"
                     >
-                      <div className="w-10 h-10 rounded-full bg-[#0D7A75] flex items-center justify-center">
+                      <div className="w-10 h-10 rounded-full bg-[#00a896] flex items-center justify-center">
                         <Mail className="w-5 h-5" />
                       </div>
                       <div>
@@ -219,7 +219,7 @@ export default function ContactPage() {
                       onClick={() => setIsBookingOpen(true)}
                       className="w-full flex items-center gap-3 p-3 rounded-xl bg-white/10 hover:bg-white/15 transition-all"
                     >
-                      <div className="w-10 h-10 rounded-full bg-[#0D7A75] flex items-center justify-center">
+                      <div className="w-10 h-10 rounded-full bg-[#00a896] flex items-center justify-center">
                         <Calendar className="w-5 h-5" />
                       </div>
                       <div className="text-left">
@@ -238,25 +238,25 @@ export default function ContactPage() {
                   >
                     <h3 className="font-bold text-[#101828]">{clinic.shortName}</h3>
                     <div className="flex items-start gap-2 text-sm text-slate-600">
-                      <MapPin className="w-4 h-4 text-[#0D7A75] flex-shrink-0 mt-0.5" />
+                      <MapPin className="w-4 h-4 text-[#00a896] flex-shrink-0 mt-0.5" />
                       {clinic.address}
                     </div>
                     <div className="flex items-center gap-2 text-sm">
-                      <Phone className="w-4 h-4 text-[#0D7A75] flex-shrink-0" />
+                      <Phone className="w-4 h-4 text-[#00a896] flex-shrink-0" />
                       <a
                         href={`tel:${clinic.phone}`}
-                        className="text-[#0D7A75] font-semibold hover:underline"
+                        className="text-[#00a896] font-semibold hover:underline"
                       >
                         {clinic.phone}
                       </a>
                     </div>
                     <div className="flex items-center gap-2 text-xs text-slate-500">
-                      <Clock className="w-4 h-4 text-[#0D7A75] flex-shrink-0" />
+                      <Clock className="w-4 h-4 text-[#00a896] flex-shrink-0" />
                       Mon-Sat: {clinic.hours.weekday}
                     </div>
                     <Link
                       href={`/locations/${clinic.slug}`}
-                      className="inline-flex items-center gap-1 text-xs font-bold text-[#0D7A75] hover:underline"
+                      className="inline-flex items-center gap-1 text-xs font-bold text-[#00a896] hover:underline"
                     >
                       View Details <ArrowRight className="w-3 h-3" />
                     </Link>
@@ -293,3 +293,4 @@ export default function ContactPage() {
     </div>
   );
 }
+

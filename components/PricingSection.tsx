@@ -15,12 +15,12 @@ export default function PricingSection({ onSelectPlan }: PricingSectionProps) {
   const getPlanIcon = (iconName: string) => {
     switch (iconName) {
       case "Crown":
-        return <Crown className="w-5 h-5 text-[#0D7A75]" />;
+        return <Crown className="w-5 h-5 text-[#00a896]" />;
       case "Users":
-        return <Users className="w-5 h-5 text-[#0D7A75]" />;
+        return <Users className="w-5 h-5 text-[#00a896]" />;
       case "HeartPulse":
       default:
-        return <HeartPulse className="w-5 h-5 text-[#0D7A75]" />;
+        return <HeartPulse className="w-5 h-5 text-[#00a896]" />;
     }
   };
 
@@ -55,7 +55,7 @@ export default function PricingSection({ onSelectPlan }: PricingSectionProps) {
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
-          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#0D7A75]">
+          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#00a896]">
             <Sparkles className="w-3.5 h-3.5" />
             Transparent Greater Noida Pricing
           </div>
@@ -74,7 +74,7 @@ export default function PricingSection({ onSelectPlan }: PricingSectionProps) {
                 onClick={() => setBillingCycle("monthly")}
                 className={`px-4 py-1.5 rounded-full transition-all ${
                   billingCycle === "monthly"
-                    ? "bg-[#0D7A75] text-white shadow-xs"
+                    ? "bg-[#00a896] text-white shadow-xs"
                     : "text-slate-600 hover:text-[#101828]"
                 }`}
               >
@@ -84,7 +84,7 @@ export default function PricingSection({ onSelectPlan }: PricingSectionProps) {
                 onClick={() => setBillingCycle("annual")}
                 className={`px-4 py-1.5 rounded-full transition-all flex items-center gap-1.5 ${
                   billingCycle === "annual"
-                    ? "bg-[#0D7A75] text-white shadow-xs"
+                    ? "bg-[#00a896] text-white shadow-xs"
                     : "text-slate-600 hover:text-[#101828]"
                 }`}
               >
@@ -113,13 +113,13 @@ export default function PricingSection({ onSelectPlan }: PricingSectionProps) {
                 <div
                   className={`h-full rounded-3xl p-8 transition-all duration-300 flex flex-col justify-between relative bg-white ${
                     isPopular
-                      ? "border-2 border-[#0D7A75] shadow-2xl shadow-[#0D7A75]/15 ring-4 ring-[#0D7A75]/10"
+                      ? "border-2 border-[#00a896] shadow-2xl shadow-[#00a896]/15 ring-4 ring-[#00a896]/10"
                       : "border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-[#A3E3DF]"
                   }`}
                 >
                   {/* "Popular" Badge centered at top matching design.md */}
                   {isPopular && (
-                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[#0D7A75] text-white text-xs font-bold uppercase tracking-wider shadow-md">
+                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[#00a896] text-white text-xs font-bold uppercase tracking-wider shadow-md">
                       Most Popular
                     </div>
                   )}
@@ -128,7 +128,7 @@ export default function PricingSection({ onSelectPlan }: PricingSectionProps) {
                     
                     {/* Icon & Plan Title */}
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-2xl bg-[#E6F5F4] border border-[#A3E3DF]/60 flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 rounded-2xl bg-[#e5f6f4] border border-[#A3E3DF]/60 flex items-center justify-center flex-shrink-0">
                         {getPlanIcon(plan.iconName)}
                       </div>
                       <div>
@@ -149,7 +149,7 @@ export default function PricingSection({ onSelectPlan }: PricingSectionProps) {
                           {priceInfo.period}
                         </span>
                       </div>
-                      <p className="text-[11px] text-[#0D7A75] font-semibold mt-1">
+                      <p className="text-[11px] text-[#00a896] font-semibold mt-1">
                         {priceInfo.savings} • Direct consultation in Greater Noida
                       </p>
                     </div>
@@ -158,7 +158,7 @@ export default function PricingSection({ onSelectPlan }: PricingSectionProps) {
                     <div className="space-y-3 pt-2">
                       {plan.features.map((feature, fIdx) => (
                         <div key={fIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                          <div className="w-4 h-4 rounded-full bg-[#E6F5F4] text-[#0D7A75] flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <div className="w-4 h-4 rounded-full bg-[#e5f6f4] text-[#00a896] flex items-center justify-center flex-shrink-0 mt-0.5">
                             <Check className="w-2.5 h-2.5 stroke-[3]" />
                           </div>
                           <span>{feature}</span>
@@ -174,8 +174,8 @@ export default function PricingSection({ onSelectPlan }: PricingSectionProps) {
                       onClick={() => onSelectPlan(plan.name)}
                       className={`w-full py-3 px-6 rounded-full font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-xs ${
                         isPopular
-                          ? "bg-[#0D7A75] hover:bg-[#095C58] text-white shadow-md hover:shadow-lg"
-                          : "bg-white hover:bg-[#0D7A75] text-[#0D7A75] hover:text-white border-2 border-[#0D7A75]"
+                          ? "bg-[#00a896] hover:bg-[#008f7f] text-white shadow-md hover:shadow-lg"
+                          : "bg-white hover:bg-[#00a896] text-[#00a896] hover:text-white border-2 border-[#00a896]"
                       }`}
                     >
                       <span>Choose {plan.name}</span>
@@ -192,7 +192,7 @@ export default function PricingSection({ onSelectPlan }: PricingSectionProps) {
         {/* Insurance & Payment Trust Strip */}
         <div className="mt-12 p-6 rounded-2xl bg-white border border-slate-200/80 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-600">
           <div className="flex items-center gap-2 font-medium text-[#101828]">
-            <ShieldCheck className="w-5 h-5 text-[#0D7A75]" />
+            <ShieldCheck className="w-5 h-5 text-[#00a896]" />
             <span>Accepted Payment Modes in Greater Greater Greater Noida Clinics:</span>
           </div>
           <div className="flex flex-wrap items-center gap-3 font-semibold text-slate-700">
@@ -207,3 +207,4 @@ export default function PricingSection({ onSelectPlan }: PricingSectionProps) {
     </section>
   );
 }
+

@@ -77,7 +77,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <AnimateOnScroll animation="slideRight">
                 <div className="space-y-6">
-                  <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#0D7A75]">
+                  <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#00a896]">
                     <Award className="w-3.5 h-3.5" />
                     Our Mission
                   </div>
@@ -94,7 +94,7 @@ export default function AboutPage() {
                     continue to set the standard for dental excellence in the region.
                   </p>
                   <div className="flex flex-wrap gap-4 pt-4">
-                    <Link href="/doctors" className="px-6 py-3 rounded-full bg-[#0D7A75] text-white font-semibold text-sm hover:bg-[#095C58] transition-all flex items-center gap-2">
+                    <Link href="/doctors" className="px-6 py-3 rounded-full bg-[#00a896] text-white font-semibold text-sm hover:bg-[#008f7f] transition-all flex items-center gap-2">
                       Meet Our Team <ArrowRight className="w-4 h-4" />
                     </Link>
                     <Link href="/services" className="px-6 py-3 rounded-full border border-slate-200 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-all">
@@ -112,8 +112,8 @@ export default function AboutPage() {
                       alt="Modern dental clinic interior"
                       className="w-full h-80 md:h-96 object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#063B36]/80 via-transparent to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-[#063B36] to-transparent">
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f3057]/80 via-transparent to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-[#0f3057] to-transparent">
                       <div className="grid grid-cols-2 gap-4">
                         {[
                           { value: 15, suffix: "+", label: "Years Experience" },
@@ -159,12 +159,12 @@ export default function AboutPage() {
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                        <div className="absolute bottom-3 left-3 w-10 h-10 rounded-xl bg-white shadow-md flex items-center justify-center text-[#0D7A75]">
+                        <div className="absolute bottom-3 left-3 w-10 h-10 rounded-xl bg-white shadow-md flex items-center justify-center text-[#00a896]">
                           <Icon className="w-5 h-5" />
                         </div>
                       </div>
                       <div className="p-5">
-                        <h3 className="text-base font-bold text-[#101828] group-hover:text-[#0D7A75] transition-colors">{value.title}</h3>
+                        <h3 className="text-base font-bold text-[#101828] group-hover:text-[#00a896] transition-colors">{value.title}</h3>
                         <p className="text-xs text-slate-500 mt-2 leading-relaxed">{value.desc}</p>
                       </div>
                     </div>
@@ -185,12 +185,12 @@ export default function AboutPage() {
             </AnimateOnScroll>
 
             <div ref={timelineRef} className="relative">
-              <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#0D7A75] to-[#A3E3DF] -translate-x-1/2" />
+              <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#00a896] to-[#A3E3DF] -translate-x-1/2" />
 
               <div className="space-y-8">
                 {milestones.map((milestone, idx) => (
                   <div key={idx} className={`timeline-item relative flex items-center gap-8 ${idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
-                    <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-[#0D7A75] border-4 border-white shadow-md -translate-x-1/2 z-10 hover:scale-125 transition-transform" />
+                    <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-[#00a896] border-4 border-white shadow-md -translate-x-1/2 z-10 hover:scale-125 transition-transform" />
                     <div className={`ml-12 md:ml-0 md:w-1/2 ${idx % 2 === 0 ? "md:pr-12" : "md:pl-12"}`}>
                       <Tilt3DCard maxTilt={3} scale={1.01}>
                         <div className="rounded-2xl bg-[#FBFDFC] border border-slate-200/90 hover:border-[#A3E3DF] hover:shadow-md transition-all overflow-hidden">
@@ -201,7 +201,7 @@ export default function AboutPage() {
                               className="w-full h-full object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                            <span className="absolute bottom-2 left-2 text-xs font-bold text-white bg-[#0D7A75] px-2 py-0.5 rounded-full">{milestone.year}</span>
+                            <span className="absolute bottom-2 left-2 text-xs font-bold text-white bg-[#00a896] px-2 py-0.5 rounded-full">{milestone.year}</span>
                           </div>
                           <div className="p-4">
                             <h3 className="text-base font-bold text-[#101828]">{milestone.title}</h3>
@@ -244,12 +244,12 @@ export default function AboutPage() {
                       </div>
                     </div>
                     <div className="p-5 space-y-3">
-                      <h3 className="text-lg font-bold text-[#101828] group-hover:text-[#0D7A75] transition-colors">{clinic.shortName}</h3>
+                      <h3 className="text-lg font-bold text-[#101828] group-hover:text-[#00a896] transition-colors">{clinic.shortName}</h3>
                       <div className="flex items-start gap-2 text-sm text-slate-600">
-                        <MapPin className="w-4 h-4 text-[#0D7A75] flex-shrink-0 mt-0.5" />
+                        <MapPin className="w-4 h-4 text-[#00a896] flex-shrink-0 mt-0.5" />
                         {clinic.fullAddress}
                       </div>
-                      <Link href={`/locations/${clinic.slug}`} className="inline-flex items-center gap-1.5 text-sm font-bold text-[#0D7A75] hover:underline">
+                      <Link href={`/locations/${clinic.slug}`} className="inline-flex items-center gap-1.5 text-sm font-bold text-[#00a896] hover:underline">
                         View Details <ArrowRight className="w-3.5 h-3.5" />
                       </Link>
                     </div>
@@ -267,3 +267,4 @@ export default function AboutPage() {
     </div>
   );
 }
+

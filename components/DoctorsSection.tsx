@@ -19,7 +19,7 @@ export default function DoctorsSection({ onBookWithDoctor }: DoctorsSectionProps
         {/* Header matching design.md */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
           <div className="space-y-2 max-w-lg">
-            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#0D7A75]">
+            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#00a896]">
               <Sparkles className="w-3.5 h-3.5" />
               Our 2 Specialist Founders
             </div>
@@ -49,7 +49,7 @@ export default function DoctorsSection({ onBookWithDoctor }: DoctorsSectionProps
                 <div
                   className={`h-full rounded-3xl transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-md hover:shadow-2xl border ${
                     isFeatured
-                      ? "bg-gradient-to-b from-[#063B36] to-[#0A4A44] text-white border-[#0D7A75] ring-2 ring-[#0D7A75]/40"
+                      ? "bg-gradient-to-b from-[#0f3057] to-[#1a4f8c] text-white border-[#00a896] ring-2 ring-[#00a896]/40"
                       : "bg-white text-[#101828] border-slate-200 hover:border-[#A3E3DF]"
                   }`}
                 >
@@ -67,7 +67,7 @@ export default function DoctorsSection({ onBookWithDoctor }: DoctorsSectionProps
                     <div
                       className={`absolute inset-0 bg-gradient-to-t ${
                         isFeatured
-                          ? "from-[#063B36] via-[#063B36]/20 to-transparent"
+                          ? "from-[#0f3057] via-[#0f3057]/20 to-transparent"
                           : "from-white/60 via-transparent to-transparent"
                       }`}
                     />
@@ -77,8 +77,8 @@ export default function DoctorsSection({ onBookWithDoctor }: DoctorsSectionProps
                       <span
                         className={`px-3 py-1 rounded-full text-xs font-bold shadow-md flex items-center gap-1.5 ${
                           isFeatured
-                            ? "bg-white text-[#0D7A75]"
-                            : "bg-[#0D7A75] text-white"
+                            ? "bg-white text-[#00a896]"
+                            : "bg-[#00a896] text-white"
                         }`}
                       >
                         <Award className="w-3.5 h-3.5" />
@@ -116,7 +116,7 @@ export default function DoctorsSection({ onBookWithDoctor }: DoctorsSectionProps
                         </h3>
                         <span
                           className={`text-xs font-bold uppercase tracking-wider ${
-                            isFeatured ? "text-[#A3E3DF]" : "text-[#0D7A75]"
+                            isFeatured ? "text-[#A3E3DF]" : "text-[#00a896]"
                           }`}
                         >
                           Greater Noida Greater Noida
@@ -125,7 +125,7 @@ export default function DoctorsSection({ onBookWithDoctor }: DoctorsSectionProps
 
                       <p
                         className={`text-sm font-semibold ${
-                          isFeatured ? "text-[#A3E3DF]" : "text-[#0D7A75]"
+                          isFeatured ? "text-[#A3E3DF]" : "text-[#00a896]"
                         }`}
                       >
                         {doc.role}
@@ -150,12 +150,12 @@ export default function DoctorsSection({ onBookWithDoctor }: DoctorsSectionProps
                       <div
                         className={`p-3 rounded-xl text-xs space-y-1 ${
                           isFeatured
-                            ? "bg-[#0A4A44]/80 text-teal-100 border border-[#0D7A75]"
-                            : "bg-[#E6F5F4]/60 text-slate-700 border border-[#A3E3DF]/50"
+                            ? "bg-[#1a4f8c]/80 text-teal-100 border border-[#00a896]"
+                            : "bg-[#e5f6f4]/60 text-slate-700 border border-[#A3E3DF]/50"
                         }`}
                       >
                         <div className="font-bold flex items-center gap-1.5">
-                          <ShieldCheck className="w-3.5 h-3.5 text-[#0D7A75]" />
+                          <ShieldCheck className="w-3.5 h-3.5 text-[#00a896]" />
                           Focus: {doc.speciality}
                         </div>
                         <div className="text-[11px] opacity-90">
@@ -169,8 +169,8 @@ export default function DoctorsSection({ onBookWithDoctor }: DoctorsSectionProps
                         onClick={() => onBookWithDoctor(doc.id)}
                         className={`w-full py-3.5 px-5 rounded-full text-sm font-bold transition-all flex items-center justify-center gap-2 shadow-md hover:scale-[1.02] active:scale-[0.98] ${
                           isFeatured
-                            ? "bg-white text-[#063B36] hover:bg-slate-100"
-                            : "bg-[#0D7A75] text-white hover:bg-[#095C58]"
+                            ? "bg-white text-[#0f3057] hover:bg-slate-100"
+                            : "bg-[#00a896] text-white hover:bg-[#008f7f]"
                         }`}
                       >
                         <Calendar className="w-4 h-4" />
@@ -195,7 +195,7 @@ export default function DoctorsSection({ onBookWithDoctor }: DoctorsSectionProps
               onClick={() => setActiveDoctorIndex(dot)}
               className={`h-2.5 rounded-full transition-all duration-300 ${
                 activeDoctorIndex === dot
-                  ? "w-8 bg-[#0D7A75]"
+                  ? "w-8 bg-[#00a896]"
                   : "w-2.5 bg-slate-300 hover:bg-slate-400"
               }`}
               aria-label={`Doctor ${dot + 1}`}
@@ -207,3 +207,4 @@ export default function DoctorsSection({ onBookWithDoctor }: DoctorsSectionProps
     </section>
   );
 }
+

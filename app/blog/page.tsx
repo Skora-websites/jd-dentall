@@ -76,8 +76,8 @@ export default function BlogPage() {
                   onClick={() => setActiveCategory(cat)}
                   className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all ${
                     activeCategory === cat
-                      ? "bg-[#0D7A75] text-white shadow-sm scale-105"
-                      : "bg-white text-[#475569] hover:bg-[#E6F5F4] hover:text-[#0D7A75] border border-slate-200"
+                      ? "bg-[#00a896] text-white shadow-sm scale-105"
+                      : "bg-white text-[#475569] hover:bg-[#e5f6f4] hover:text-[#00a896] border border-slate-200"
                   }`}
                 >
                   {cat === "all" ? "All Articles" : cat}
@@ -102,7 +102,7 @@ export default function BlogPage() {
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                          <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-xs text-[#0D7A75] text-[11px] font-bold shadow-xs">{post.category}</span>
+                          <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-xs text-[#00a896] text-[11px] font-bold shadow-xs">{post.category}</span>
                         </div>
 
                         <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
@@ -114,11 +114,11 @@ export default function BlogPage() {
                               <Clock className="w-3.5 h-3.5" />
                               <span>{post.readTime}</span>
                             </div>
-                            <h3 className="text-base sm:text-lg font-bold text-[#101828] group-hover:text-[#0D7A75] transition-colors leading-snug line-clamp-2">{post.title}</h3>
+                            <h3 className="text-base sm:text-lg font-bold text-[#101828] group-hover:text-[#00a896] transition-colors leading-snug line-clamp-2">{post.title}</h3>
                             <p className="text-xs text-[#475569] leading-relaxed line-clamp-2">{post.excerpt}</p>
                           </div>
                           <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
-                            <span className="text-xs font-bold text-[#0D7A75] group-hover:underline inline-flex items-center gap-1">
+                            <span className="text-xs font-bold text-[#00a896] group-hover:underline inline-flex items-center gap-1">
                               Read Article <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                             </span>
                             <span className="text-[11px] text-slate-400 font-medium flex items-center gap-1">
@@ -143,3 +143,4 @@ export default function BlogPage() {
     </div>
   );
 }
+
