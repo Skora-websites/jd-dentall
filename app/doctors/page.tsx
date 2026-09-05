@@ -92,7 +92,7 @@ export default function DoctorsPage() {
                           <div className="absolute top-4 right-4 flex items-center gap-2">
                             <span className={`px-3 py-1 rounded-full text-xs font-bold shadow-md flex items-center gap-1.5 ${isFeatured ? "bg-white text-[#00a896]" : "bg-[#00a896] text-white"}`}>
                               <Award className="w-3.5 h-3.5" />
-                              {isFeatured ? "Lead Oral Surgeon" : "Orthodontist & Cosmetic Dentist"}
+                              {isFeatured ? "Lead Oral Surgeon" : "General & Cosmetic Dentist"}
                             </span>
                           </div>
 

@@ -28,24 +28,24 @@ export default function PricingSection({ onSelectPlan }: PricingSectionProps) {
     if (billingCycle === "annual") {
       switch (planId) {
         case "basic-care":
-          return { price: "₹9,999", period: "/year", savings: "Save ₹1,989" };
+          return { price: "₹19,990", period: "/year", savings: "Save ₹3,998" };
         case "premium-care":
-          return { price: "₹24,999", period: "/year", savings: "Save ₹4,989" };
+          return { price: "₹49,990", period: "/year", savings: "Save ₹9,998" };
         case "family-care":
-          return { price: "₹49,999", period: "/year", savings: "Save ₹9,989" };
+          return { price: "₹99,990", period: "/year", savings: "Save ₹19,998" };
         default:
-          return { price: "₹9,999", period: "/year", savings: "" };
+          return { price: "₹19,990", period: "/year", savings: "" };
       }
     }
     switch (planId) {
       case "basic-care":
-        return { price: "₹999", period: "/month", savings: "Billed monthly" };
+        return { price: "₹1,999", period: "/month", savings: "Billed monthly" };
       case "premium-care":
-        return { price: "₹2,499", period: "/month", savings: "Billed monthly" };
-      case "family-care":
         return { price: "₹4,999", period: "/month", savings: "Billed monthly" };
+      case "family-care":
+        return { price: "₹9,999", period: "/month", savings: "Billed monthly" };
       default:
-        return { price: "₹999", period: "/month", savings: "" };
+        return { price: "₹1,999", period: "/month", savings: "" };
     }
   };
 

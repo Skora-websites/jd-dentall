@@ -12,6 +12,7 @@ import {
   ShieldCheck,
   Stethoscope,
   Smile,
+  Activity,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import PageHero from "@/components/PageHero";
@@ -58,6 +59,8 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
         return <Sparkles className="w-8 h-8 text-[#00a896]" />;
       case "ShieldCheck":
         return <ShieldCheck className="w-8 h-8 text-[#00a896]" />;
+      case "Activity":
+        return <Activity className="w-8 h-8 text-[#00a896]" />;
       case "Smile":
       default:
         return <Smile className="w-8 h-8 text-[#00a896]" />;

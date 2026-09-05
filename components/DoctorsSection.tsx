@@ -78,7 +78,7 @@ export default function DoctorsSection({ onBookWithDoctor }: DoctorsSectionProps
                         }`}
                       >
                         <Award className="w-3.5 h-3.5" />
-                        {isFeatured ? "Lead Oral Surgeon" : "Orthodontist & Cosmetic Dentist"}
+                        {isFeatured ? "Lead Oral Surgeon" : "General & Cosmetic Dentist"}
                       </span>
                     </div>
 

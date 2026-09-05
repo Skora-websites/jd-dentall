@@ -25,7 +25,7 @@ export default function ServicesPage() {
   const [activeFilter, setActiveFilter] = useState("all");
   const cardsRef = useRef<HTMLDivElement>(null);
 
-  const categories = ["all", "Preventive Care", "Cosmetic Care", "Restorative Care", "Orthodontics"];
+  const categories = ["all", "Preventive Care", "Cosmetic Care", "Restorative Care", "Orthodontics", "Oral Surgery"];
   const filteredServices = activeFilter === "all" ? SERVICES : SERVICES.filter((s) => s.category === activeFilter);
 
   const serviceImages: Record<string, string> = {
@@ -33,6 +33,7 @@ export default function ServicesPage() {
     "teeth-whitening": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&h=400&fit=crop",
     "dental-implants": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&h=400&fit=crop",
     "orthodontics": "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=600&h=400&fit=crop",
+    "oral-maxillofacial-surgery": "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=600&h=400&fit=crop",
   };
 
   useEffect(() => {

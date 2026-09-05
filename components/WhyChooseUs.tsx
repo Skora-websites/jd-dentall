@@ -15,7 +15,7 @@ export default function WhyChooseUs({ onOpenBooking }: WhyChooseUsProps) {
   const checklistItems = [
     {
       title: "Highly Qualified Dentists",
-      sub: "Led directly by our lead specialist (Implantologist) & our specialist (Orthodontist) with global surgical credentials.",
+      sub: "Led directly by our lead specialist (Implantologist) & our specialist (General & Cosmetic Dentist) with global surgical credentials.",
     },
     {
       title: "Modern Equipment",

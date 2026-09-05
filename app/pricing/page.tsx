@@ -56,17 +56,17 @@ export default function PricingPage() {
   const getPrice = (planId: string) => {
     if (billingCycle === "annual") {
       switch (planId) {
-        case "basic-care": return { price: "₹9,999", period: "/year", savings: "Save ₹1,989" };
-        case "premium-care": return { price: "₹24,999", period: "/year", savings: "Save ₹4,989" };
-        case "family-care": return { price: "₹49,999", period: "/year", savings: "Save ₹9,989" };
-        default: return { price: "₹9,999", period: "/year", savings: "" };
+        case "basic-care": return { price: "₹19,990", period: "/year", savings: "Save ₹3,998" };
+        case "premium-care": return { price: "₹49,990", period: "/year", savings: "Save ₹9,998" };
+        case "family-care": return { price: "₹99,990", period: "/year", savings: "Save ₹19,998" };
+        default: return { price: "₹19,990", period: "/year", savings: "" };
       }
     }
     switch (planId) {
-      case "basic-care": return { price: "₹999", period: "/month", savings: "Billed monthly" };
-      case "premium-care": return { price: "₹2,499", period: "/month", savings: "Billed monthly" };
-      case "family-care": return { price: "₹4,999", period: "/month", savings: "Billed monthly" };
-      default: return { price: "₹999", period: "/month", savings: "" };
+      case "basic-care": return { price: "₹1,999", period: "/month", savings: "Billed monthly" };
+      case "premium-care": return { price: "₹4,999", period: "/month", savings: "Billed monthly" };
+      case "family-care": return { price: "₹9,999", period: "/month", savings: "Billed monthly" };
+      default: return { price: "₹1,999", period: "/month", savings: "" };
     }
   };
 

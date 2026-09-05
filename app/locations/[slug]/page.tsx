@@ -93,7 +93,7 @@ export default function LocationDetailPage({ params }: { params: Promise<{ slug:
                     Noida and surrounding areas.
                   </p>
                   <p className="text-slate-600 leading-relaxed">
-                    Our team of specialist doctors, led by Dr. V.K. Saini (Oral Surgeon) and Dr. Shivani Saini (Orthodontist), ensures every patient receives personalized,
+                    Our team of specialist doctors, led by Dr. V.K. Saini (Oral Surgeon) and Dr. Shivani Saini (General & Cosmetic Dentist), ensures every patient receives personalized,
                     pain-free treatment with the highest standards of care.
                   </p>
                 </div>

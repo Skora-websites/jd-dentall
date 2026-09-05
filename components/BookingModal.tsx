@@ -24,7 +24,7 @@ export default function BookingModal({
   const [selectedDate, setSelectedDate] = useState<string>(
     new Date(Date.now() + 86400000).toISOString().split("T")[0]
   );
-  const [selectedSlot, setSelectedSlot] = useState<string>("10:30 AM");
+  const [selectedSlot, setSelectedSlot] = useState<string>("09:30 AM");
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -37,9 +37,10 @@ export default function BookingModal({
   if (!isOpen) return null;
 
   const timeSlots = [
-    "09:30 AM", "10:30 AM", "11:30 AM",
-    "02:00 PM", "03:30 PM", "04:45 PM",
-    "06:00 PM", "07:15 PM"
+    "09:30 AM", "10:00 AM", "10:30 AM",
+    "11:00 AM", "11:30 AM", "12:00 PM",
+    "05:30 PM", "06:00 PM", "06:30 PM",
+    "07:00 PM", "07:30 PM", "08:00 PM"
   ];
 
   const handleNext = (e: React.FormEvent) => {
