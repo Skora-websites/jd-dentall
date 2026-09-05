@@ -21,6 +21,7 @@ export interface Doctor {
   experience: string;
   speciality: string;
   bio: string;
+  awards?: string[];
   availableDays: string;
   clinics: string[];
   image: string;

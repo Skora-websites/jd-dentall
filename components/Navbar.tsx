@@ -62,7 +62,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
           <Link href="/" className="flex items-center group">
             {/* The actual logo image file */}
             <img 
-              src="/logo.jpg" 
+              src="/logo.png" 
               alt="J.D. Dentals" 
               className="h-12 sm:h-14 w-auto group-hover:scale-[1.02] transition-transform duration-300"
               onError={(e) => {

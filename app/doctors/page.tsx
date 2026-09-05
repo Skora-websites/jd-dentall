@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { Award, Calendar, Star, MapPin, ShieldCheck, ArrowRight } from "lucide-react";
+import { Award, Calendar, Star, MapPin, ShieldCheck, ArrowRight, Trophy } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Navbar from "@/components/Navbar";
@@ -22,11 +22,6 @@ export default function DoctorsPage() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [selectedDoctorId, setSelectedDoctorId] = useState<string>("dr-vinay");
   const doctorsRef = useRef<HTMLDivElement>(null);
-
-  const doctorImages: Record<string, string> = {
-    "dr-vinay": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=500&h=600&fit=crop&crop=face",
-    "dr-shivani": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&h=600&fit=crop&crop=face",
-  };
 
   useEffect(() => {
     if (!doctorsRef.current) return;
@@ -88,7 +83,7 @@ export default function DoctorsPage() {
                       }`}>
                         <div className="relative h-80 sm:h-96 w-full overflow-hidden">
                           <img 
-                            src={doctorImages[doc.id] || "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=500&h=600&fit=crop&crop=face"}
+                            src={doc.image}
                             alt={doc.name}
                             className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
                           />
@@ -97,7 +92,7 @@ export default function DoctorsPage() {
                           <div className="absolute top-4 right-4 flex items-center gap-2">
                             <span className={`px-3 py-1 rounded-full text-xs font-bold shadow-md flex items-center gap-1.5 ${isFeatured ? "bg-white text-[#00a896]" : "bg-[#00a896] text-white"}`}>
                               <Award className="w-3.5 h-3.5" />
-                              {isFeatured ? "Lead Implantologist" : "Chief Orthodontist"}
+                              {isFeatured ? "Lead Oral Surgeon" : "Orthodontist & Cosmetic Dentist"}
                             </span>
                           </div>
 
@@ -125,6 +120,23 @@ export default function DoctorsPage() {
                               </div>
                               <div className="text-[11px] opacity-90">Available: {doc.availableDays}</div>
                             </div>
+
+                            {doc.awards && doc.awards.length > 0 && (
+                              <div className={`p-3 rounded-xl text-xs space-y-2 ${isFeatured ? "bg-[#1a4f8c]/80 text-teal-100 border border-[#00a896]" : "bg-[#e5f6f4]/60 text-slate-700 border border-[#A3E3DF]/50"}`}>
+                                <div className="font-bold flex items-center gap-1.5">
+                                  <Trophy className="w-3.5 h-3.5 text-amber-400" />
+                                  Awards & Certifications
+                                </div>
+                                <ul className="space-y-1">
+                                  {doc.awards.map((award, idx) => (
+                                    <li key={idx} className="flex items-start gap-1.5 text-[11px]">
+                                      <span className="text-[#00a896] mt-0.5">•</span>
+                                      {award}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
 
                             <div className="space-y-2">
                               <span className={`text-xs font-bold ${isFeatured ? "text-teal-100" : "text-slate-500"}`}>Available at:</span>

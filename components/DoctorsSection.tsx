@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Award, Calendar, Sparkles, Star, MapPin, CheckCircle2, ShieldCheck, ArrowRight } from "lucide-react";
+import { Award, Calendar, Sparkles, Star, MapPin, CheckCircle2, ShieldCheck, ArrowRight, Trophy } from "lucide-react";
 import Tilt3DCard from "./Tilt3DCard";
 import { DOCTORS } from "@/data/dentalData";
 
@@ -58,10 +58,6 @@ export default function DoctorsSection({ onBookWithDoctor }: DoctorsSectionProps
                     <img
                       src={doc.image}
                       alt={doc.name}
-                      onError={(e) => {
-                        // Fallback in case of network glitch
-                        (e.target as HTMLImageElement).src = isFeatured ? "/images/doctor-adam.jpg" : "/images/doctor-eve.jpg";
-                      }}
                       className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
                     />
                     <div
@@ -82,7 +78,7 @@ export default function DoctorsSection({ onBookWithDoctor }: DoctorsSectionProps
                         }`}
                       >
                         <Award className="w-3.5 h-3.5" />
-                        {isFeatured ? "Lead Implantologist" : "Chief Orthodontist"}
+                        {isFeatured ? "Lead Oral Surgeon" : "Orthodontist & Cosmetic Dentist"}
                       </span>
                     </div>
 
@@ -162,6 +158,29 @@ export default function DoctorsSection({ onBookWithDoctor }: DoctorsSectionProps
                           Available: {doc.availableDays}
                         </div>
                       </div>
+
+                      {doc.awards && doc.awards.length > 0 && (
+                        <div
+                          className={`p-3 rounded-xl text-xs space-y-1 ${
+                            isFeatured
+                              ? "bg-[#1a4f8c]/80 text-teal-100 border border-[#00a896]"
+                              : "bg-[#e5f6f4]/60 text-slate-700 border border-[#A3E3DF]/50"
+                          }`}
+                        >
+                          <div className="font-bold flex items-center gap-1.5">
+                            <Trophy className="w-3.5 h-3.5 text-amber-400" />
+                            Awards & Certifications
+                          </div>
+                          <ul className="space-y-1">
+                            {doc.awards.map((award, idx) => (
+                              <li key={idx} className="flex items-start gap-1.5 text-[11px]">
+                                <span className="text-[#00a896] mt-0.5">•</span>
+                                {award}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
                     </div>
 
                     <div className="space-y-3 pt-4 border-t border-current/10">

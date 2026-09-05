@@ -97,7 +97,7 @@ export default function BookingModal({
           <p className="text-slate-300 text-sm mt-1 max-w-md">
             {step === 4
               ? "Your consultation is reserved at our Greater Noida clinic."
-              : "Consult Dr. Vinay or Dr. Shivani for painless, personalized dental care."}
+              : "Consult Dr. V.K. Saini or Dr. Shivani for painless, personalized dental care."}
           </p>
 
           {/* Step Progress Indicators */}

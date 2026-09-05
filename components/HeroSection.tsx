@@ -102,7 +102,7 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
 
             <p ref={subtitleRef} className="text-base sm:text-lg text-[#475569] leading-relaxed max-w-xl font-normal">
               Experience world-class dental care with modern technology and a gentle touch in Greater Noida. Led by{" "}
-              <strong className="text-[#101828] font-semibold">Dr. Vinay Saini</strong> and{" "}
+              <strong className="text-[#101828] font-semibold">Dr. V.K. Saini</strong> and{" "}
               <strong className="text-[#101828] font-semibold">Dr. Shivani Saini</strong>, we make every smile healthy, confident, and beautiful across Greater Noida.
             </p>
 
@@ -128,11 +128,11 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
 
             <div className="pt-4 flex items-center gap-4 text-xs text-slate-500">
               <div className="flex -space-x-2">
-                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=100&h=100&fit=crop&crop=face" alt="Dr. Vinay Saini" className="w-10 h-10 rounded-full border-2 border-white object-cover shadow-xs" />
-                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=100&h=100&fit=crop&crop=face" alt="Dr. Shivani Saini" className="w-10 h-10 rounded-full border-2 border-white object-cover shadow-xs" />
+                <img src="/images/doctor-vinay.jpg" alt="Dr. V.K. Saini" className="w-10 h-10 rounded-full border-2 border-white object-cover shadow-xs" />
+                <img src="/images/doctor-shivani.jpg" alt="Dr. Shivani Saini" className="w-10 h-10 rounded-full border-2 border-white object-cover shadow-xs" />
               </div>
               <div>
-                <span className="font-bold text-[#101828]">Consult Dr. Vinay & Dr. Shivani</span>
+                <span className="font-bold text-[#101828]">Consult Dr. V.K. Saini & Dr. Shivani</span>
                 <span className="block text-[11px] text-slate-500">Zero waiting time • Two Greater Noida Clinics</span>
               </div>
             </div>
