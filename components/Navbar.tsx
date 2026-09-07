@@ -34,7 +34,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
             <span className="text-slate-400">|</span>
             <span className="flex items-center gap-1.5 text-slate-300">
               <Clock className="w-3.5 h-3.5 text-[#A3E3DF]" />
-              Mon - Sat: 9:00 AM – 9:00 PM
+              Mon - Sat: 9:30 AM – 12:30 PM, 5:30 – 8:00 PM
             </span>
           </div>
           <div className="flex items-center gap-4">
