@@ -197,6 +197,9 @@ export const DOCTORS: Doctor[] = [
     availableDays: "Mon – Sat (Sky Plaza & Gaur City)",
     clinics: ["Sky Plaza – Greater Noida", "Gaur City – Greater Noida"],
     image: "/images/dr-vinay.jpg",
+    // Booking routing — call & WhatsApp for Dr. V.K. Saini.
+    phone: "098000 00881",
+    whatsapp: "919800000881",
     isFeatured: true,
   },
   {
@@ -211,6 +214,9 @@ export const DOCTORS: Doctor[] = [
     availableDays: "Mon – Sat (Sky Plaza & Gaur City)",
     clinics: ["Sky Plaza – Greater Noida", "Gaur City – Greater Noida"],
     image: "/images/doctor-shivani.jpg",
+    // Booking routing — call & WhatsApp for Dr. Shivani Saini.
+    phone: "+91 99588 81524",
+    whatsapp: "919958881524",
     isFeatured: false,
   },
 ];

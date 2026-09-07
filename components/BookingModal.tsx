@@ -1,8 +1,16 @@
 "use client";
 
 import React, { useState } from "react";
-import { X, Calendar, Clock, MapPin, CheckCircle2, User, Phone, Mail, Sparkles, AlertCircle } from "lucide-react";
+import { X, Calendar, Clock, MapPin, CheckCircle2, User, Phone, Mail, MessageCircle, Sparkles, AlertCircle } from "lucide-react";
 import { CLINIC_INFO, DOCTORS, SERVICES, CLINIC_LOCATIONS } from "@/data/dentalData";
+
+function getTomorrowIsoDate() {
+  return new Date(Date.now() + 86400000).toISOString().split("T")[0];
+}
+
+function generateBookingRef() {
+  return `JD-DENTALS-${Math.floor(1000 + Math.random() * 9000)}`;
+}
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -21,9 +29,7 @@ export default function BookingModal({
   const [selectedDoctor, setSelectedDoctor] = useState<string>(initialDoctorId || "dr-vinay");
   const [selectedService, setSelectedService] = useState<string>(initialServiceId || "general-checkup");
   const [selectedLocation, setSelectedLocation] = useState<string>(CLINIC_LOCATIONS[0].slug);
-  const [selectedDate, setSelectedDate] = useState<string>(
-    new Date(Date.now() + 86400000).toISOString().split("T")[0]
-  );
+  const [selectedDate, setSelectedDate] = useState<string>(getTomorrowIsoDate);
   const [selectedSlot, setSelectedSlot] = useState<string>("09:30 AM");
   const [formData, setFormData] = useState({
     name: "",
@@ -33,6 +39,7 @@ export default function BookingModal({
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [bookingRef, setBookingRef] = useState<string>("");
+  const [sendStatus, setSendStatus] = useState<"sent" | "failed">("sent");
 
   if (!isOpen) return null;
 
@@ -43,7 +50,7 @@ export default function BookingModal({
     "07:00 PM", "07:30 PM", "08:00 PM"
   ];
 
-  const handleNext = (e: React.FormEvent) => {
+  const handleNext = async (e: React.FormEvent) => {
     e.preventDefault();
     if (step === 1) {
       setStep(2);
@@ -55,12 +62,35 @@ export default function BookingModal({
         return;
       }
       setIsSubmitting(true);
-      setTimeout(() => {
+      const refId = generateBookingRef();
+      setBookingRef(refId);
+      try {
+        const res = await fetch("/api/booking", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            bookingRef: refId,
+            name: formData.name,
+            phone: formData.phone,
+            email: formData.email,
+            notes: formData.notes,
+            doctor: currentDoctorObj?.name,
+            service: currentServiceObj?.title,
+            price: currentServiceObj?.priceEstimate,
+            clinic: currentLocationObj?.name,
+            address: currentLocationObj?.address,
+            date: selectedDate,
+            slot: selectedSlot,
+          }),
+        });
+        if (!res.ok) throw new Error("Booking email failed");
+        setSendStatus("sent");
+      } catch {
+        setSendStatus("failed");
+      } finally {
         setIsSubmitting(false);
-        const refId = `JD-DENTALS-${Math.floor(1000 + Math.random() * 9000)}`;
-        setBookingRef(refId);
         setStep(4);
-      }, 700);
+      }
     }
   };
 
@@ -73,6 +103,31 @@ export default function BookingModal({
   const currentDoctorObj = DOCTORS.find((d) => d.id === selectedDoctor) || DOCTORS[0];
   const currentServiceObj = SERVICES.find((s) => s.id === selectedService) || SERVICES[0];
   const currentLocationObj = CLINIC_LOCATIONS.find((c) => c.slug === selectedLocation) || CLINIC_LOCATIONS[0];
+
+  const bookingDetails = [
+    `Booking Reference: ${bookingRef}`,
+    `Patient Name: ${formData.name}`,
+    `Phone: ${formData.phone}`,
+    ...(formData.email ? [`Email: ${formData.email}`] : []),
+    `Doctor: ${currentDoctorObj?.name}`,
+    `Treatment: ${currentServiceObj?.title} (${currentServiceObj?.priceEstimate})`,
+    `Clinic: ${currentLocationObj?.name}`,
+    `Address: ${currentLocationObj?.address}`,
+    `Preferred Date: ${selectedDate}`,
+    `Preferred Time: ${selectedSlot}`,
+    ...(formData.notes ? [`Dental Concerns: ${formData.notes}`] : []),
+  ].join("\n");
+
+  const emailBookingHref = `mailto:${CLINIC_INFO.email}?subject=${encodeURIComponent(
+    `New Appointment Request (${bookingRef}) - ${formData.name}`
+  )}&body=${encodeURIComponent(bookingDetails)}`;
+
+  const clinicWhatsappNumber = `91${CLINIC_INFO.phone.replace(/\D/g, "").replace(/^0+/, "")}`;
+  const doctorWhatsappNumber = currentDoctorObj?.whatsapp || clinicWhatsappNumber;
+  const doctorCallNumber = currentDoctorObj?.phone || currentLocationObj?.phone || CLINIC_INFO.phone;
+  const whatsappBookingHref = `https://wa.me/${doctorWhatsappNumber}?text=${encodeURIComponent(
+    `New appointment request from the J.D. Dentals website:\n\n${bookingDetails}`
+  )}`;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-900/70 backdrop-blur-md transition-all duration-300">
@@ -93,11 +148,13 @@ export default function BookingModal({
             Greater Noida Dental Appointment
           </div>
           <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
-            {step === 4 ? "Appointment Confirmed!" : "Book Your Dental Visit"}
+            {step === 4 ? (sendStatus === "sent" ? "Appointment Confirmed!" : "Almost There — Confirm Your Booking") : "Book Your Dental Visit"}
           </h3>
           <p className="text-slate-300 text-sm mt-1 max-w-md">
             {step === 4
-              ? "Your consultation is reserved at our Greater Noida clinic."
+              ? sendStatus === "sent"
+                ? "Your booking details have been emailed to our team — we will confirm your slot shortly."
+                : "We could not email your details automatically — send them by email or call us to confirm."
               : "Consult Dr. V.K. Saini or Dr. Shivani for painless, personalized dental care."}
           </p>
 
@@ -351,7 +408,7 @@ export default function BookingModal({
               <div className="p-3 rounded-lg bg-emerald-50 border border-emerald-200/60 flex items-start gap-2 text-xs text-emerald-900">
                 <AlertCircle className="w-4 h-4 text-[#00a896] flex-shrink-0 mt-0.5" />
                 <span>
-                  Zero advance booking fee. WhatsApp appointment confirmation will be sent to your phone.
+                  Zero advance booking fee. Your booking details will be emailed directly to our team — we will confirm on WhatsApp.
                 </span>
               </div>
 
@@ -381,7 +438,7 @@ export default function BookingModal({
               </div>
 
               <div>
-                <h4 className="text-2xl font-bold text-[#101828]">You&apos;re All Set!</h4>
+                <h4 className="text-2xl font-bold text-[#101828]">Booking Details Ready</h4>
                 <p className="text-slate-600 text-sm mt-1">
                   We look forward to welcoming you at our {currentLocationObj?.shortName} clinic.
                 </p>
@@ -414,20 +471,58 @@ export default function BookingModal({
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
+              <div className="space-y-3 pt-2 max-w-md mx-auto">
+                {sendStatus === "sent" ? (
+                  <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-200/60 flex items-start gap-2 text-xs text-emerald-900">
+                    <CheckCircle2 className="w-4 h-4 text-[#00a896] flex-shrink-0 mt-0.5" />
+                    <span>
+                      Your booking details have been emailed directly to our team at {CLINIC_INFO.email}. The doctor will review them and confirm your slot shortly.
+                    </span>
+                  </div>
+                ) : (
+                  <div className="p-3 rounded-xl bg-amber-50 border border-amber-200/60 flex items-start gap-2 text-xs text-amber-900">
+                    <AlertCircle className="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" />
+                    <span>
+                      Automatic email failed — please send your details by email, WhatsApp, or call us to confirm.
+                    </span>
+                  </div>
+                )}
+                <div className="flex flex-col sm:flex-row flex-wrap gap-3">
+                  {sendStatus === "failed" && (
+                    <a
+                      href={emailBookingHref}
+                      className="flex-1 px-6 py-2.5 rounded-full bg-[#00a896] text-white font-semibold text-sm hover:bg-[#008f7f] transition-all inline-flex items-center justify-center gap-2"
+                    >
+                      <Mail className="w-4 h-4" /> Send Details by Email
+                    </a>
+                  )}
+                  <a
+                    href={whatsappBookingHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 px-6 py-2.5 rounded-full bg-[#25D366] text-white font-semibold text-sm hover:bg-[#1eb857] transition-all inline-flex items-center justify-center gap-2"
+                  >
+                    <MessageCircle className="w-4 h-4" /> WhatsApp: {currentDoctorObj?.name}
+                  </a>
+                  <a
+                    href={`tel:${doctorCallNumber}`}
+                    className="flex-1 px-6 py-2.5 rounded-full border border-slate-300 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-all inline-flex items-center justify-center gap-2"
+                  >
+                    <Phone className="w-4 h-4 text-[#00a896]" /> Call: {doctorCallNumber}
+                  </a>
+                </div>
+                {sendStatus === "failed" && (
+                  <p className="text-[11px] text-slate-400 text-center">
+                    Send Details by Email opens your email app with the booking details pre-filled — just press send.
+                  </p>
+                )}
                 <button
                   type="button"
                   onClick={handleReset}
-                  className="px-6 py-2.5 rounded-full bg-[#00a896] text-white font-semibold text-sm hover:bg-[#008f7f] transition-all"
+                  className="w-full px-6 py-2 rounded-full text-slate-500 font-medium text-xs hover:bg-slate-100 transition-all"
                 >
                   Done & Close
                 </button>
-                <a
-                  href={`tel:${currentLocationObj?.phone}`}
-                  className="px-6 py-2.5 rounded-full border border-slate-300 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-all inline-flex items-center justify-center gap-2"
-                >
-                  <Phone className="w-4 h-4 text-[#00a896]" /> Call: {currentLocationObj?.phone}
-                </a>
               </div>
             </div>
           )}

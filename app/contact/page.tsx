@@ -7,7 +7,6 @@ import {
   Mail,
   MapPin,
   Clock,
-  Send,
   MessageCircle,
   ArrowRight,
   CheckCircle2,
@@ -20,6 +19,9 @@ import BookingModal from "@/components/BookingModal";
 import FloatingWidget from "@/components/FloatingWidget";
 import { CLINIC_LOCATIONS, CLINIC_INFO } from "@/data/dentalData";
 
+// wa.me needs the number in full international format: country code, no "+", no leading 0.
+const WHATSAPP_NUMBER = `91${CLINIC_INFO.phone.replace(/\D/g, "").replace(/^0+/, "")}`;
+
 export default function ContactPage() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [formData, setFormData] = useState({
@@ -29,16 +31,33 @@ export default function ContactPage() {
     subject: "",
     message: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-    }, 1000);
+    const subjectLabels: Record<string, string> = {
+      appointment: "Book Appointment",
+      pricing: "Pricing Inquiry",
+      treatment: "Treatment Question",
+      emergency: "Emergency",
+      other: "Other",
+    };
+    const whatsappText = [
+      "New enquiry from the J.D. Dentals website:",
+      "",
+      `Name: ${formData.name}`,
+      `Phone: ${formData.phone}`,
+      ...(formData.email ? [`Email: ${formData.email}`] : []),
+      ...(formData.subject ? [`Topic: ${subjectLabels[formData.subject] || formData.subject}`] : []),
+      "",
+      `Message: ${formData.message}`,
+    ].join("\n");
+    window.open(
+      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappText)}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
+    setIsSubmitted(true);
   };
 
   return (
@@ -62,7 +81,7 @@ export default function ContactPage() {
                 <div className="rounded-3xl bg-white border border-slate-200 shadow-lg p-8 sm:p-10">
                   <h2 className="text-2xl font-extrabold text-[#101828] mb-2">Send Us a Message</h2>
                   <p className="text-sm text-slate-500 mb-8">
-                    Fill out the form below and we&apos;ll get back to you within 24 hours.
+                    Fill out the form below — your message will open in WhatsApp, ready to send to our team.
                   </p>
 
                   {isSubmitted ? (
@@ -70,9 +89,9 @@ export default function ContactPage() {
                       <div className="w-16 h-16 bg-[#e5f6f4] text-[#00a896] rounded-full flex items-center justify-center mx-auto">
                         <CheckCircle2 className="w-10 h-10" />
                       </div>
-                      <h3 className="text-xl font-bold text-[#101828]">Message Sent!</h3>
+                      <h3 className="text-xl font-bold text-[#101828]">WhatsApp is Open!</h3>
                       <p className="text-sm text-slate-500">
-                        Thank you for reaching out. We&apos;ll get back to you soon.
+                        Your message is pre-filled — just press send in WhatsApp to deliver it to our team on {CLINIC_INFO.phone}.
                       </p>
                       <button
                         onClick={() => {
@@ -167,17 +186,10 @@ export default function ContactPage() {
                         </p>
                         <button
                           type="submit"
-                          disabled={isSubmitting}
                           className="px-8 py-3 rounded-full bg-[#00a896] text-white font-semibold text-sm hover:bg-[#008f7f] transition-all shadow-md flex items-center gap-2"
                         >
-                          {isSubmitting ? (
-                            "Sending..."
-                          ) : (
-                            <>
-                              <Send className="w-4 h-4" />
-                              Send Message
-                            </>
-                          )}
+                          <MessageCircle className="w-4 h-4" />
+                          Send via WhatsApp
                         </button>
                       </div>
                     </form>

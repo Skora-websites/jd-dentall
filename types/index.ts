@@ -25,6 +25,10 @@ export interface Doctor {
   availableDays: string;
   clinics: string[];
   image: string;
+  // Booking confirmation routing: call number shown to the patient, and WhatsApp
+  // number in international wa.me format (e.g. 919800000881) that receives the details.
+  phone: string;
+  whatsapp: string;
   isFeatured?: boolean;
 }
 
