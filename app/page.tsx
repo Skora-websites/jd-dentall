@@ -70,8 +70,8 @@ export default function Home() {
   };
 
   const locationImages = [
-    "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=500&fit=crop",
-    "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=500&fit=crop",
+    "/images/operatory-interior.jpg",
+    "/images/reception-gaur-city.jpg",
   ];
 
   return (

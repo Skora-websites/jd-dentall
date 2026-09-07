@@ -27,9 +27,9 @@ export default function BlogPage() {
   const filteredPosts = activeCategory === "all" ? BLOG_POSTS : BLOG_POSTS.filter((post) => post.category === activeCategory);
 
   const blogImages: Record<string, string> = {
-    "post-1": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&h=400&fit=crop",
-    "post-2": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&h=400&fit=crop",
-    "post-3": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&h=400&fit=crop",
+    "post-1": "/images/blog-enamel.jpg",
+    "post-2": "/images/blog-checkup.jpg",
+    "post-3": "/images/blog-whitening.jpg",
   };
 
   useEffect(() => {
@@ -97,7 +97,7 @@ export default function BlogPage() {
                       <div className="h-full rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-[#A3E3DF] overflow-hidden flex flex-col justify-between cursor-pointer group transition-all duration-300">
                         <div className="relative h-52 w-full overflow-hidden">
                           <img 
-                            src={blogImages[post.id] || "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&h=400&fit=crop"}
+                            src={blogImages[post.id] || "/images/blog-enamel.jpg"}
                             alt={post.title}
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                           />

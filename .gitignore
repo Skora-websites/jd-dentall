@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# WhatsApp source photos (kept locally, semantic copies are committed)
+public/images/WhatsApp Image*.jpeg

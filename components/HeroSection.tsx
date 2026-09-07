@@ -143,8 +143,8 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
               <div className="relative rounded-3xl p-3 bg-gradient-to-tr from-[#00a896]/15 via-white to-[#ccf0eb]/30 border border-white shadow-2xl overflow-hidden">
                 <div className="relative h-[380px] sm:h-[460px] w-full rounded-2xl overflow-hidden bg-slate-100">
                   <img 
-                    src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&h=600&fit=crop" 
-                    alt="Happy patient at J.D. Dentals Greater Noida" 
+                    src="/images/clinic-hero-treatment.jpg" 
+                    alt="Dr. V.K. Saini treating a patient at J.D. Dentals, Greater Noida" 
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0f3057]/50 via-transparent to-transparent" />

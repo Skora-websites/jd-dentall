@@ -173,7 +173,7 @@ export const SERVICES: ServiceItem[] = [
     ],
     duration: "60 - 90 Mins",
     priceEstimate: "On Consultation",
-    image: "/images/service-implants.jpg",
+    image: "/images/surgery-headlight.jpg",
     iconName: "Activity",
     badgeText: "Surgical",
   },

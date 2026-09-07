@@ -45,19 +45,19 @@ export default function AboutPage() {
   }, []);
 
   const values = [
-    { icon: Shield, title: "Patient Safety First", desc: "European sterilization protocols and 100% disposable instruments for your safety.", image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&h=300&fit=crop" },
-    { icon: Heart, title: "Compassionate Care", desc: "Gentle, anxiety-free treatments with a focus on patient comfort.", image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&h=300&fit=crop" },
-    { icon: Target, title: "Precision Excellence", desc: "Computer-guided treatments with 3D digital planning for optimal results.", image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400&h=300&fit=crop" },
-    { icon: Users, title: "Family Friendly", desc: "Comprehensive care for all ages, from kids to seniors.", image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&h=300&fit=crop" },
+    { icon: Shield, title: "Patient Safety First", desc: "European sterilization protocols and 100% disposable instruments for your safety.", image: "/images/clinic-sanitation.jpg" },
+    { icon: Heart, title: "Compassionate Care", desc: "Gentle, anxiety-free treatments with a focus on patient comfort.", image: "/images/patient-happy.jpg" },
+    { icon: Target, title: "Precision Excellence", desc: "Computer-guided treatments with 3D digital planning for optimal results.", image: "/images/implant-placement.jpg" },
+    { icon: Users, title: "Family Friendly", desc: "Comprehensive care for all ages, from kids to seniors.", image: "/images/paediatric-infographic.jpg" },
   ];
 
   const milestones = [
-    { year: "2010", title: "Founded", desc: "J.D. Dentals established in Greater Noida", image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=300&h=200&fit=crop" },
-    { year: "2015", title: "Expansion", desc: "Second clinic opened at Gaur City", image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=300&h=200&fit=crop" },
-    { year: "2018", title: "Technology Upgrade", desc: "3D CBCT and digital scanners installed", image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=300&h=200&fit=crop" },
-    { year: "2020", title: "Digital Smile Design", desc: "AI-powered smile simulation launched", image: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=300&h=200&fit=crop" },
-    { year: "2023", title: "25,000+ Smiles", desc: "Milestone of 25k+ happy patients", image: "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=300&h=200&fit=crop" },
-    { year: "2025", title: "Continued Excellence", desc: "200+ Google reviews with 4.9+ rating", image: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=300&h=200&fit=crop" },
+    { year: "2010", title: "Founded", desc: "J.D. Dentals established in Greater Noida", image: "/images/clinic-hero-treatment.jpg" },
+    { year: "2015", title: "Expansion", desc: "Second clinic opened at Gaur City", image: "/images/reception-gaur-city.jpg" },
+    { year: "2018", title: "Technology Upgrade", desc: "3D CBCT and digital scanners installed", image: "/images/operatory-interior.jpg" },
+    { year: "2020", title: "Digital Smile Design", desc: "AI-powered smile simulation launched", image: "/images/smile-makeover.jpg" },
+    { year: "2023", title: "25,000+ Smiles", desc: "Milestone of 25k+ happy patients", image: "/images/patient-happy.jpg" },
+    { year: "2025", title: "Continued Excellence", desc: "200+ Google reviews with 4.9+ rating", image: "/images/surgery-team.jpg" },
   ];
 
   return (
@@ -108,7 +108,7 @@ export default function AboutPage() {
                 <Tilt3DCard maxTilt={6} scale={1.02}>
                   <div className="rounded-3xl overflow-hidden shadow-2xl">
                     <img 
-                      src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop" 
+                      src="/images/operatory-interior.jpg" 
                       alt="Modern dental clinic interior"
                       className="w-full h-80 md:h-96 object-cover"
                     />
@@ -232,7 +232,7 @@ export default function AboutPage() {
                   <div className="rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md transition-all overflow-hidden group">
                     <div className="relative h-40 overflow-hidden">
                       <img 
-                        src={index === 0 ? "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&h=300&fit=crop" : "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&h=300&fit=crop"}
+                        src={index === 0 ? "/images/operatory-interior.jpg" : "/images/reception-gaur-city.jpg"}
                         alt={clinic.name}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
