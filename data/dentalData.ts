@@ -184,7 +184,7 @@ export const DOCTORS: Doctor[] = [
     id: "dr-vinay",
     name: "Dr. V.K. Saini",
     role: "Lead Oral Surgeon",
-    qualifications: "BDS, King George Medical University",
+    qualifications: "MDS, King George Medical University",
     experience: "15+ Years Clinical Excellence",
     speciality: "Oral Surgery, Dental Implants, Full Mouth Rehabilitation, Cleft Lip & Palate Management",
     bio: "Dr. V.K. Saini is the lead oral surgeon at J.D. Dentals, bringing over 15 years of clinical experience in comprehensive and surgical dentistry. A graduate of King George Medical University, Dr. Saini is passionate about creating healthy, confident smiles while easing anxiety for nervous patients. He regularly completes advanced training in surgical procedures and digital dentistry. Dr. Saini has over 10 years of experience in implants and full mouth rehabilitation. He is also associated with several hospitals and institutions for educating budding dental professionals.",
