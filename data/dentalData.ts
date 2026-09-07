@@ -196,7 +196,7 @@ export const DOCTORS: Doctor[] = [
     ],
     availableDays: "Mon – Sat (Sky Plaza & Gaur City)",
     clinics: ["Sky Plaza – Greater Noida", "Gaur City – Greater Noida"],
-    image: "/images/doctor-vinay.jpg",
+    image: "/images/dr-vinay.jpg",
     isFeatured: true,
   },
   {

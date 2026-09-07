@@ -128,7 +128,7 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
 
             <div className="pt-4 flex items-center gap-4 text-xs text-slate-500">
               <div className="flex -space-x-2">
-                <img src="/images/doctor-vinay.jpg" alt="Dr. V.K. Saini" className="w-10 h-10 rounded-full border-2 border-white object-cover shadow-xs" />
+                <img src="/images/dr-vinay.jpg" alt="Dr. V.K. Saini" className="w-10 h-10 rounded-full border-2 border-white object-cover shadow-xs" />
                 <img src="/images/doctor-shivani.jpg" alt="Dr. Shivani Saini" className="w-10 h-10 rounded-full border-2 border-white object-cover shadow-xs" />
               </div>
               <div>
