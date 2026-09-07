@@ -62,7 +62,7 @@ export default function ServicesPage() {
   const additionalServices = [
     { name: "Root Canal Treatment", desc: "Painless single-sitting root canal", icon: Heart, color: "bg-rose-50 text-rose-500", image: "/images/clinic-hero-treatment.jpg" },
     { name: "Dental Crowns", desc: "Same-day ceramic crowns", icon: Shield, color: "bg-amber-50 text-amber-500", image: "/images/crowns-infographic.jpg" },
-    { name: "Wisdom Tooth Removal", desc: "Safe surgical extraction", icon: Zap, color: "bg-purple-50 text-purple-500", image: "/images/opg-xray.jpg" },
+    { name: "Wisdom Tooth Removal", desc: "Safe surgical extraction", icon: Zap, color: "bg-purple-50 text-purple-500", image: "/images/wisdom-tooth-surgery.png" },
     { name: "Pediatric Dentistry", desc: "Gentle care for kids", icon: Smile, color: "bg-blue-50 text-blue-500", image: "/images/paediatric-infographic.jpg" },
     { name: "Gum Treatment", desc: "Periodontal therapy", icon: Stethoscope, color: "bg-green-50 text-green-500", image: "/images/surgery-closeup.jpg" },
     { name: "Dental Bridges", desc: "Missing teeth replacement", icon: Star, color: "bg-orange-50 text-orange-500", image: "/images/bridge-infographic.jpg" },
