@@ -36,6 +36,10 @@ export const metadata: Metadata = {
     locale: "en_IN",
     siteName: "J.D. Dentals",
   },
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
   robots: {
     index: true,
     follow: true,
