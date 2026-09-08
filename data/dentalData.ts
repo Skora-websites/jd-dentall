@@ -231,7 +231,7 @@ export const TESTIMONIALS: Testimonial[] = [
     location: "Sector 50, Greater Noida",
     treatment: "Dental Implant & Ceramic Crown",
     rating: 5,
-    image: "/images/patient-happy.jpg",
+    image: "/images/unsplash-jessica-patient.jpg",
   },
   {
     id: "test-2",
@@ -242,7 +242,7 @@ export const TESTIMONIALS: Testimonial[] = [
     location: "Sector 137, Greater Noida",
     treatment: "Clear Aligners / Invisalign",
     rating: 5,
-    image: "/images/smile-makeover.jpg",
+    image: "/images/unsplash-rahul-patient.jpg",
   },
   {
     id: "test-3",
@@ -253,18 +253,7 @@ export const TESTIMONIALS: Testimonial[] = [
     location: "Indirapuram, NCR",
     treatment: "Digital Smile Makeover & Zoom Whitening",
     rating: 5,
-    image: "/images/why-us-consultation.jpg",
-  },
-  {
-    id: "test-2",
-    quote:
-      "Dr. Shivani planned my Invisalign treatment with 3D scanning. In just 9 months, my severe crowding was completely fixed without any tooth extractions. The clinic ambience is like a 5-star lounge.",
-    name: "Rahul Sharma",
-    role: "Software Architect",
-    location: "Sector 137, Greater Noida",
-    treatment: "Clear Aligners / Invisalign",
-    rating: 5,
-    image: "/images/smile-makeover.jpg",
+    image: "/images/unsplash-priya-patient.jpg",
   },
   {
     id: "test-3",
