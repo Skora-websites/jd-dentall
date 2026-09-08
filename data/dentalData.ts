@@ -243,7 +243,6 @@ export const TESTIMONIALS: Testimonial[] = [
     treatment: "Clear Aligners / Invisalign",
     rating: 5,
     image: "/images/smile-makeover.jpg",
-    caption: "Rahul smiling with his straightened teeth after Invisalign / Clear Aligners treatment",
   },
   {
     id: "test-3",
