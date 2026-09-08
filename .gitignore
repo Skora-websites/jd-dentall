@@ -43,3 +43,5 @@ next-env.d.ts
 # WhatsApp source photos (kept locally, semantic copies are committed)
 public/images/WhatsApp Image*.jpeg
 public/images/dr-vinay.jpeg
+
+.vercel

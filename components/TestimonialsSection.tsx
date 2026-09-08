@@ -133,7 +133,7 @@ export default function TestimonialsSection() {
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100">
                 <img
                   src={TESTIMONIALS[currentIndex].image}
-                  alt={currentTestimonial.caption || `${currentTestimonial.name}'s smile after treatment at J.D. Dentals`}
+                  alt={`${currentTestimonial.name}'s smile after treatment at J.D. Dentals`}
                   onError={(e) => {
                     (e.target as HTMLImageElement).src = "/images/patient-happy.jpg";
                   }}
