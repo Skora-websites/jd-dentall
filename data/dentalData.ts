@@ -231,7 +231,8 @@ export const TESTIMONIALS: Testimonial[] = [
     location: "Sector 50, Greater Noida",
     treatment: "Dental Implant & Ceramic Crown",
     rating: 5,
-    image: "/images/testimonial-patient-smile.jpg",
+    image: "/images/patient-happy.jpg",
+    caption: "Jessica pointing to her clean smile after dental implant & ceramic crown at J.D. Dentals",
   },
   {
     id: "test-2",
@@ -242,7 +243,8 @@ export const TESTIMONIALS: Testimonial[] = [
     location: "Sector 137, Greater Noida",
     treatment: "Clear Aligners / Invisalign",
     rating: 5,
-    image: "/images/testimonial-patient-smile.jpg",
+    image: "/images/smile-makeover.jpg",
+    caption: "Rahul smiling with his straightened teeth after Invisalign / Clear Aligners treatment",
   },
   {
     id: "test-3",
@@ -253,7 +255,31 @@ export const TESTIMONIALS: Testimonial[] = [
     location: "Indirapuram, NCR",
     treatment: "Digital Smile Makeover & Zoom Whitening",
     rating: 5,
-    image: "/images/testimonial-patient-smile.jpg",
+    image: "/images/why-us-consultation.jpg",
+    caption: "Priya smiling confidently after painless root canal and Zoom whitening at J.D. Dentals",
+  },
+  },
+  {
+    id: "test-2",
+    quote:
+      "Dr. Shivani planned my Invisalign treatment with 3D scanning. In just 9 months, my severe crowding was completely fixed without any tooth extractions. The clinic ambience is like a 5-star lounge.",
+    name: "Rahul Sharma",
+    role: "Software Architect",
+    location: "Sector 137, Greater Noida",
+    treatment: "Clear Aligners / Invisalign",
+    rating: 5,
+    image: "/images/smile-makeover.jpg",
+  },
+  {
+    id: "test-3",
+    quote:
+      "I had extreme dental anxiety from past experiences. Dr. Vinay and Dr. Shivani performed a single-sitting painless root canal and Zoom whitening at Gaur City. I can finally smile with complete confidence!",
+    name: "Priya Malhotra",
+    role: "Senior HR Director",
+    location: "Indirapuram, NCR",
+    treatment: "Digital Smile Makeover & Zoom Whitening",
+    rating: 5,
+    image: "/images/why-us-consultation.jpg",
   },
 ];
 

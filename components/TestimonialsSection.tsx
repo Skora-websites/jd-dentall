@@ -132,10 +132,10 @@ export default function TestimonialsSection() {
             <Tilt3DCard maxTilt={6} scale={1.02} className="w-full max-w-md">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100">
                 <img
-                  src="/images/testimonial-patient-smile.jpg"
-                  alt="Happy patient pointing to her clean radiant smile after treatment at J.D. Dentals"
+                  src={TESTIMONIALS[currentIndex].image}
+                  alt={currentTestimonial.caption || `${currentTestimonial.name}'s smile after treatment at J.D. Dentals`}
                   onError={(e) => {
-                    (e.target as HTMLImageElement).src = "/images/testimonial-patient-smile.jpg";
+                    (e.target as HTMLImageElement).src = "/images/patient-happy.jpg";
                   }}
                   className="w-full h-[440px] object-cover object-top"
                 />
