@@ -232,7 +232,6 @@ export const TESTIMONIALS: Testimonial[] = [
     treatment: "Dental Implant & Ceramic Crown",
     rating: 5,
     image: "/images/patient-happy.jpg",
-    caption: "Jessica pointing to her clean smile after dental implant & ceramic crown at J.D. Dentals",
   },
   {
     id: "test-2",
@@ -256,8 +255,6 @@ export const TESTIMONIALS: Testimonial[] = [
     treatment: "Digital Smile Makeover & Zoom Whitening",
     rating: 5,
     image: "/images/why-us-consultation.jpg",
-    caption: "Priya smiling confidently after painless root canal and Zoom whitening at J.D. Dentals",
-  },
   },
   {
     id: "test-2",
